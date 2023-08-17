@@ -41,7 +41,7 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.pcTransactionDetail = new System.Windows.Forms.PictureBox();
             this.TxtTitle = new System.Windows.Forms.TextBox();
-            this.llblLink = new System.Windows.Forms.LinkLabel();
+            this.lblLink = new System.Windows.Forms.LinkLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactionDetail)).BeginInit();
@@ -154,12 +154,12 @@
             // 
             // pcTransactionDetail
             // 
-            this.pcTransactionDetail.Image = global::Ui.Properties.Resources.images__1_;
-            this.pcTransactionDetail.InitialImage = global::Ui.Properties.Resources.images__1_;
+            this.pcTransactionDetail.ErrorImage = null;
+            this.pcTransactionDetail.InitialImage = null;
             this.pcTransactionDetail.Location = new System.Drawing.Point(6, 19);
             this.pcTransactionDetail.Name = "pcTransactionDetail";
             this.pcTransactionDetail.Size = new System.Drawing.Size(438, 127);
-            this.pcTransactionDetail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcTransactionDetail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcTransactionDetail.TabIndex = 0;
             this.pcTransactionDetail.TabStop = false;
             // 
@@ -173,15 +173,16 @@
             this.TxtTitle.TabIndex = 0;
             this.TxtTitle.Text = "Title";
             // 
-            // llblLink
+            // lblLink
             // 
-            this.llblLink.AutoSize = true;
-            this.llblLink.Location = new System.Drawing.Point(102, 194);
-            this.llblLink.Name = "llblLink";
-            this.llblLink.Size = new System.Drawing.Size(59, 13);
-            this.llblLink.TabIndex = 3;
-            this.llblLink.TabStop = true;
-            this.llblLink.Text = "Image Link";
+            this.lblLink.AutoSize = true;
+            this.lblLink.Location = new System.Drawing.Point(102, 194);
+            this.lblLink.Name = "lblLink";
+            this.lblLink.Size = new System.Drawing.Size(59, 13);
+            this.lblLink.TabIndex = 3;
+            this.lblLink.TabStop = true;
+            this.lblLink.Text = "Image Link";
+            this.lblLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblLink_LinkClicked);
             // 
             // panel2
             // 
@@ -208,7 +209,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 390);
-            this.Controls.Add(this.llblLink);
+            this.Controls.Add(this.lblLink);
             this.Controls.Add(this.TxtTitle);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -245,6 +246,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewButtonColumn Column8;
-        private System.Windows.Forms.LinkLabel llblLink;
+        private System.Windows.Forms.LinkLabel lblLink;
     }
 }

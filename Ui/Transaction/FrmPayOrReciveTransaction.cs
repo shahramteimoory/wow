@@ -1,6 +1,7 @@
 ﻿using DataLayer.Context;
 using System;
 using System.IO;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 using ValidationComponents;
 using static Utility.Enum.Enums;
@@ -14,10 +15,10 @@ namespace Ui.Transaction
             InitializeComponent();
         }
         public int playerID;
-        public TransactionType type;
+        public TransactionType transactionType;
         void frmRefresh()
         {
-            if (type == TransactionType.Creditor)
+            if (transactionType == TransactionType.Creditor)
             {
                 this.Text = "Payment";
                 lblFrmType.Text = "the payment";
@@ -52,13 +53,38 @@ namespace Ui.Transaction
         {
             if (BaseValidator.IsFormValid(this.components))
             {
-                string Imagename = Guid.NewGuid().ToString() + Path.GetExtension(pcTransaction.ImageLocation);
-                string paath = Application.StartupPath + "Images";
+                string paath = Application.StartupPath + "\\Images\\";
                 if (!Directory.Exists(paath))
                 {
                     Directory.CreateDirectory(paath);
                 }
-                pcTransaction.Image.Save(Path.Combine(paath , Imagename));
+                string Imagename;
+                if (rbFromPC.Checked)
+                {
+                    if (pcTransaction.ImageLocation != null)
+                    {
+                        Imagename = paath + Guid.NewGuid().ToString() + Path.GetExtension(pcTransaction.ImageLocation);
+                        pcTransaction.Image.Save(Path.Combine(Imagename));
+                    }
+                    else
+                    {
+                        DialogResult dialogResult = MessageBox.Show("You did not uplode photo.\n Are you sure for Continue?", "Uoload photo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if (dialogResult == DialogResult.No)
+                        {
+                            return;
+                        }
+                        Imagename = "DefaultTransaction.jpg";
+                    }
+                }
+                else
+                {
+                    Imagename = txtImageURL.Text;
+                }
+                
+
+                
+                
+                
                 using (UnitOfWork db = new UnitOfWork())
                 {
                     DataLayer.Transaction transaction = new DataLayer.Transaction()
@@ -67,7 +93,7 @@ namespace Ui.Transaction
                         Image = Imagename,
                         Amount = long.Parse(txtAmount.Text),
                         PlayerID = playerID,
-                        Type = (int)type,
+                        Type = (int)transactionType,
                         Title = txtTitle.Text,
 
                     };
@@ -90,6 +116,29 @@ namespace Ui.Transaction
             {
                 e.Handled = true;
             }
+        }
+
+        private void rbFromPC_CheckedChanged(object sender, EventArgs e)
+        {
+            btnUploadFrpmPC.Enabled = rbFromPC.Checked;
+        }
+
+        private void rbFromURL_CheckedChanged(object sender, EventArgs e)
+        {
+            txtImageURL.Enabled = rbFromURL.Checked;
+        }
+
+        private void txtImageURL_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                pcTransaction.ImageLocation = txtImageURL.Text;
+            }
+            catch
+            {
+                MessageBox.Show("URL not found");
+            }
+            
         }
     }
 }

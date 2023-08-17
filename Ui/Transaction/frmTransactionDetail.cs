@@ -54,13 +54,27 @@ namespace Ui.Transaction
 
             TxtTitle.Text = dgvTransactionDetail.CurrentRow.Cells[5].Value.ToString();
             string image = dgvTransactionDetail.CurrentRow.Cells[6].Value.ToString();
-            pcTransactionDetail.ImageLocation = Application.StartupPath + "/Images/" + image;
+            pcTransactionDetail.ImageLocation =  image;
+            lblLink.Text = image;
 
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lblLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(lblLink.Text);
+            }
+            catch
+            {
+                MessageBox.Show("404 not found");
+            }
+            
         }
     }
 }

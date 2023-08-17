@@ -64,7 +64,7 @@ namespace Ui.Transaction
         private void btnPay_Click(object sender, EventArgs e)
         {
             FrmPayOrReciveTransaction frm = new FrmPayOrReciveTransaction();
-            frm.type = TransactionType.Creditor;
+            frm.transactionType = TransactionType.Creditor;
             frm.playerID = int.Parse(dgvPlayerList.CurrentRow.Cells["Column1"].Value.ToString());
             frm.ShowDialog();
         }
@@ -72,7 +72,7 @@ namespace Ui.Transaction
         private void btnReceive_Click(object sender, EventArgs e)
         {
             FrmPayOrReciveTransaction frm = new FrmPayOrReciveTransaction();
-            frm.type = TransactionType.Debtor;
+            frm.transactionType = TransactionType.Debtor;
             frm.playerID = int.Parse(dgvPlayerList.CurrentRow.Cells["Column1"].Value.ToString());
             frm.ShowDialog();
         }

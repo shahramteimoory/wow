@@ -42,8 +42,11 @@
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnUploadFrpmPC = new System.Windows.Forms.Button();
             this.pcTransaction = new System.Windows.Forms.PictureBox();
+            this.rbFromPC = new System.Windows.Forms.RadioButton();
+            this.rbFromURL = new System.Windows.Forms.RadioButton();
+            this.txtImageURL = new System.Windows.Forms.TextBox();
             this.requiredFieldValidator1 = new ValidationComponents.RequiredFieldValidator(this.components);
             this.requiredFieldValidator2 = new ValidationComponents.RequiredFieldValidator(this.components);
             this.gpTransaction.SuspendLayout();
@@ -75,9 +78,9 @@
             this.panel1.BackgroundImage = global::Ui.Properties.Resources.goldright;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(433, 0);
+            this.panel1.Location = new System.Drawing.Point(430, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(109, 349);
+            this.panel1.Size = new System.Drawing.Size(109, 391);
             this.panel1.TabIndex = 2;
             // 
             // panel2
@@ -87,7 +90,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(109, 349);
+            this.panel2.Size = new System.Drawing.Size(109, 391);
             this.panel2.TabIndex = 0;
             // 
             // label1
@@ -115,7 +118,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 22);
+            this.label3.Location = new System.Drawing.Point(9, 48);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 5;
@@ -123,16 +126,16 @@
             // 
             // txtAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(70, 19);
+            this.txtAmount.Location = new System.Drawing.Point(64, 45);
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(100, 20);
+            this.txtAmount.Size = new System.Drawing.Size(78, 20);
             this.txtAmount.TabIndex = 7;
             this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 64);
+            this.label2.Location = new System.Drawing.Point(9, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(30, 13);
             this.label2.TabIndex = 6;
@@ -140,16 +143,16 @@
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(42, 61);
+            this.txtTitle.Location = new System.Drawing.Point(64, 19);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(242, 20);
+            this.txtTitle.Size = new System.Drawing.Size(222, 20);
             this.txtTitle.TabIndex = 5;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(239, 173);
+            this.btnSave.Location = new System.Drawing.Point(115, 356);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(309, 23);
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -157,36 +160,67 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.pcTransaction);
-            this.groupBox1.Location = new System.Drawing.Point(115, 198);
+            this.groupBox1.Location = new System.Drawing.Point(115, 225);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(312, 151);
+            this.groupBox1.Size = new System.Drawing.Size(312, 124);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Image";
             // 
-            // button1
+            // btnUploadFrpmPC
             // 
-            this.button1.Location = new System.Drawing.Point(95, 126);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "UploadImage";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnUploadFrpmPC.Location = new System.Drawing.Point(212, 171);
+            this.btnUploadFrpmPC.Name = "btnUploadFrpmPC";
+            this.btnUploadFrpmPC.Size = new System.Drawing.Size(92, 23);
+            this.btnUploadFrpmPC.TabIndex = 11;
+            this.btnUploadFrpmPC.Text = "UploadImage";
+            this.btnUploadFrpmPC.UseVisualStyleBackColor = true;
+            this.btnUploadFrpmPC.Click += new System.EventHandler(this.button1_Click);
             // 
             // pcTransaction
             // 
-            this.pcTransaction.BackgroundImage = global::Ui.Properties.Resources.images__1_;
             this.pcTransaction.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pcTransaction.InitialImage = global::Ui.Properties.Resources.images__1_;
+            this.pcTransaction.InitialImage = null;
             this.pcTransaction.Location = new System.Drawing.Point(6, 19);
             this.pcTransaction.Name = "pcTransaction";
             this.pcTransaction.Size = new System.Drawing.Size(302, 101);
-            this.pcTransaction.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcTransaction.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcTransaction.TabIndex = 10;
             this.pcTransaction.TabStop = false;
+            // 
+            // rbFromPC
+            // 
+            this.rbFromPC.AutoSize = true;
+            this.rbFromPC.Checked = true;
+            this.rbFromPC.Location = new System.Drawing.Point(121, 174);
+            this.rbFromPC.Name = "rbFromPC";
+            this.rbFromPC.Size = new System.Drawing.Size(65, 17);
+            this.rbFromPC.TabIndex = 12;
+            this.rbFromPC.TabStop = true;
+            this.rbFromPC.Text = "From PC";
+            this.rbFromPC.UseVisualStyleBackColor = true;
+            this.rbFromPC.CheckedChanged += new System.EventHandler(this.rbFromPC_CheckedChanged);
+            // 
+            // rbFromURL
+            // 
+            this.rbFromURL.AutoSize = true;
+            this.rbFromURL.Location = new System.Drawing.Point(121, 198);
+            this.rbFromURL.Name = "rbFromURL";
+            this.rbFromURL.Size = new System.Drawing.Size(73, 17);
+            this.rbFromURL.TabIndex = 13;
+            this.rbFromURL.Text = "From URL";
+            this.rbFromURL.UseVisualStyleBackColor = true;
+            this.rbFromURL.CheckedChanged += new System.EventHandler(this.rbFromURL_CheckedChanged);
+            // 
+            // txtImageURL
+            // 
+            this.txtImageURL.Enabled = false;
+            this.txtImageURL.Location = new System.Drawing.Point(212, 197);
+            this.txtImageURL.Name = "txtImageURL";
+            this.txtImageURL.Size = new System.Drawing.Size(211, 20);
+            this.txtImageURL.TabIndex = 14;
+            this.txtImageURL.Leave += new System.EventHandler(this.txtImageURL_Leave);
             // 
             // requiredFieldValidator1
             // 
@@ -206,9 +240,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 349);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(539, 391);
+            this.Controls.Add(this.txtImageURL);
+            this.Controls.Add(this.rbFromURL);
+            this.Controls.Add(this.rbFromPC);
             this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnUploadFrpmPC);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblPlayerName);
             this.Controls.Add(this.gpTransaction);
             this.Controls.Add(this.label1);
@@ -244,9 +282,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnUploadFrpmPC;
         private System.Windows.Forms.PictureBox pcTransaction;
         private ValidationComponents.RequiredFieldValidator requiredFieldValidator1;
         private ValidationComponents.RequiredFieldValidator requiredFieldValidator2;
+        private System.Windows.Forms.RadioButton rbFromPC;
+        private System.Windows.Forms.RadioButton rbFromURL;
+        private System.Windows.Forms.TextBox txtImageURL;
     }
 }

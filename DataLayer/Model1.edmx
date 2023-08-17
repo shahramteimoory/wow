@@ -70,7 +70,7 @@
           <Property Name="DateTime" Type="datetime" Nullable="false" />
           <Property Name="PlayerID" Type="int" Nullable="false" />
           <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Image" Type="nvarchar" MaxLength="50" />
+          <Property Name="Image" Type="nvarchar" MaxLength="300" />
         </EntityType>
         <Association Name="FK_Boost_Dungeon">
           <End Role="Dungeon" Type="Self.Dungeon" Multiplicity="1" />
@@ -350,7 +350,7 @@
           <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="PlayerID" Type="Int32" Nullable="false" />
           <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Image" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Player" Relationship="LichKingDBModel.FK_Transaction_Player" FromRole="Transaction" ToRole="Player" />
         </EntityType>
         <Association Name="FK_Transaction_Player">
