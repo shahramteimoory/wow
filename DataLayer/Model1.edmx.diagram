@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="db5e7be97cb44dc49a763471046e9006" Name="Diagram1">
+        <EntityTypeShape EntityType="LichKingDBModel.Boost" Width="1.5" PointX="1.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LichKingDBModel.Player" Width="1.5" PointX="4.875" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LichKingDBModel.Role" Width="1.5" PointX="5.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LichKingDBModel.sysdiagrams" Width="1.5" PointX="9.875" PointY="7.875" IsExpanded="true" />
+        <AssociationConnector Association="LichKingDBModel.FK_Boost_Player" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="LichKingDBModel.Dungeon" Width="1.5" PointX="0.75" PointY="0.875" />
+        <AssociationConnector Association="LichKingDBModel.FK_Boost_Dungeon" />
+        <EntityTypeShape EntityType="LichKingDBModel.Run" Width="1.5" PointX="7.375" PointY="2.875" />
+        <AssociationConnector Association="LichKingDBModel.FK_Run_Boost" />
+        <AssociationConnector Association="LichKingDBModel.FK_Run_Player" />
+        <AssociationConnector Association="LichKingDBModel.FK_Run_Role" />
+        <EntityTypeShape EntityType="LichKingDBModel.Transaction" Width="1.5" PointX="6.5" PointY="8.625" />
+        <AssociationConnector Association="LichKingDBModel.FK_Transaction_Player" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
