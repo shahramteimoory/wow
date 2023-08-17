@@ -48,6 +48,11 @@ namespace DataLayer.Services
             }
         }
 
+        public List<Run> GetMyRunByPlayerID(int PlayerID)
+        {
+            return db.Run.Where(r => r.PlayerID == 0 && r.Boost.PlayerID == PlayerID).ToList();
+        }
+
         public List<Run> GetRunByPlayerID(int PlayerID)
         {
             return db.Run.Where(r => r.PlayerID == PlayerID).ToList();

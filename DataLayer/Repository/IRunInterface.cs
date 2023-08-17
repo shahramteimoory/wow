@@ -9,5 +9,6 @@ namespace DataLayer.Repository
         bool DeleteRun(int RunID);
         bool DeleteRuns(int BoostID);
         List<Run> GetRunByPlayerID(int PlayerID);
+        List<Run> GetMyRunByPlayerID(int PlayerID);
     }
 }

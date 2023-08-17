@@ -1,8 +1,10 @@
 ﻿using DataLayer.Context;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 using Ui.Boost;
 using Ui.Transaction;
+using static Utility.Enum.Enums;
 
 namespace Ui.Report
 {
@@ -20,56 +22,47 @@ namespace Ui.Report
             using (UnitOfWork db = new UnitOfWork())
             {
                 var trans = db.TransactionRepository.GetTransactionByPlayerID(playerID);
-                string type;
-                double bedehkartotal = 0;
-                double talabkartotal = 0;
+                
                 foreach (var item in trans)
                 {
 
-                    if (item.Type == 0)
+                    if (item.Type == (int)TransactionType.Debtor)
                     {
-
-                        bedehkartotal += item.Amount;
+                        dgvTransaction.Rows.Add(item.DateTime.ToString() , item.Title , null , item.Amount , null , null , item.DateTime.Ticks);
                     }
                     else
                     {
-
-                        talabkartotal += item.Amount;
+                        dgvTransaction.Rows.Add(item.DateTime.ToString(), item.Title, item.Amount, null, null, null , item.DateTime.Ticks);
                     }
-                    if (item.Type == 0)
-                    {
-                        type = "Debtor";
-                    }
-                    else
-                    {
-                        type = "Creditor";
-                    }
-
-
-                    dgvTransaction.Rows.Add(playerID, item.TransactionID, type, item.Amount, item.DateTime, item.Title);
+                    
                 }
-                if (bedehkartotal > talabkartotal)
-                {
-                    lblType.Text = "Creditor";
-                }
-                else
-                {
-                    lblType.Text = "Debtor";
-                }
-                double result = 0;
-                result = bedehkartotal - talabkartotal;
-                lblAmount.Text = result.ToString();
+               
                 var runi = db.RunRepository.GetRunByPlayerID(playerID);
                 foreach (var item in runi)
                 {
+                    if (item.Boost.Mine)
+                    {
+                        dgvTransaction.Rows.Add(item.Boost.DateTime.ToString(), $"Dungeon: {item.Boost.Dungeon.Name} Lvl: {item.Boost.Lvl} Adv:{item.Boost.Player.FullName}", null, item.Gold, null, null ,item.Boost.DateTime.Ticks);
+                    }
 
                     dgvRun.Rows.Add(playerID, item.RunID, item.BoostID, item.Role.Title, item.Gold, item.Boost.Dungeon.Name);
                 }
+
+                var myRun = db.RunRepository.GetMyRunByPlayerID(playerID);
+                foreach (var item in myRun)
+                {
+                    
+                    dgvTransaction.Rows.Add(item.Boost.DateTime.ToString(),$"Dungeon: {item.Boost.Dungeon.Name} Lvl: {item.Boost.Lvl} Adv:{item.Boost.Player.FullName}" , item.Gold, null , null, null, item.Boost.DateTime.Ticks);
+                    
+                }
+
+
             }
+            RefreshDgvTransaction();
         }
         private void frmReport_Load(object sender, EventArgs e)
         {
-            lblPlayer2.Text = playerName;
+            lblPlayerName.Text = playerName;
             frmRefresh();
 
         }
@@ -103,6 +96,107 @@ namespace Ui.Report
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        
+        private void RefreshDgvTransaction()
+        {
+            long sumCreditor = 0;
+            long sumDebtor = 0;
+            dgvTransaction.Sort(dgvTransaction.Columns["cTick"], System.ComponentModel.ListSortDirection.Ascending);
+
+            for (int i = 0; i < dgvTransaction.Rows.Count; i++) 
+            {
+                if (dgvTransaction.Rows[i].Cells["cDebtor"].Value == null)
+                {
+                    //Creditor
+                    //ba ballance ++ mishvd
+
+                    sumCreditor += long.Parse(dgvTransaction.Rows[i].Cells["cCreditor"].Value.ToString());
+                    if (i == 0)
+                    {
+                        dgvTransaction.Rows[i].Cells["cBallance"].Value = dgvTransaction.Rows[i].Cells["cCreditor"].Value;
+                        dgvTransaction.Rows[i].Cells["cStatus"].Value = "Creditor";
+                    }
+                    else
+                    {
+                        dgvTransaction.Rows[i].Cells["cBallance"].Value = 
+                            long.Parse(dgvTransaction.Rows[i - 1].Cells["cBallance"].Value.ToString()) + 
+                            long.Parse(dgvTransaction.Rows[i].Cells["cCreditor"].Value.ToString());
+
+                        dgvTransaction.Rows[i].Cells["cStatus"].Value =
+                            GetStatus(long.Parse(dgvTransaction.Rows[i].Cells["cBallance"].Value.ToString()));
+                    }
+
+                }
+                else
+                {
+                    //Debtor
+                    //az ballance -- mishvd
+
+                    sumDebtor += long.Parse(dgvTransaction.Rows[i].Cells["cDebtor"].Value.ToString());
+                    if (i == 0)
+                    {
+                        dgvTransaction.Rows[i].Cells["cBallance"].Value = 
+                            long.Parse( dgvTransaction.Rows[i].Cells["cDebtor"].Value.ToString()) * -1;
+
+                        dgvTransaction.Rows[i].Cells["cStatus"].Value = "Debtor";
+                    }
+                    else
+                    {
+                        dgvTransaction.Rows[i].Cells["cBallance"].Value =
+                            long.Parse(dgvTransaction.Rows[i - 1].Cells["cBallance"].Value.ToString()) -
+                            long.Parse(dgvTransaction.Rows[i].Cells["cDebtor"].Value.ToString());
+
+                        dgvTransaction.Rows[i].Cells["cStatus"].Value =
+                            GetStatus(long.Parse(dgvTransaction.Rows[i].Cells["cBallance"].Value.ToString()));
+                    }
+
+                }
+
+                if (dgvTransaction.Rows[i].Cells["cStatus"].Value.ToString() == "Creditor")
+                {
+                    dgvTransaction.Rows[i].Cells["cStatus"].Style.ForeColor = Color.Red;
+                }
+                if (dgvTransaction.Rows[i].Cells["cStatus"].Value.ToString() == "Checkout")
+                {
+                    dgvTransaction.Rows[i].Cells["cStatus"].Style.ForeColor = Color.Green;
+                }
+            }
+
+            if (dgvTransaction.Rows.Count !=0)
+            {
+                long lastBallance = long.Parse(dgvTransaction.Rows[dgvTransaction.Rows.Count - 1].Cells["cBallance"].Value.ToString());
+                string lastStatus = dgvTransaction.Rows[dgvTransaction.Rows.Count - 1].Cells["cStatus"].Value.ToString();
+                dgvTransaction.Rows.Add(null, "Total", sumCreditor, sumDebtor, lastBallance, lastStatus);
+
+                dgvTransaction.Rows[dgvTransaction.Rows.Count - 1].DefaultCellStyle.BackColor = Color.LightGreen;
+
+                dgvTransaction.FirstDisplayedScrollingRowIndex = dgvTransaction.RowCount - 1;
+
+                lblStatus.Text = lastStatus;
+                lblAmount.Text = Math.Abs(lastBallance).ToString("N0");
+            }
+
+            
+        }
+
+
+        private string GetStatus(long Ballnace)
+        {
+            if (Ballnace == 0)
+            {
+                return "Checkout";
+            }
+            else if (Ballnace > 1) 
+            {
+                return "Creditor";
+            }
+            else
+            {
+                return "Debtor";
+            }
+            
         }
     }
 }

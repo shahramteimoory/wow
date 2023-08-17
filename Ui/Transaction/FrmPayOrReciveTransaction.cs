@@ -94,7 +94,7 @@ namespace Ui.Transaction
                         Amount = long.Parse(txtAmount.Text),
                         PlayerID = playerID,
                         Type = (int)transactionType,
-                        Title = txtTitle.Text,
+                        Title = $"{lblFrmType.Text}: Title: {txtTitle.Text}",
 
                     };
                     db.TransactionRepository.InsertTransaction(transaction);
