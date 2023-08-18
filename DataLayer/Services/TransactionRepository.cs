@@ -1,6 +1,8 @@
 ﻿using DataLayer.Repository;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
 
 namespace DataLayer.Services
@@ -38,6 +40,11 @@ namespace DataLayer.Services
 
             return db.Transaction.Where(t => t.PlayerID == PlayerID).ToList();
 
+        }
+
+        public Transaction GetTransactionByTransactionID(int transactionID)
+        {
+            return db.Transaction.SingleOrDefault(t => t.TransactionID == transactionID);
         }
 
         public List<Transaction> GetTransactionsByType(int type)
@@ -94,12 +101,19 @@ namespace DataLayer.Services
                     db.Entry(local).State = EntityState.Detached;
                 }
                 db.Entry(transaction).State = EntityState.Modified;
+                
+
                 return true;
             }
-            catch
+            catch 
             {
+                        
+                    
+                
+
                 return false;
             }
         }
     }
+    
 }

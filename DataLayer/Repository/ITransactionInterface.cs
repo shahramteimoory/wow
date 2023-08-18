@@ -12,7 +12,7 @@ namespace DataLayer.Repository
         bool UpdateTransaction(Transaction transaction);
         bool DeleteTransaction(int transactionID);
 
-        //int GetPlayerIdByName(string Player);
+        Transaction GetTransactionByTransactionID(int transactionID);
         List<Transaction> GetTransactionsByType(int type);
         int GetCount(string PlayerfullName);
         // List<ViewModel.Player.PlayerViewModel> GetPlayersName(string filter = "");

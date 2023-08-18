@@ -99,9 +99,6 @@
     <Compile Include="Services\PlayerRepository.cs" />
     <Compile Include="Services\RunRepository.cs" />
     <Compile Include="Services\TransactionRepository.cs" />
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Transaction.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

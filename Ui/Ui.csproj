@@ -134,6 +134,12 @@
     <Compile Include="Report\frmReport.Designer.cs">
       <DependentUpon>frmReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Transaction\frmEditTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmEditTransaction.Designer.cs">
+      <DependentUpon>frmEditTransaction.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transaction\FrmPayOrReciveTransaction.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\frmReport.resx">
       <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\frmEditTransaction.resx">
+      <DependentUpon>frmEditTransaction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transaction\FrmPayOrReciveTransaction.resx">
       <DependentUpon>FrmPayOrReciveTransaction.cs</DependentUpon>

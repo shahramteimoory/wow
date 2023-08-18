@@ -50,16 +50,6 @@
           <Property Name="RoleID" Type="int" Nullable="false" />
           <Property Name="Gold" Type="bigint" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <EntityType Name="Transaction">
           <Key>
             <PropertyRef Name="TransactionID" />
@@ -69,7 +59,7 @@
           <Property Name="Amount" Type="bigint" Nullable="false" />
           <Property Name="DateTime" Type="datetime" Nullable="false" />
           <Property Name="PlayerID" Type="int" Nullable="false" />
-          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="150" />
           <Property Name="Image" Type="nvarchar" MaxLength="300" />
         </EntityType>
         <Association Name="FK_Boost_Dungeon">
@@ -150,7 +140,6 @@
           <EntitySet Name="Player" EntityType="Self.Player" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Run" EntityType="Self.Run" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Transaction" EntityType="Self.Transaction" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Boost_Dungeon" Association="Self.FK_Boost_Dungeon">
             <End Role="Dungeon" EntitySet="Dungeon" />
@@ -181,6 +170,38 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LichKingDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="LichKingDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Boost" EntityType="LichKingDBModel.Boost" />
+          <EntitySet Name="Dungeon" EntityType="LichKingDBModel.Dungeon" />
+          <EntitySet Name="Player" EntityType="LichKingDBModel.Player" />
+          <EntitySet Name="Role" EntityType="LichKingDBModel.Role" />
+          <EntitySet Name="Run" EntityType="LichKingDBModel.Run" />
+          <EntitySet Name="Transaction" EntityType="LichKingDBModel.Transaction" />
+          <AssociationSet Name="FK_Boost_Dungeon" Association="LichKingDBModel.FK_Boost_Dungeon">
+            <End Role="Dungeon" EntitySet="Dungeon" />
+            <End Role="Boost" EntitySet="Boost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Boost_Player" Association="LichKingDBModel.FK_Boost_Player">
+            <End Role="Player" EntitySet="Player" />
+            <End Role="Boost" EntitySet="Boost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Run_Boost" Association="LichKingDBModel.FK_Run_Boost">
+            <End Role="Boost" EntitySet="Boost" />
+            <End Role="Run" EntitySet="Run" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Run_Player" Association="LichKingDBModel.FK_Run_Player">
+            <End Role="Player" EntitySet="Player" />
+            <End Role="Run" EntitySet="Run" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transaction_Player" Association="LichKingDBModel.FK_Transaction_Player">
+            <End Role="Player" EntitySet="Player" />
+            <End Role="Transaction" EntitySet="Transaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Run_Role" Association="LichKingDBModel.FK_Run_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Run" EntitySet="Run" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="Boost">
           <Key>
             <PropertyRef Name="BoostID" />
@@ -192,84 +213,10 @@
           <Property Name="Gold" Type="Int64" Nullable="false" />
           <Property Name="DungeonID" Type="Int32" Nullable="false" />
           <Property Name="Lvl" Type="Int32" />
-          <NavigationProperty Name="Player" Relationship="Self.FK_Boost_Player" FromRole="Boost" ToRole="Player" />
           <NavigationProperty Name="Dungeon" Relationship="LichKingDBModel.FK_Boost_Dungeon" FromRole="Boost" ToRole="Dungeon" />
+          <NavigationProperty Name="Player" Relationship="LichKingDBModel.FK_Boost_Player" FromRole="Boost" ToRole="Player" />
           <NavigationProperty Name="Run" Relationship="LichKingDBModel.FK_Run_Boost" FromRole="Boost" ToRole="Run" />
         </EntityType>
-        <EntityType Name="Player">
-          <Key>
-            <PropertyRef Name="PlayerID" />
-          </Key>
-          <Property Name="PlayerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FullName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="IsDelete" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Boost" Relationship="Self.FK_Boost_Player" FromRole="Player" ToRole="Boost" />
-          <NavigationProperty Name="Run" Relationship="LichKingDBModel.FK_Run_Player" FromRole="Player" ToRole="Run" />
-          <NavigationProperty Name="Transaction" Relationship="LichKingDBModel.FK_Transaction_Player" FromRole="Player" ToRole="Transaction" />
-        </EntityType>
-        <EntityType Name="Role">
-          <Key>
-            <PropertyRef Name="RoleID" />
-          </Key>
-          <Property Name="RoleID" Type="Int32" Nullable="false" />
-          <Property Name="Title" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Run" Relationship="LichKingDBModel.FK_Run_Role" FromRole="Role" ToRole="Run" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
-        <Association Name="FK_Boost_Player">
-          <End Role="Player" Type="Self.Player" Multiplicity="1" />
-          <End Role="Boost" Type="Self.Boost" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Player">
-              <PropertyRef Name="PlayerID" />
-            </Principal>
-            <Dependent Role="Boost">
-              <PropertyRef Name="PlayerID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="LichKingDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Boost" EntityType="Self.Boost" />
-          <EntitySet Name="Player" EntityType="Self.Player" />
-          <EntitySet Name="Role" EntityType="Self.Role" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
-          <AssociationSet Name="FK_Boost_Player" Association="Self.FK_Boost_Player">
-            <End Role="Player" EntitySet="Player" />
-            <End Role="Boost" EntitySet="Boost" />
-          </AssociationSet>
-          <EntitySet Name="Dungeon" EntityType="LichKingDBModel.Dungeon" />
-          <AssociationSet Name="FK_Boost_Dungeon" Association="LichKingDBModel.FK_Boost_Dungeon">
-            <End Role="Dungeon" EntitySet="Dungeon" />
-            <End Role="Boost" EntitySet="Boost" />
-          </AssociationSet>
-          <EntitySet Name="Run" EntityType="LichKingDBModel.Run" />
-          <AssociationSet Name="FK_Run_Boost" Association="LichKingDBModel.FK_Run_Boost">
-            <End Role="Boost" EntitySet="Boost" />
-            <End Role="Run" EntitySet="Run" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Run_Player" Association="LichKingDBModel.FK_Run_Player">
-            <End Role="Player" EntitySet="Player" />
-            <End Role="Run" EntitySet="Run" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Run_Role" Association="LichKingDBModel.FK_Run_Role">
-            <End Role="Role" EntitySet="Role" />
-            <End Role="Run" EntitySet="Run" />
-          </AssociationSet>
-          <EntitySet Name="Transaction" EntityType="LichKingDBModel.Transaction" />
-          <AssociationSet Name="FK_Transaction_Player" Association="LichKingDBModel.FK_Transaction_Player">
-            <End Role="Player" EntitySet="Player" />
-            <End Role="Transaction" EntitySet="Transaction" />
-          </AssociationSet>
-        </EntityContainer>
         <EntityType Name="Dungeon">
           <Key>
             <PropertyRef Name="DungeonID" />
@@ -279,18 +226,25 @@
           <Property Name="IsDelete" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Boost" Relationship="LichKingDBModel.FK_Boost_Dungeon" FromRole="Dungeon" ToRole="Boost" />
         </EntityType>
-        <Association Name="FK_Boost_Dungeon">
-          <End Type="LichKingDBModel.Dungeon" Role="Dungeon" Multiplicity="1" />
-          <End Type="LichKingDBModel.Boost" Role="Boost" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Dungeon">
-              <PropertyRef Name="DungeonID" />
-            </Principal>
-            <Dependent Role="Boost">
-              <PropertyRef Name="DungeonID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
+        <EntityType Name="Player">
+          <Key>
+            <PropertyRef Name="PlayerID" />
+          </Key>
+          <Property Name="PlayerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Boost" Relationship="LichKingDBModel.FK_Boost_Player" FromRole="Player" ToRole="Boost" />
+          <NavigationProperty Name="Run" Relationship="LichKingDBModel.FK_Run_Player" FromRole="Player" ToRole="Run" />
+          <NavigationProperty Name="Transaction" Relationship="LichKingDBModel.FK_Transaction_Player" FromRole="Player" ToRole="Transaction" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Run" Relationship="LichKingDBModel.FK_Run_Role" FromRole="Role" ToRole="Run" />
+        </EntityType>
         <EntityType Name="Run">
           <Key>
             <PropertyRef Name="RunID" />
@@ -304,6 +258,43 @@
           <NavigationProperty Name="Player" Relationship="LichKingDBModel.FK_Run_Player" FromRole="Run" ToRole="Player" />
           <NavigationProperty Name="Role" Relationship="LichKingDBModel.FK_Run_Role" FromRole="Run" ToRole="Role" />
         </EntityType>
+        <EntityType Name="Transaction">
+          <Key>
+            <PropertyRef Name="TransactionID" />
+          </Key>
+          <Property Name="TransactionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="Amount" Type="Int64" Nullable="false" />
+          <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PlayerID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Player" Relationship="LichKingDBModel.FK_Transaction_Player" FromRole="Transaction" ToRole="Player" />
+        </EntityType>
+        <Association Name="FK_Boost_Dungeon">
+          <End Type="LichKingDBModel.Dungeon" Role="Dungeon" Multiplicity="1" />
+          <End Type="LichKingDBModel.Boost" Role="Boost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dungeon">
+              <PropertyRef Name="DungeonID" />
+            </Principal>
+            <Dependent Role="Boost">
+              <PropertyRef Name="DungeonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Boost_Player">
+          <End Type="LichKingDBModel.Player" Role="Player" Multiplicity="1" />
+          <End Type="LichKingDBModel.Boost" Role="Boost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Player">
+              <PropertyRef Name="PlayerID" />
+            </Principal>
+            <Dependent Role="Boost">
+              <PropertyRef Name="PlayerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Run_Boost">
           <End Type="LichKingDBModel.Boost" Role="Boost" Multiplicity="1" />
           <End Type="LichKingDBModel.Run" Role="Run" Multiplicity="*" />
@@ -328,31 +319,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Run_Role">
-          <End Type="LichKingDBModel.Role" Role="Role" Multiplicity="1" />
-          <End Type="LichKingDBModel.Run" Role="Run" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Role">
-              <PropertyRef Name="RoleID" />
-            </Principal>
-            <Dependent Role="Run">
-              <PropertyRef Name="RoleID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="Transaction">
-          <Key>
-            <PropertyRef Name="TransactionID" />
-          </Key>
-          <Property Name="TransactionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Type" Type="Int32" Nullable="false" />
-          <Property Name="Amount" Type="Int64" Nullable="false" />
-          <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="PlayerID" Type="Int32" Nullable="false" />
-          <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Image" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Player" Relationship="LichKingDBModel.FK_Transaction_Player" FromRole="Transaction" ToRole="Player" />
-        </EntityType>
         <Association Name="FK_Transaction_Player">
           <End Type="LichKingDBModel.Player" Role="Player" Multiplicity="1" />
           <End Type="LichKingDBModel.Transaction" Role="Transaction" Multiplicity="*" />
@@ -365,7 +331,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        <Association Name="FK_Run_Role">
+          <End Type="LichKingDBModel.Role" Role="Role" Multiplicity="1" />
+          <End Type="LichKingDBModel.Run" Role="Run" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="Run">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -374,41 +352,13 @@
           <EntitySetMapping Name="Boost">
             <EntityTypeMapping TypeName="LichKingDBModel.Boost">
               <MappingFragment StoreEntitySet="Boost">
-                <ScalarProperty Name="BoostID" ColumnName="BoostID" />
-                <ScalarProperty Name="Mine" ColumnName="Mine" />
-                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
-                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
-                <ScalarProperty Name="Gold" ColumnName="Gold" />
-                <ScalarProperty Name="DungeonID" ColumnName="DungeonID" />
                 <ScalarProperty Name="Lvl" ColumnName="Lvl" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Player">
-            <EntityTypeMapping TypeName="LichKingDBModel.Player">
-              <MappingFragment StoreEntitySet="Player">
+                <ScalarProperty Name="DungeonID" ColumnName="DungeonID" />
+                <ScalarProperty Name="Gold" ColumnName="Gold" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
                 <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
-                <ScalarProperty Name="FullName" ColumnName="FullName" />
-                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Role">
-            <EntityTypeMapping TypeName="LichKingDBModel.Role">
-              <MappingFragment StoreEntitySet="Role">
-                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="LichKingDBModel.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="Mine" ColumnName="Mine" />
+                <ScalarProperty Name="BoostID" ColumnName="BoostID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -418,6 +368,23 @@
                 <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="DungeonID" ColumnName="DungeonID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Player">
+            <EntityTypeMapping TypeName="LichKingDBModel.Player">
+              <MappingFragment StoreEntitySet="Player">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="LichKingDBModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

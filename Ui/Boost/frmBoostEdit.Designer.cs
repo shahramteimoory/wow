@@ -220,6 +220,7 @@
             // 
             // TANK
             // 
+            this.TANK.BackgroundImage = global::Ui.Properties.Resources.Tank1;
             this.TANK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.TANK.Location = new System.Drawing.Point(6, 63);
             this.TANK.Name = "TANK";
@@ -229,6 +230,7 @@
             // 
             // HEAL
             // 
+            this.HEAL.BackgroundImage = global::Ui.Properties.Resources.Healer;
             this.HEAL.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.HEAL.Location = new System.Drawing.Point(6, 108);
             this.HEAL.Name = "HEAL";
@@ -239,7 +241,7 @@
             // DPS
             // 
             this.DPS.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.DPS.BackgroundImage = global::Ui.Properties.Resources.DPS;
+            this.DPS.BackgroundImage = global::Ui.Properties.Resources.DPS1;
             this.DPS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.DPS.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DPS.Location = new System.Drawing.Point(6, 19);

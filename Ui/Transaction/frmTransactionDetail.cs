@@ -21,6 +21,7 @@ namespace Ui.Transaction
                 var trans = db.TransactionRepository.GetTransactionByPlayerID(playerID);
                 string player = db.PlayerRepository.GetPlayerNameById(playerID);
                 string type;
+                dgvTransactionDetail.Rows.Clear();
                 foreach (var item in trans)
                 {
                     if (item.Type == 0)
@@ -31,12 +32,15 @@ namespace Ui.Transaction
                     {
                         type = "Creditor";
                     }
+
                     dgvTransactionDetail.Rows.Add(item.TransactionID, player, item.Amount, type, item.DateTime, item.Title, item.Image);
 
                 }
 
                 dgvTransactionDetail.Sort(dgvTransactionDetail.Columns["Column5"], ListSortDirection.Descending);
 
+                dgvTransactionDetail.Refresh(); // رفرش رابط کاربری فرم
+                
             }
         }
 
@@ -44,17 +48,14 @@ namespace Ui.Transaction
         {
             frmRefresh();
         }
-        public void Dgv()
-        {
 
-        }
         public void dgvTransactionDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
 
             TxtTitle.Text = dgvTransactionDetail.CurrentRow.Cells[5].Value.ToString();
             string image = dgvTransactionDetail.CurrentRow.Cells[6].Value.ToString();
-            pcTransactionDetail.ImageLocation =  image;
+            pcTransactionDetail.ImageLocation = image;
             lblLink.Text = image;
 
         }
@@ -74,7 +75,57 @@ namespace Ui.Transaction
             {
                 MessageBox.Show("404 not found");
             }
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvTransactionDetail.CurrentRow != null)
+                {
+                    int transactionid = int.Parse(dgvTransactionDetail.CurrentRow.Cells["Column1"].Value.ToString());
+                    using (UnitOfWork db = new UnitOfWork())
+                    {
+                        if (DialogResult.Yes== MessageBox.Show("You sure about Delete this Transaction", "Warning", MessageBoxButtons.YesNo))
+                        {
+                            db.TransactionRepository.DeleteTransaction(transactionid);
+                            db.Save();
+                            db.Dispose();
+                            frmRefresh();
+                        }
+                        
+                    }
+                }
+            }
+            catch (NullReferenceException)
+            {
+
+                MessageBox.Show("Please Select Transaction for Delete");
+            }
+ 
+
+
+                
             
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (dgvTransactionDetail.CurrentRow != null)
+            {
+                int transactionid = int.Parse(dgvTransactionDetail.CurrentRow.Cells["Column1"].Value.ToString());
+                using (UnitOfWork db = new UnitOfWork())
+                {
+                 
+                    frmEditTransaction frmEditTransaction = new frmEditTransaction();
+                    
+                    frmEditTransaction.transactionID = transactionid;
+                    frmEditTransaction.ShowDialog();
+                    frmRefresh();
+                    
+                }
+            }
         }
     }
 }

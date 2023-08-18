@@ -78,17 +78,7 @@ namespace Ui.Boost
             frmRefresh();
         }
 
-        private void btnUpdateBoost_Click(object sender, EventArgs e)
-        {
-            if (dgvBoostList.CurrentRow != null)
-            {
-                int boostid = int.Parse(dgvBoostList.CurrentRow.Cells["BoostID"].Value.ToString());
-                frmBoostEdit frmedit = new frmBoostEdit();
-                frmedit.Boostid = boostid;
-                frmedit.ShowDialog();
-                frmRefresh();
-            }
-        }
+
 
         private void chbFromDate_CheckedChanged(object sender, EventArgs e)
         {
@@ -112,38 +102,83 @@ namespace Ui.Boost
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (dgvBoostList.CurrentRow != null)
+            try
             {
-                int boostid = int.Parse(dgvBoostList.CurrentRow.Cells["BoostID"].Value.ToString());
-                using (UnitOfWork db = new UnitOfWork())
+                if (dgvBoostList.CurrentRow != null)
                 {
+                    int boostid = int.Parse(dgvBoostList.CurrentRow.Cells["BoostID"].Value.ToString());
+                    using (UnitOfWork db = new UnitOfWork())
+                    {
 
-                    db.RunRepository.DeleteRuns(boostid);
-                    db.Save();
-                    db.Dispose();
+                        db.RunRepository.DeleteRuns(boostid);
+                        db.Save();
+                        db.Dispose();
+                    }
+
+                    using (UnitOfWork db = new UnitOfWork())
+                    {
+
+                        db.BoostRepository.DeleteBoost(boostid);
+                        db.Save();
+                        db.Dispose();
+                    }
+                    frmRefresh();
                 }
-
-                using (UnitOfWork db = new UnitOfWork())
-                {
-
-                    db.BoostRepository.DeleteBoost(boostid);
-                    db.Save();
-                    db.Dispose();
-                }
-                frmRefresh();
             }
+            catch (NullReferenceException)
+            {
+
+                MessageBox.Show("Please choose Boost");
+            }
+
+            
         }
 
         private void btnDetailBoost_Click(object sender, EventArgs e)
         {
-            if (dgvBoostList.CurrentRow != null)
+            try
             {
-                int boostid = int.Parse(dgvBoostList.CurrentRow.Cells["BoostID"].Value.ToString());
-                frmBoostDetail frmedit = new frmBoostDetail();
-                frmedit.Boostid = boostid;
-                frmedit.ShowDialog();
-                frmRefresh();
+                if (dgvBoostList.CurrentRow != null)
+                {
+                    int boostid = int.Parse(dgvBoostList.CurrentRow.Cells["BoostID"].Value.ToString());
+                    frmBoostDetail frmedit = new frmBoostDetail();
+                    frmedit.Boostid = boostid;
+                    frmedit.ShowDialog();
+                    frmRefresh();
+                }
             }
+            catch (NullReferenceException)
+            {
+
+                MessageBox.Show("Please choose Boost");
+            }
+
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvBoostList.CurrentRow != null)
+                {
+                    int boostid = int.Parse(dgvBoostList.CurrentRow.Cells["BoostID"].Value.ToString());
+                    frmBoostEdit frmedit = new frmBoostEdit();
+                    frmedit.Boostid = boostid;
+                    frmedit.ShowDialog();
+                    frmRefresh();
+                }
+            }
+            catch (Exception ex)
+            {
+                if (ex.GetType().Name== "NullReferenceException")
+                {
+                    MessageBox.Show("Please choose Boost");
+                }
+                
+
+            }
+   
+            
         }
     }
 }

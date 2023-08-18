@@ -28,8 +28,8 @@ namespace DataLayer
         public int DungeonID { get; set; }
         public Nullable<int> Lvl { get; set; }
     
-        public virtual Player Player { get; set; }
         public virtual Dungeon Dungeon { get; set; }
+        public virtual Player Player { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Run> Run { get; set; }
     }

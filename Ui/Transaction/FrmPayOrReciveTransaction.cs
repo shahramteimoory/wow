@@ -21,7 +21,7 @@ namespace Ui.Transaction
             if (transactionType == TransactionType.Creditor)
             {
                 this.Text = "Payment";
-                lblFrmType.Text = "the payment";
+                lblFrmType.Text = "The payment";
             }
             else
             {
@@ -32,6 +32,7 @@ namespace Ui.Transaction
             {
                 string playername = db.PlayerRepository.GetPlayerNameById(playerID);
                 lblPlayerName.Text = playername;
+
             }
         }
         private void FrmPayOrReciveTransaction_Load(object sender, EventArgs e)

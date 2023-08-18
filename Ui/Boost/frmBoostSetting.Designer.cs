@@ -47,6 +47,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtfilter = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnEdit = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBoostList)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.gbFilter.SuspendLayout();
@@ -112,6 +113,7 @@
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnDetailBoost,
+            this.btnEdit,
             this.btnDelete});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -235,6 +237,17 @@
             this.label1.TabIndex = 4;
             this.label1.Text = " Filter";
             // 
+            // btnEdit
+            // 
+            this.btnEdit.Image = global::Ui.Properties.Resources.changes;
+            this.btnEdit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(83, 90);
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
             // frmBoostSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,5 +293,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Gold;
         private System.Windows.Forms.DataGridViewTextBoxColumn Lvl;
         private System.Windows.Forms.DataGridViewTextBoxColumn BoostDateTime;
+        private System.Windows.Forms.ToolStripButton btnEdit;
     }
 }

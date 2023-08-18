@@ -49,8 +49,8 @@
             this.lblDateShamsi = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnResetAllDate = new System.Windows.Forms.Button();
             this.cbxReset = new System.Windows.Forms.CheckBox();
+            this.btnResetAllDate = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -221,7 +221,6 @@
             // 
             // timer1
             // 
-            this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
@@ -238,17 +237,6 @@
             this.panel1.Size = new System.Drawing.Size(868, 521);
             this.panel1.TabIndex = 2;
             // 
-            // btnResetAllDate
-            // 
-            this.btnResetAllDate.Location = new System.Drawing.Point(766, 430);
-            this.btnResetAllDate.Name = "btnResetAllDate";
-            this.btnResetAllDate.Size = new System.Drawing.Size(99, 27);
-            this.btnResetAllDate.TabIndex = 1;
-            this.btnResetAllDate.Text = "Reset All Date";
-            this.btnResetAllDate.UseVisualStyleBackColor = true;
-            this.btnResetAllDate.Visible = false;
-            this.btnResetAllDate.Click += new System.EventHandler(this.btnResetAllDate_Click);
-            // 
             // cbxReset
             // 
             this.cbxReset.AutoSize = true;
@@ -260,6 +248,17 @@
             this.cbxReset.Text = "Dont toch this ";
             this.cbxReset.UseVisualStyleBackColor = true;
             this.cbxReset.CheckedChanged += new System.EventHandler(this.cbxReset_CheckedChanged);
+            // 
+            // btnResetAllDate
+            // 
+            this.btnResetAllDate.Location = new System.Drawing.Point(766, 430);
+            this.btnResetAllDate.Name = "btnResetAllDate";
+            this.btnResetAllDate.Size = new System.Drawing.Size(99, 27);
+            this.btnResetAllDate.TabIndex = 1;
+            this.btnResetAllDate.Text = "Reset All Date";
+            this.btnResetAllDate.UseVisualStyleBackColor = true;
+            this.btnResetAllDate.Visible = false;
+            this.btnResetAllDate.Click += new System.EventHandler(this.btnResetAllDate_Click);
             // 
             // frmmain
             // 
