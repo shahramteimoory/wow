@@ -1,4 +1,5 @@
 ﻿using DataLayer.Context;
+using Fury;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -57,7 +58,7 @@ namespace Ui.Boost
                 dgvBoostList.AutoGenerateColumns = false;
                 foreach (var boost in result)
                 {
-                    dgvBoostList.Rows.Add(boost.BoostID, boost.Player.FullName, boost.Dungeon.Name, boost.Gold, boost.Lvl, boost.DateTime.toshamsi());
+                    dgvBoostList.Rows.Add(boost.BoostID, boost.Player.FullName, boost.Dungeon.Name, boost.Gold, boost.Lvl, boost.DateTime.ToString());
                 }
                 db.Dispose();
             }
@@ -125,9 +126,9 @@ namespace Ui.Boost
                     frmRefresh();
                 }
             }
-            catch (NullReferenceException)
+            catch (NullReferenceException ex)
             {
-
+                FileLogger.Log(ex.ToString());
                 MessageBox.Show("Please choose Boost");
             }
 
@@ -147,9 +148,9 @@ namespace Ui.Boost
                     frmRefresh();
                 }
             }
-            catch (NullReferenceException)
+            catch(Exception ex)
             {
-
+                FileLogger.Log(ex.ToString());
                 MessageBox.Show("Please choose Boost");
             }
 
@@ -174,7 +175,7 @@ namespace Ui.Boost
                 {
                     MessageBox.Show("Please choose Boost");
                 }
-                
+                FileLogger.Log(ex.ToString());
 
             }
    

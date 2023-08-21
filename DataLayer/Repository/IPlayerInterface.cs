@@ -14,7 +14,11 @@ namespace DataLayer.Repository
         int GetPlayerIdByName(string Player);
         string GetPlayerNameById(int PlayerID);
         int GetCount(string fullName);
+        List<Player> GetAllPlayersExceptOwner();
         List<ViewModel.Player.PlayerViewModel> GetPlayersName(string filter = "");
-
+        List<Player> GetAllSoftDelete();
+        bool HardDeletePlayer(int PlayerID);
+        List<Player> SearchDeleted(string parameter);
+        bool RecoveryDeletePlayer(int playerID);
     }
 }

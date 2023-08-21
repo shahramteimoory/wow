@@ -6,12 +6,27 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{9218A844-E943-496B-9194-AF44AF5D07F9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Ui</RootNamespace>
-    <AssemblyName>Ui</AssemblyName>
+    <RootNamespace>Fury</RootNamespace>
+    <AssemblyName>Fury</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -22,6 +37,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,17 +48,32 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>W 2.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AdvancedDataGridView, Version=1.2.28405.11, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DG.AdvancedDataGridView.1.2.28405.11\lib\net40\AdvancedDataGridView.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\DataLayer\bin\Debug\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\DataLayer\bin\Debug\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="MaterialSkin, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.2.2.3.1\lib\net48\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Design" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -90,6 +121,19 @@
     <Compile Include="Dungeon\frmEditDungeon.Designer.cs">
       <DependentUpon>frmEditDungeon.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dungeon\frmHardDeleteDungeon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dungeon\frmHardDeleteDungeon.Designer.cs">
+      <DependentUpon>frmHardDeleteDungeon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dungeon\frmRecoveryDungeon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dungeon\frmRecoveryDungeon.Designer.cs">
+      <DependentUpon>frmRecoveryDungeon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileLogger.cs" />
     <Compile Include="frmmain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,11 +152,23 @@
     <Compile Include="Player\frmEditPlayer.Designer.cs">
       <DependentUpon>frmEditPlayer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Player\frmHardDeletePlayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Player\frmHardDeletePlayer.Designer.cs">
+      <DependentUpon>frmHardDeletePlayer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Player\frmPlayerManger.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Player\frmPlayerManger.Designer.cs">
       <DependentUpon>frmPlayerManger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Player\frmRecoveryPlayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Player\frmRecoveryPlayer.Designer.cs">
+      <DependentUpon>frmRecoveryPlayer.cs</DependentUpon>
     </Compile>
     <Compile Include="Player\frmSelectPlayer.cs">
       <SubType>Form</SubType>
@@ -206,6 +262,12 @@
     <EmbeddedResource Include="Dungeon\frmEditDungeon.resx">
       <DependentUpon>frmEditDungeon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dungeon\frmHardDeleteDungeon.resx">
+      <DependentUpon>frmHardDeleteDungeon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dungeon\frmRecoveryDungeon.resx">
+      <DependentUpon>frmRecoveryDungeon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmmain.resx">
       <DependentUpon>frmmain.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,14 +277,20 @@
     <EmbeddedResource Include="Player\frmEditPlayer.resx">
       <DependentUpon>frmEditPlayer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Player\frmHardDeletePlayer.resx">
+      <DependentUpon>frmHardDeletePlayer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Player\frmPlayerManger.resx">
       <DependentUpon>frmPlayerManger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Player\frmRecoveryPlayer.resx">
+      <DependentUpon>frmRecoveryPlayer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Player\frmSelectPlayer.resx">
       <DependentUpon>frmSelectPlayer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
@@ -244,6 +312,7 @@
     <EmbeddedResource Include="Transaction\frmTransactionDetail.resx">
       <DependentUpon>frmTransactionDetail.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -332,8 +401,23 @@
     <None Include="Resources\Report.png" />
     <None Include="Resources\arthasRight1.png" />
     <None Include="Resources\download1.jpg" />
+    <None Include="Resources\desktop-wallpaper-deathwing-2019-games-world-of-warcraft.jpg" />
+    <EmbeddedResource Include="Resources\W 2.ico" />
+    <None Include="Resources\list.png" />
+    <Content Include="W 2.ico" />
     <Content Include="WinValidator\New Text Document.txt" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -75,7 +75,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::Ui.Properties.Resources.goldright;
+            this.panel1.BackgroundImage = global::Fury.Properties.Resources.goldright;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(430, 0);
@@ -85,7 +85,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackgroundImage = global::Ui.Properties.Resources.goldleft;
+            this.panel2.BackgroundImage = global::Fury.Properties.Resources.goldleft;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);

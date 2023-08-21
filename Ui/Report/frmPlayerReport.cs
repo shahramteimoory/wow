@@ -15,7 +15,7 @@ namespace Ui.Report
             using (UnitOfWork db = new UnitOfWork())
             {
                 dgvPlayerList.AutoGenerateColumns = false;
-                dgvPlayerList.DataSource = db.PlayerRepository.GetAllPlayer();
+                dgvPlayerList.DataSource = db.PlayerRepository.GetAllPlayersExceptOwner();
                 db.Dispose();
             }
         }

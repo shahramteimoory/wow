@@ -168,24 +168,37 @@ namespace Ui.Boost
 
         private void ComputeCut()
         {
-            if (string.IsNullOrEmpty(txtGoldPot.Text))
+            if (chbAutoCompute.Checked)
+            {
+                if (string.IsNullOrEmpty(txtGoldPot.Text))
+                {
+                    for (int i = 0; i < dgvRuns.Rows.Count; i++)
+                    {
+                        dgvRuns.Rows[i].Cells[5].Value = 0;
+                    }
+                }
+                else
+                {
+                    if (dgvRuns.Rows.Count != 0)
+                    {
+                        long perPlayer = long.Parse(txtGoldPot.Text) / dgvRuns.Rows.Count;
+
+                        for (int i = 0; i < dgvRuns.Rows.Count; i++)
+                        {
+                            dgvRuns.Rows[i].Cells[5].Value = perPlayer;
+                        }
+                    }
+                }
+
+                dgvRuns.Columns[5].ReadOnly = true;
+            }
+            else
             {
                 for (int i = 0; i < dgvRuns.Rows.Count; i++)
                 {
                     dgvRuns.Rows[i].Cells[5].Value = 0;
                 }
-            }
-            else
-            {
-                if (dgvRuns.Rows.Count != 0)
-                {
-                    long perPlayer = long.Parse(txtGoldPot.Text) / dgvRuns.Rows.Count;
-
-                    for (int i = 0; i < dgvRuns.Rows.Count; i++)
-                    {
-                        dgvRuns.Rows[i].Cells[5].Value = perPlayer;
-                    }
-                }
+                dgvRuns.Columns[5].ReadOnly = false;
             }
         }
 
@@ -263,6 +276,11 @@ namespace Ui.Boost
             {
                 e.Handled = true;
             }
+        }
+
+        private void chbAutoCompute_CheckedChanged(object sender, EventArgs e)
+        {
+            ComputeCut();
         }
     }
 }

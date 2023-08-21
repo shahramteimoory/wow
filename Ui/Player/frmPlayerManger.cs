@@ -1,4 +1,5 @@
 ﻿using DataLayer.Context;
+using Fury.Player;
 using System;
 using System.Windows.Forms;
 using ValidationComponents;
@@ -48,6 +49,7 @@ namespace Ui.Player
                         db.PlayerRepository.InsertPlayer(player);
                         db.Save();
                     }
+                    txtInsertPlayer.Text = null;
                     frmRefresh();
                     db.Dispose();
                 }
@@ -128,6 +130,20 @@ namespace Ui.Player
                     db.Dispose();
                 }
             }
+        }
+
+        private void btnHardDeletePlayer_Click(object sender, EventArgs e)
+        {
+            frmHardDeletePlayer frmHardDeletePlayer = new frmHardDeletePlayer();
+            frmHardDeletePlayer.ShowDialog();
+            frmRefresh();
+        }
+
+        private void btnRecoveryPlayer_Click(object sender, EventArgs e)
+        {
+            frmRecoveryPlayer frmRecoveryPlayer = new frmRecoveryPlayer();
+            frmRecoveryPlayer.ShowDialog();
+            frmRefresh();
         }
     }
 }

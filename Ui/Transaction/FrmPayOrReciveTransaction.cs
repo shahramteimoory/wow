@@ -1,4 +1,5 @@
 ﻿using DataLayer.Context;
+using Fury;
 using System;
 using System.IO;
 using System.Security.Cryptography;
@@ -135,8 +136,9 @@ namespace Ui.Transaction
             {
                 pcTransaction.ImageLocation = txtImageURL.Text;
             }
-            catch
+            catch(Exception ex) 
             {
+                FileLogger.Log(ex.ToString());
                 MessageBox.Show("URL not found");
             }
             

@@ -16,8 +16,8 @@ namespace Ui.Transaction
             using (UnitOfWork db = new UnitOfWork())
             {
                 dgvPlayerList.AutoGenerateColumns = false;
-                dgvPlayerList.DataSource = db.PlayerRepository.GetAllPlayer();
-                db.Dispose();
+                dgvPlayerList.DataSource = db.PlayerRepository.GetAllPlayersExceptOwner();
+                
             }
 
 

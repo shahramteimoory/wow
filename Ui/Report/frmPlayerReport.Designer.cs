@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPlayerFilter = new System.Windows.Forms.TextBox();
             this.dgvPlayerList = new System.Windows.Forms.DataGridView();
@@ -69,6 +70,7 @@
             this.dgvPlayerList.Name = "dgvPlayerList";
             this.dgvPlayerList.ReadOnly = true;
             this.dgvPlayerList.RowHeadersVisible = false;
+            this.dgvPlayerList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPlayerList.Size = new System.Drawing.Size(231, 211);
             this.dgvPlayerList.TabIndex = 6;
             this.dgvPlayerList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlayerList_CellContentClick);
@@ -88,14 +90,20 @@
             this.Column2.HeaderText = "Player Name ";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // Column3
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Silver;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column3.HeaderText = "Detail";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column3.Text = "Detail";
             this.Column3.Width = 70;
             // 
             // frmPlayerReport
@@ -106,9 +114,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPlayerFilter);
             this.Controls.Add(this.dgvPlayerList);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
             this.Name = "frmPlayerReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmPlayerReport";
+            this.Text = "Report";
             this.Load += new System.EventHandler(this.frmPlayerReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlayerList)).EndInit();
             this.ResumeLayout(false);

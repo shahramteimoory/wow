@@ -45,7 +45,7 @@ namespace Ui.Report
                         dgvTransaction.Rows.Add(item.Boost.DateTime.ToString(), $"Dungeon: {item.Boost.Dungeon.Name} Lvl: {item.Boost.Lvl} Adv:{item.Boost.Player.FullName}", null, item.Gold, null, null ,item.Boost.DateTime.Ticks);
                     }
 
-                    dgvRun.Rows.Add(playerID, item.RunID, item.BoostID, item.Role.Title, item.Gold, item.Boost.Dungeon.Name);
+                    dgvRun.Rows.Add(playerID, item.RunID, item.BoostID, item.Role.Title, item.Gold, item.Boost.Dungeon.Name , "Detail");
                 }
 
                 var myRun = db.RunRepository.GetMyRunByPlayerID(playerID);

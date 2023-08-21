@@ -1,4 +1,5 @@
 ﻿using DataLayer.Context;
+using Fury.Dungeon;
 using System;
 using System.Windows.Forms;
 using ValidationComponents;
@@ -125,6 +126,20 @@ namespace Ui.Dungeon
                     db.Dispose();
                 }
             }
+        }
+
+        private void btnHardDeleteDungeon_Click(object sender, EventArgs e)
+        {
+            frmHardDeleteDungeon frmHardDeleteDungeon = new frmHardDeleteDungeon();
+            frmHardDeleteDungeon.ShowDialog();
+            frmRefresh();
+        }
+
+        private void btnRecoveryDungeon_Click(object sender, EventArgs e)
+        {
+            frmRecoveryDungeon frmRecoveryDungeon = new frmRecoveryDungeon();
+            frmRecoveryDungeon.ShowDialog();
+            frmRefresh();
         }
     }
 }

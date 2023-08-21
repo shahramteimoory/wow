@@ -79,8 +79,10 @@
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.txtEdit);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MaximizeBox = false;
             this.Name = "frmEditDungeon";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmEditDungeon";
             this.ResumeLayout(false);
             this.PerformLayout();

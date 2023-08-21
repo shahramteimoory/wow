@@ -32,14 +32,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvPlayer = new System.Windows.Forms.DataGridView();
-            this.PlayerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPlayerNameFilter = new System.Windows.Forms.TextBox();
             this.btnSelect = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
+            this.PlayerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlayer)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,25 +81,11 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvPlayer.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvPlayer.RowHeadersVisible = false;
+            this.dgvPlayer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPlayer.Size = new System.Drawing.Size(194, 145);
             this.dgvPlayer.TabIndex = 50;
             this.dgvPlayer.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlayer_RowEnter);
-            // 
-            // PlayerID
-            // 
-            this.PlayerID.DataPropertyName = "PlayerID";
-            this.PlayerID.HeaderText = "PlayerID";
-            this.PlayerID.Name = "PlayerID";
-            this.PlayerID.ReadOnly = true;
-            this.PlayerID.Visible = false;
-            // 
-            // FullName
-            // 
-            this.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.FullName.DataPropertyName = "FullName";
-            this.FullName.HeaderText = "PlayerName";
-            this.FullName.Name = "FullName";
-            this.FullName.ReadOnly = true;
             // 
             // label1
             // 
@@ -158,6 +144,23 @@
             this.lblID.Text = "label3";
             this.lblID.Visible = false;
             // 
+            // PlayerID
+            // 
+            this.PlayerID.DataPropertyName = "PlayerID";
+            this.PlayerID.HeaderText = "PlayerID";
+            this.PlayerID.Name = "PlayerID";
+            this.PlayerID.ReadOnly = true;
+            this.PlayerID.Visible = false;
+            // 
+            // FullName
+            // 
+            this.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FullName.DataPropertyName = "FullName";
+            this.FullName.HeaderText = "PlayerName";
+            this.FullName.Name = "FullName";
+            this.FullName.ReadOnly = true;
+            this.FullName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // frmSelectPlayer
             // 
             this.AcceptButton = this.btnSelect;
@@ -183,8 +186,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridViewTextBoxColumn PlayerID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPlayerNameFilter;
         private System.Windows.Forms.Button btnSelect;
@@ -192,5 +193,7 @@
         private System.Windows.Forms.DataGridView dgvPlayer;
         public System.Windows.Forms.Label lblName;
         public System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PlayerID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
     }
 }

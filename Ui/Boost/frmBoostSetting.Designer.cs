@@ -37,6 +37,7 @@
             this.BoostDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnDetailBoost = new System.Windows.Forms.ToolStripButton();
+            this.btnEdit = new System.Windows.Forms.ToolStripButton();
             this.btnDelete = new System.Windows.Forms.ToolStripButton();
             this.gbFilter = new System.Windows.Forms.GroupBox();
             this.dateTo = new System.Windows.Forms.DateTimePicker();
@@ -47,7 +48,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtfilter = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnEdit = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBoostList)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.gbFilter.SuspendLayout();
@@ -55,6 +55,10 @@
             // 
             // dgvBoostList
             // 
+            this.dgvBoostList.AllowUserToAddRows = false;
+            this.dgvBoostList.AllowUserToDeleteRows = false;
+            this.dgvBoostList.AllowUserToResizeColumns = false;
+            this.dgvBoostList.AllowUserToResizeRows = false;
             this.dgvBoostList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBoostList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.BoostID,
@@ -65,6 +69,9 @@
             this.BoostDateTime});
             this.dgvBoostList.Location = new System.Drawing.Point(22, 171);
             this.dgvBoostList.Name = "dgvBoostList";
+            this.dgvBoostList.ReadOnly = true;
+            this.dgvBoostList.RowHeadersVisible = false;
+            this.dgvBoostList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBoostList.Size = new System.Drawing.Size(539, 171);
             this.dgvBoostList.TabIndex = 0;
             // 
@@ -73,6 +80,7 @@
             this.BoostID.DataPropertyName = "BoostID";
             this.BoostID.HeaderText = "BoostID";
             this.BoostID.Name = "BoostID";
+            this.BoostID.ReadOnly = true;
             this.BoostID.Visible = false;
             // 
             // PlayerID
@@ -80,6 +88,8 @@
             this.PlayerID.DataPropertyName = "PlayerID";
             this.PlayerID.HeaderText = "AdvertiserName";
             this.PlayerID.Name = "PlayerID";
+            this.PlayerID.ReadOnly = true;
+            this.PlayerID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.PlayerID.Width = 120;
             // 
             // DungeonID
@@ -88,12 +98,16 @@
             this.DungeonID.DataPropertyName = "DungeonID";
             this.DungeonID.HeaderText = "DungeonName";
             this.DungeonID.Name = "DungeonID";
+            this.DungeonID.ReadOnly = true;
+            this.DungeonID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // Gold
             // 
             this.Gold.DataPropertyName = "Gold";
             this.Gold.HeaderText = "Pot";
             this.Gold.Name = "Gold";
+            this.Gold.ReadOnly = true;
+            this.Gold.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Gold.Width = 80;
             // 
             // Lvl
@@ -101,6 +115,8 @@
             this.Lvl.DataPropertyName = "Lvl";
             this.Lvl.HeaderText = "Lvl";
             this.Lvl.Name = "Lvl";
+            this.Lvl.ReadOnly = true;
+            this.Lvl.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Lvl.Width = 40;
             // 
             // BoostDateTime
@@ -108,6 +124,8 @@
             this.BoostDateTime.DataPropertyName = "DateTime";
             this.BoostDateTime.HeaderText = "DateTime";
             this.BoostDateTime.Name = "BoostDateTime";
+            this.BoostDateTime.ReadOnly = true;
+            this.BoostDateTime.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // toolStrip1
             // 
@@ -123,7 +141,7 @@
             // 
             // btnDetailBoost
             // 
-            this.btnDetailBoost.Image = global::Ui.Properties.Resources.Edit1;
+            this.btnDetailBoost.Image = global::Fury.Properties.Resources.Edit1;
             this.btnDetailBoost.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnDetailBoost.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDetailBoost.Name = "btnDetailBoost";
@@ -132,9 +150,20 @@
             this.btnDetailBoost.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDetailBoost.Click += new System.EventHandler(this.btnDetailBoost_Click);
             // 
+            // btnEdit
+            // 
+            this.btnEdit.Image = global::Fury.Properties.Resources.changes;
+            this.btnEdit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(83, 90);
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
             // btnDelete
             // 
-            this.btnDelete.Image = global::Ui.Properties.Resources.icons8_delete_100;
+            this.btnDelete.Image = global::Fury.Properties.Resources.icons8_delete_100;
             this.btnDelete.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDelete.Name = "btnDelete";
@@ -237,17 +266,6 @@
             this.label1.TabIndex = 4;
             this.label1.Text = " Filter";
             // 
-            // btnEdit
-            // 
-            this.btnEdit.Image = global::Ui.Properties.Resources.changes;
-            this.btnEdit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(83, 90);
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
             // frmBoostSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,12 +305,12 @@
         private System.Windows.Forms.DateTimePicker dateTo;
         private System.Windows.Forms.CheckBox chbToDate;
         private System.Windows.Forms.CheckBox chbFromDate;
+        private System.Windows.Forms.ToolStripButton btnEdit;
         private System.Windows.Forms.DataGridViewTextBoxColumn BoostID;
         private System.Windows.Forms.DataGridViewTextBoxColumn PlayerID;
         private System.Windows.Forms.DataGridViewTextBoxColumn DungeonID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gold;
         private System.Windows.Forms.DataGridViewTextBoxColumn Lvl;
         private System.Windows.Forms.DataGridViewTextBoxColumn BoostDateTime;
-        private System.Windows.Forms.ToolStripButton btnEdit;
     }
 }

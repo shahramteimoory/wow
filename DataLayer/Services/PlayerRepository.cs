@@ -23,6 +23,16 @@ namespace DataLayer.Services
             return db.Player.Where(p => p.IsDelete == false).ToList();
         }
 
+        public List<Player> GetAllPlayersExceptOwner()
+        {
+            return db.Player.Where(player => player.PlayerID > 0 && player.IsDelete == false).ToList();
+        }
+
+        public List<Player> GetAllSoftDelete()
+        {
+            return db.Player.Where(p => p.IsDelete == true).ToList();
+        }
+
         public int GetCount(string fullName)
         {
             return db.Player.Count(p => p.FullName.ToLower() == fullName.ToLower());
@@ -81,6 +91,34 @@ namespace DataLayer.Services
                 }).ToList();
         }
 
+        public bool HardDeletePlayer(int PlayerID)
+        {
+            try
+            {
+                if (PlayerID == 0)
+                {
+                    return false; // شناسه 0 قابل قبول نیست
+                }
+
+                Player player = db.Player.FirstOrDefault(p => p.PlayerID == PlayerID);
+                if (player != null)
+                {
+                    db.Player.Remove(player);
+                    db.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false; // بازیکن با شناسه مورد نظر یافت نشد
+                }
+            }
+            catch
+            {
+                return false; // خطایی در حذف رخ داد
+                ;
+            }
+        }
+
         /// <summary>
         /// متد ادد کردن پلیر به دی تابیس
         /// </summary>
@@ -95,11 +133,31 @@ namespace DataLayer.Services
                 return true;
             }
             catch
+            
             {
 
                 return false;
             }
 
+        }
+
+        public bool RecoveryDeletePlayer(int playerID)
+        {
+            try
+            {
+                var player = db.Player.FirstOrDefault(p => p.PlayerID == playerID);
+                if (player != null)
+                {
+                    player.IsDelete = false;
+                    db.Entry(player).State = EntityState.Modified;
+                }
+                return true;
+            }
+            catch
+            
+            {
+                return false;
+            }
         }
 
         /// <summary>
@@ -110,6 +168,11 @@ namespace DataLayer.Services
         public List<Player> Search(string parameter)
         {
             return db.Player.Where(p => p.FullName.Contains(parameter) && p.IsDelete == false).ToList();
+        }
+
+        public List<Player> SearchDeleted(string parameter)
+        {
+            return db.Player.Where(p => p.FullName.Contains(parameter) && p.IsDelete == true).ToList();
         }
 
         /// <summary>
@@ -126,6 +189,7 @@ namespace DataLayer.Services
                 return true;
             }
             catch
+            
             {
                 return false;
 
@@ -147,6 +211,7 @@ namespace DataLayer.Services
                 return true;
             }
             catch
+            
             {
                 return false;
             }
@@ -172,6 +237,7 @@ namespace DataLayer.Services
                 return true;
             }
             catch
+            
             {
                 return false;
             }

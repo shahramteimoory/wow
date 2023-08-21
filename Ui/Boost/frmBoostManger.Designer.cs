@@ -30,8 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBoostManger));
             this.cbDungeonName = new System.Windows.Forms.ComboBox();
             this.cbDungeonLvl = new System.Windows.Forms.ComboBox();
@@ -60,6 +62,7 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.chbAutoCompute = new System.Windows.Forms.CheckBox();
             this.requiredFieldValidator1 = new ValidationComponents.RequiredFieldValidator(this.components);
             this.gbRole.SuspendLayout();
@@ -81,6 +84,7 @@
             this.cbDungeonLvl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDungeonLvl.FormattingEnabled = true;
             this.cbDungeonLvl.Items.AddRange(new object[] {
+            "0",
             "10",
             "11",
             "12",
@@ -126,7 +130,7 @@
             // 
             this.txtGoldPot.Location = new System.Drawing.Point(504, 30);
             this.txtGoldPot.Name = "txtGoldPot";
-            this.txtGoldPot.Size = new System.Drawing.Size(110, 20);
+            this.txtGoldPot.Size = new System.Drawing.Size(131, 20);
             this.txtGoldPot.TabIndex = 42;
             this.txtGoldPot.TextChanged += new System.EventHandler(this.txtGoldPot_TextChanged);
             this.txtGoldPot.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGoldPot_KeyPress);
@@ -154,9 +158,8 @@
             // 
             // TANK
             // 
-            this.TANK.BackgroundImage = global::Ui.Properties.Resources.Tank1;
+            this.TANK.BackgroundImage = global::Fury.Properties.Resources.Tank1;
             this.TANK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.TANK.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.TANK.Location = new System.Drawing.Point(6, 63);
             this.TANK.Name = "TANK";
             this.TANK.Size = new System.Drawing.Size(42, 30);
@@ -165,7 +168,7 @@
             // 
             // HEAL
             // 
-            this.HEAL.BackgroundImage = global::Ui.Properties.Resources.Healer;
+            this.HEAL.BackgroundImage = global::Fury.Properties.Resources.Healer;
             this.HEAL.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.HEAL.Location = new System.Drawing.Point(6, 108);
             this.HEAL.Name = "HEAL";
@@ -176,7 +179,7 @@
             // DPS
             // 
             this.DPS.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.DPS.BackgroundImage = global::Ui.Properties.Resources.DPS1;
+            this.DPS.BackgroundImage = global::Fury.Properties.Resources.DPS1;
             this.DPS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.DPS.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DPS.Location = new System.Drawing.Point(6, 19);
@@ -219,25 +222,27 @@
             this.PlayerID,
             this.FullName,
             this.Insert});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPlayers.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPlayers.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPlayers.Location = new System.Drawing.Point(67, 106);
             this.dgvPlayers.Name = "dgvPlayers";
             this.dgvPlayers.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPlayers.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPlayers.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvPlayers.RowHeadersVisible = false;
+            this.dgvPlayers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPlayers.Size = new System.Drawing.Size(194, 144);
             this.dgvPlayers.TabIndex = 47;
             this.dgvPlayers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlayers_CellContentClick);
@@ -257,19 +262,25 @@
             this.FullName.HeaderText = "PlayerName";
             this.FullName.Name = "FullName";
             this.FullName.ReadOnly = true;
+            this.FullName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // Insert
             // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Insert.DefaultCellStyle = dataGridViewCellStyle2;
             this.Insert.HeaderText = "Insert";
             this.Insert.Name = "Insert";
             this.Insert.ReadOnly = true;
+            this.Insert.Text = "Insert";
             this.Insert.Width = 50;
             // 
             // btnSaveBoost
             // 
-            this.btnSaveBoost.Location = new System.Drawing.Point(375, 256);
+            this.btnSaveBoost.Location = new System.Drawing.Point(401, 256);
             this.btnSaveBoost.Name = "btnSaveBoost";
-            this.btnSaveBoost.Size = new System.Drawing.Size(234, 23);
+            this.btnSaveBoost.Size = new System.Drawing.Size(249, 23);
             this.btnSaveBoost.TabIndex = 48;
             this.btnSaveBoost.Text = "Save";
             this.btnSaveBoost.UseVisualStyleBackColor = true;
@@ -277,7 +288,8 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(135, 256);
+            this.btnClear.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClear.Location = new System.Drawing.Point(161, 256);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(234, 23);
             this.btnClear.TabIndex = 49;
@@ -303,9 +315,9 @@
             this.lblAdvName.AutoSize = true;
             this.lblAdvName.Location = new System.Drawing.Point(90, 33);
             this.lblAdvName.Name = "lblAdvName";
-            this.lblAdvName.Size = new System.Drawing.Size(102, 13);
+            this.lblAdvName.Size = new System.Drawing.Size(87, 13);
             this.lblAdvName.TabIndex = 51;
-            this.lblAdvName.Text = "Advertiser: Shahram";
+            this.lblAdvName.Text = "Advertiser: its me";
             // 
             // lblAdvID
             // 
@@ -320,6 +332,7 @@
             // dgvRuns
             // 
             this.dgvRuns.AllowUserToAddRows = false;
+            this.dgvRuns.AllowUserToDeleteRows = false;
             this.dgvRuns.AllowUserToResizeColumns = false;
             this.dgvRuns.AllowUserToResizeRows = false;
             this.dgvRuns.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -328,24 +341,29 @@
             this.Column2,
             this.Column3,
             this.Column4,
-            this.Column5});
-            this.dgvRuns.Location = new System.Drawing.Point(267, 87);
+            this.Column5,
+            this.Column6});
+            this.dgvRuns.Location = new System.Drawing.Point(267, 86);
             this.dgvRuns.Name = "dgvRuns";
             this.dgvRuns.RowHeadersVisible = false;
-            this.dgvRuns.Size = new System.Drawing.Size(347, 164);
+            this.dgvRuns.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRuns.Size = new System.Drawing.Size(383, 164);
             this.dgvRuns.TabIndex = 53;
+            this.dgvRuns.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRuns_CellContentClick);
             this.dgvRuns.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvRuns_RowsRemoved);
             // 
             // Column1
             // 
             this.Column1.HeaderText = "PlayerID";
             this.Column1.Name = "Column1";
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column1.Visible = false;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "RoleID";
             this.Column2.Name = "Column2";
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column2.Visible = false;
             // 
             // Column3
@@ -353,16 +371,33 @@
             this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column3.HeaderText = "PlayerName";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Role";
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Cut";
             this.Column5.Name = "Column5";
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Column6
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Red;
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Column6.HeaderText = "Delete";
+            this.Column6.Name = "Column6";
+            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column6.Text = "Delete";
+            this.Column6.Width = 60;
             // 
             // chbAutoCompute
             // 
@@ -386,9 +421,11 @@
             // 
             // frmBoostManger
             // 
+            this.AcceptButton = this.btnSaveBoost;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 288);
+            this.CancelButton = this.btnClear;
+            this.ClientSize = new System.Drawing.Size(662, 288);
             this.Controls.Add(this.chbAutoCompute);
             this.Controls.Add(this.dgvRuns);
             this.Controls.Add(this.lblAdvID);
@@ -435,20 +472,21 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvPlayers;
         private System.Windows.Forms.Button btnSaveBoost;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PlayerID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
-        private System.Windows.Forms.DataGridViewButtonColumn Insert;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.CheckBox chbOwner;
         private System.Windows.Forms.Label lblAdvName;
         private System.Windows.Forms.Label lblAdvID;
         private System.Windows.Forms.DataGridView dgvRuns;
+        private ValidationComponents.RequiredFieldValidator requiredFieldValidator1;
+        private System.Windows.Forms.CheckBox chbAutoCompute;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PlayerID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
+        private System.Windows.Forms.DataGridViewButtonColumn Insert;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private ValidationComponents.RequiredFieldValidator requiredFieldValidator1;
-        private System.Windows.Forms.CheckBox chbAutoCompute;
+        private System.Windows.Forms.DataGridViewButtonColumn Column6;
     }
 }

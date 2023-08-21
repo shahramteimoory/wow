@@ -222,5 +222,22 @@ namespace Ui.Boost
         {
             ComputeCut();
         }
+
+        private void boostSettingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBoostSetting boostSetting = new frmBoostSetting();
+            boostSetting.ShowDialog();
+        }
+
+        private void dgvRuns_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                if (e.ColumnIndex == 5)
+                {
+                    dgvRuns.Rows.RemoveAt(e.RowIndex);
+                }
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using DataLayer.Context;
+using Fury;
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
@@ -71,9 +72,10 @@ namespace Ui.Transaction
             {
                 System.Diagnostics.Process.Start(lblLink.Text);
             }
-            catch
+            catch(Exception ex)
             {
                 MessageBox.Show("404 not found");
+                FileLogger.Log(ex.ToString());
             }
 
         }
@@ -98,9 +100,9 @@ namespace Ui.Transaction
                     }
                 }
             }
-            catch (NullReferenceException)
+            catch (Exception ex)
             {
-
+                FileLogger.Log(ex.ToString());
                 MessageBox.Show("Please Select Transaction for Delete");
             }
  

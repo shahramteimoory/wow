@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDungeonManger));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -45,13 +47,18 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.recoveryHardDeleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnRecoveryDungeon = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnHardDeleteDungeon = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDungeons)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.BackgroundImage = global::Ui.Properties.Resources.RightDungeon;
+            this.panel2.BackgroundImage = global::Fury.Properties.Resources.RightDungeon;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(528, 0);
@@ -61,7 +68,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::Ui.Properties.Resources.LeftDungeon;
+            this.panel1.BackgroundImage = global::Fury.Properties.Resources.LeftDungeon;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -101,6 +108,8 @@
             // 
             this.dgvDungeons.AllowUserToAddRows = false;
             this.dgvDungeons.AllowUserToDeleteRows = false;
+            this.dgvDungeons.AllowUserToResizeColumns = false;
+            this.dgvDungeons.AllowUserToResizeRows = false;
             this.dgvDungeons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDungeons.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DungeonID,
@@ -110,6 +119,8 @@
             this.dgvDungeons.Location = new System.Drawing.Point(173, 191);
             this.dgvDungeons.Name = "dgvDungeons";
             this.dgvDungeons.ReadOnly = true;
+            this.dgvDungeons.RowHeadersVisible = false;
+            this.dgvDungeons.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvDungeons.Size = new System.Drawing.Size(355, 211);
             this.dgvDungeons.TabIndex = 40;
             this.dgvDungeons.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDungeons_CellContentClick);
@@ -129,21 +140,30 @@
             this.DungeonName.HeaderText = "Name";
             this.DungeonName.Name = "DungeonName";
             this.DungeonName.ReadOnly = true;
+            this.DungeonName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // Edit
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Yellow;
+            this.Edit.DefaultCellStyle = dataGridViewCellStyle1;
             this.Edit.FillWeight = 60F;
             this.Edit.HeaderText = "Edit";
             this.Edit.Name = "Edit";
             this.Edit.ReadOnly = true;
+            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Edit.Width = 60;
             // 
             // Delete
             // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
+            this.Delete.DefaultCellStyle = dataGridViewCellStyle2;
             this.Delete.FillWeight = 60F;
             this.Delete.HeaderText = "Delete";
             this.Delete.Name = "Delete";
             this.Delete.ReadOnly = true;
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Delete.Width = 60;
             // 
             // requiredFieldValidator1
@@ -186,11 +206,46 @@
             this.label2.TabIndex = 45;
             this.label2.Text = "Search :";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.recoveryHardDeleteToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(175, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(353, 24);
+            this.menuStrip1.TabIndex = 47;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // recoveryHardDeleteToolStripMenuItem
+            // 
+            this.recoveryHardDeleteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnRecoveryDungeon,
+            this.btnHardDeleteDungeon});
+            this.recoveryHardDeleteToolStripMenuItem.Name = "recoveryHardDeleteToolStripMenuItem";
+            this.recoveryHardDeleteToolStripMenuItem.Size = new System.Drawing.Size(140, 20);
+            this.recoveryHardDeleteToolStripMenuItem.Text = "Recovery / Hard Delete";
+            // 
+            // btnRecoveryDungeon
+            // 
+            this.btnRecoveryDungeon.Name = "btnRecoveryDungeon";
+            this.btnRecoveryDungeon.Size = new System.Drawing.Size(188, 22);
+            this.btnRecoveryDungeon.Text = "Recovery Dungeon";
+            this.btnRecoveryDungeon.Click += new System.EventHandler(this.btnRecoveryDungeon_Click);
+            // 
+            // btnHardDeleteDungeon
+            // 
+            this.btnHardDeleteDungeon.Name = "btnHardDeleteDungeon";
+            this.btnHardDeleteDungeon.Size = new System.Drawing.Size(188, 22);
+            this.btnHardDeleteDungeon.Text = "Hard Delete Dungeon";
+            this.btnHardDeleteDungeon.Click += new System.EventHandler(this.btnHardDeleteDungeon_Click);
+            // 
             // frmDungeonManger
             // 
+            this.AcceptButton = this.btnInsertDungeon;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(703, 400);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtSearch);
@@ -207,6 +262,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDungeons)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,13 +278,17 @@
         private System.Windows.Forms.Button btnInsertDungeon;
         private System.Windows.Forms.DataGridView dgvDungeons;
         private ValidationComponents.RequiredFieldValidator requiredFieldValidator1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DungeonID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DungeonName;
-        private System.Windows.Forms.DataGridViewButtonColumn Edit;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem recoveryHardDeleteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnRecoveryDungeon;
+        private System.Windows.Forms.ToolStripMenuItem btnHardDeleteDungeon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DungeonID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DungeonName;
+        private System.Windows.Forms.DataGridViewButtonColumn Edit;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
     }
 }

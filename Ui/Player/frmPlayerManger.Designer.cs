@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPlayerManger));
             this.txtInsertPlayer = new System.Windows.Forms.TextBox();
             this.btnInsertPlayer = new System.Windows.Forms.Button();
@@ -41,9 +43,14 @@
             this.clmDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.requiredFieldValidator1 = new ValidationComponents.RequiredFieldValidator(this.components);
             this.label2 = new System.Windows.Forms.Label();
+            this.requiredFieldValidator1 = new ValidationComponents.RequiredFieldValidator(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.recoveryHardDeleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnRecoveryPlayer = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnHardDeletePlayer = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlayerList)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtInsertPlayer
@@ -68,7 +75,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(244, 9);
+            this.label1.Location = new System.Drawing.Point(240, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(215, 36);
             this.label1.TabIndex = 35;
@@ -95,10 +102,11 @@
             this.clmPlayer,
             this.clmEdit,
             this.clmDelete});
-            this.dgvPlayerList.Location = new System.Drawing.Point(180, 151);
+            this.dgvPlayerList.Location = new System.Drawing.Point(182, 151);
             this.dgvPlayerList.MultiSelect = false;
             this.dgvPlayerList.Name = "dgvPlayerList";
             this.dgvPlayerList.ReadOnly = true;
+            this.dgvPlayerList.RowHeadersVisible = false;
             this.dgvPlayerList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPlayerList.Size = new System.Drawing.Size(322, 228);
             this.dgvPlayerList.TabIndex = 32;
@@ -118,27 +126,36 @@
             this.clmPlayer.HeaderText = "Player FullName";
             this.clmPlayer.Name = "clmPlayer";
             this.clmPlayer.ReadOnly = true;
-            this.clmPlayer.Width = 150;
+            this.clmPlayer.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.clmPlayer.Width = 200;
             // 
             // clmEdit
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Cornsilk;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Yellow;
+            this.clmEdit.DefaultCellStyle = dataGridViewCellStyle1;
             this.clmEdit.HeaderText = "Edit";
             this.clmEdit.Name = "clmEdit";
             this.clmEdit.ReadOnly = true;
-            this.clmEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.clmEdit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.clmEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.clmEdit.Width = 60;
             // 
             // clmDelete
             // 
             this.clmDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Red;
+            this.clmDelete.DefaultCellStyle = dataGridViewCellStyle2;
             this.clmDelete.HeaderText = "Delete";
             this.clmDelete.Name = "clmDelete";
             this.clmDelete.ReadOnly = true;
+            this.clmDelete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // panel2
             // 
-            this.panel2.BackgroundImage = global::Ui.Properties.Resources.Right;
+            this.panel2.BackgroundImage = global::Fury.Properties.Resources.Right;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(504, 0);
@@ -148,20 +165,13 @@
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::Ui.Properties.Resources.Left;
+            this.panel1.BackgroundImage = global::Fury.Properties.Resources.Left;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(179, 378);
             this.panel1.TabIndex = 30;
-            // 
-            // requiredFieldValidator1
-            // 
-            this.requiredFieldValidator1.CancelFocusChangeWhenInvalid = false;
-            this.requiredFieldValidator1.ControlToValidate = this.txtInsertPlayer;
-            this.requiredFieldValidator1.ErrorMessage = "Please Enter Player Name";
-            this.requiredFieldValidator1.Icon = ((System.Drawing.Icon)(resources.GetObject("requiredFieldValidator1.Icon")));
             // 
             // label2
             // 
@@ -172,11 +182,53 @@
             this.label2.TabIndex = 38;
             this.label2.Text = "Search :";
             // 
+            // requiredFieldValidator1
+            // 
+            this.requiredFieldValidator1.CancelFocusChangeWhenInvalid = false;
+            this.requiredFieldValidator1.ControlToValidate = this.txtInsertPlayer;
+            this.requiredFieldValidator1.ErrorMessage = "Please Enter Player Name";
+            this.requiredFieldValidator1.Icon = ((System.Drawing.Icon)(resources.GetObject("requiredFieldValidator1.Icon")));
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.recoveryHardDeleteToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(179, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(325, 24);
+            this.menuStrip1.TabIndex = 47;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // recoveryHardDeleteToolStripMenuItem
+            // 
+            this.recoveryHardDeleteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnRecoveryPlayer,
+            this.btnHardDeletePlayer});
+            this.recoveryHardDeleteToolStripMenuItem.Name = "recoveryHardDeleteToolStripMenuItem";
+            this.recoveryHardDeleteToolStripMenuItem.Size = new System.Drawing.Size(140, 20);
+            this.recoveryHardDeleteToolStripMenuItem.Text = "Recovery / Hard Delete";
+            // 
+            // btnRecoveryPlayer
+            // 
+            this.btnRecoveryPlayer.Name = "btnRecoveryPlayer";
+            this.btnRecoveryPlayer.Size = new System.Drawing.Size(171, 22);
+            this.btnRecoveryPlayer.Text = "Recovery Player";
+            this.btnRecoveryPlayer.Click += new System.EventHandler(this.btnRecoveryPlayer_Click);
+            // 
+            // btnHardDeletePlayer
+            // 
+            this.btnHardDeletePlayer.Name = "btnHardDeletePlayer";
+            this.btnHardDeletePlayer.Size = new System.Drawing.Size(171, 22);
+            this.btnHardDeletePlayer.Text = "Hard Delete Player";
+            this.btnHardDeletePlayer.Click += new System.EventHandler(this.btnHardDeletePlayer_Click);
+            // 
             // frmPlayerManger
             // 
+            this.AcceptButton = this.btnInsertPlayer;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(703, 378);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtInsertPlayer);
             this.Controls.Add(this.btnInsertPlayer);
@@ -192,6 +244,8 @@
             this.Text = "Player Manger";
             this.Load += new System.EventHandler(this.frmPlayerManger_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlayerList)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,11 +260,15 @@
         private System.Windows.Forms.DataGridView dgvPlayerList;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
+        private ValidationComponents.RequiredFieldValidator requiredFieldValidator1;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn PlayerID;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmPlayer;
         private System.Windows.Forms.DataGridViewButtonColumn clmEdit;
         private System.Windows.Forms.DataGridViewButtonColumn clmDelete;
-        private ValidationComponents.RequiredFieldValidator requiredFieldValidator1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem recoveryHardDeleteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnRecoveryPlayer;
+        private System.Windows.Forms.ToolStripMenuItem btnHardDeletePlayer;
     }
 }

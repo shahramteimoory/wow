@@ -30,14 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmmain));
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btnSetting = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.btnBoostSetting = new System.Windows.Forms.ToolStripButton();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.btnPlayer = new System.Windows.Forms.ToolStripButton();
             this.btnDungeon = new System.Windows.Forms.ToolStripButton();
             this.btnBoost = new System.Windows.Forms.ToolStripButton();
+            this.btnBoostList = new System.Windows.Forms.ToolStripButton();
             this.btnTransaction = new System.Windows.Forms.ToolStripButton();
             this.btnReport = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -45,55 +42,20 @@
             this.lblTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblVersion = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblDateShamsi = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cbxReset = new System.Windows.Forms.CheckBox();
-            this.btnResetAllDate = new System.Windows.Forms.Button();
-            this.toolStrip1.SuspendLayout();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chengToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutMeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblWowTokenPrice = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblVersion = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnSetting,
-            this.toolStripLabel1,
-            this.btnBoostSetting});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(868, 25);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // btnSetting
-            // 
-            this.btnSetting.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnSetting.Image = ((System.Drawing.Image)(resources.GetObject("btnSetting.Image")));
-            this.btnSetting.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Size = new System.Drawing.Size(48, 22);
-            this.btnSetting.Text = "Setting";
-            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(46, 22);
-            this.toolStripLabel1.Text = "             ";
-            // 
-            // btnBoostSetting
-            // 
-            this.btnBoostSetting.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnBoostSetting.Image = ((System.Drawing.Image)(resources.GetObject("btnBoostSetting.Image")));
-            this.btnBoostSetting.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnBoostSetting.Name = "btnBoostSetting";
-            this.btnBoostSetting.Size = new System.Drawing.Size(81, 22);
-            this.btnBoostSetting.Text = "Boost Setting";
-            this.btnBoostSetting.Click += new System.EventHandler(this.btnBoostSetting_Click);
             // 
             // toolStrip2
             // 
@@ -101,18 +63,19 @@
             this.btnPlayer,
             this.btnDungeon,
             this.btnBoost,
+            this.btnBoostList,
             this.btnTransaction,
             this.btnReport});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 25);
+            this.toolStrip2.Location = new System.Drawing.Point(0, 24);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(868, 62);
+            this.toolStrip2.Size = new System.Drawing.Size(804, 62);
             this.toolStrip2.TabIndex = 1;
             this.toolStrip2.Text = "toolStrip2";
             // 
             // btnPlayer
             // 
             this.btnPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnPlayer.Image = global::Ui.Properties.Resources.Add_user_P;
+            this.btnPlayer.Image = global::Fury.Properties.Resources.Add_user_P;
             this.btnPlayer.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnPlayer.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnPlayer.Name = "btnPlayer";
@@ -123,7 +86,7 @@
             // 
             // btnDungeon
             // 
-            this.btnDungeon.Image = global::Ui.Properties.Resources.ezgif_com_webp_to_png__1_;
+            this.btnDungeon.Image = global::Fury.Properties.Resources.ezgif_com_webp_to_png__1_;
             this.btnDungeon.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnDungeon.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDungeon.Name = "btnDungeon";
@@ -135,7 +98,7 @@
             // btnBoost
             // 
             this.btnBoost.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnBoost.Image = global::Ui.Properties.Resources.Thunder;
+            this.btnBoost.Image = global::Fury.Properties.Resources.Thunder;
             this.btnBoost.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnBoost.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnBoost.Name = "btnBoost";
@@ -144,9 +107,21 @@
             this.btnBoost.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnBoost.Click += new System.EventHandler(this.btnBoost_Click);
             // 
+            // btnBoostList
+            // 
+            this.btnBoostList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBoostList.Image = global::Fury.Properties.Resources.list;
+            this.btnBoostList.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnBoostList.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnBoostList.Name = "btnBoostList";
+            this.btnBoostList.Size = new System.Drawing.Size(62, 59);
+            this.btnBoostList.Text = "Boost List";
+            this.btnBoostList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnBoostList.Click += new System.EventHandler(this.btnBoostList_Click);
+            // 
             // btnTransaction
             // 
-            this.btnTransaction.Image = global::Ui.Properties.Resources.Gold_2;
+            this.btnTransaction.Image = global::Fury.Properties.Resources.Gold_2;
             this.btnTransaction.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnTransaction.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnTransaction.Name = "btnTransaction";
@@ -158,7 +133,7 @@
             // btnReport
             // 
             this.btnReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnReport.Image = global::Ui.Properties.Resources.Report;
+            this.btnReport.Image = global::Fury.Properties.Resources.Report;
             this.btnReport.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnReport.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnReport.Name = "btnReport";
@@ -173,12 +148,12 @@
             this.lblDate,
             this.lblTime,
             this.toolStripStatusLabel1,
+            this.lblWowTokenPrice,
             this.toolStripStatusLabel2,
-            this.lblVersion,
-            this.lblDateShamsi});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 586);
+            this.lblVersion});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 520);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(868, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(804, 22);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -197,15 +172,84 @@
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(124, 17);
-            this.toolStripStatusLabel1.Text = "                                       ";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(181, 17);
+            this.toolStripStatusLabel1.Text = "                         Wow Token Price : ";
             // 
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(283, 17);
-            this.toolStripStatusLabel2.Text = "                                                                                 " +
-    "           ";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(88, 17);
+            this.toolStripStatusLabel2.Text = "                           ";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::Fury.Properties.Resources.dfm5ypq_f2e10d2a_c527_444a_b3b4_7e550a2cf252;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.ForeColor = System.Drawing.Color.Crimson;
+            this.panel1.Location = new System.Drawing.Point(0, 86);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(804, 456);
+            this.panel1.TabIndex = 2;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingToolStripMenuItem,
+            this.toolStripMenuItem1});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(804, 24);
+            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // settingToolStripMenuItem
+            // 
+            this.settingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.chengToolStripMenuItem,
+            this.aboutMeToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
+            this.settingToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.settingToolStripMenuItem.Text = "Setting";
+            // 
+            // chengToolStripMenuItem
+            // 
+            this.chengToolStripMenuItem.Name = "chengToolStripMenuItem";
+            this.chengToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.chengToolStripMenuItem.Text = "Change owner";
+            this.chengToolStripMenuItem.Click += new System.EventHandler(this.chengToolStripMenuItem_Click);
+            // 
+            // aboutMeToolStripMenuItem
+            // 
+            this.aboutMeToolStripMenuItem.Name = "aboutMeToolStripMenuItem";
+            this.aboutMeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutMeToolStripMenuItem.Text = "About Me";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(40, 20);
+            this.toolStripMenuItem1.Text = "       ";
+            // 
+            // lblWowTokenPrice
+            // 
+            this.lblWowTokenPrice.Name = "lblWowTokenPrice";
+            this.lblWowTokenPrice.Size = new System.Drawing.Size(118, 17);
+            this.lblWowTokenPrice.Text = "toolStripStatusLabel3";
             // 
             // lblVersion
             // 
@@ -213,84 +257,34 @@
             this.lblVersion.Size = new System.Drawing.Size(118, 17);
             this.lblVersion.Text = "toolStripStatusLabel3";
             // 
-            // lblDateShamsi
-            // 
-            this.lblDateShamsi.Name = "lblDateShamsi";
-            this.lblDateShamsi.Size = new System.Drawing.Size(118, 15);
-            this.lblDateShamsi.Text = "toolStripStatusLabel3";
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::Ui.Properties.Resources.dfm5ypq_f2e10d2a_c527_444a_b3b4_7e550a2cf252;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.cbxReset);
-            this.panel1.Controls.Add(this.btnResetAllDate);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.ForeColor = System.Drawing.Color.Crimson;
-            this.panel1.Location = new System.Drawing.Point(0, 87);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(868, 521);
-            this.panel1.TabIndex = 2;
-            // 
-            // cbxReset
-            // 
-            this.cbxReset.AutoSize = true;
-            this.cbxReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxReset.Location = new System.Drawing.Point(804, 482);
-            this.cbxReset.Name = "cbxReset";
-            this.cbxReset.Size = new System.Drawing.Size(61, 14);
-            this.cbxReset.TabIndex = 2;
-            this.cbxReset.Text = "Dont toch this ";
-            this.cbxReset.UseVisualStyleBackColor = true;
-            this.cbxReset.CheckedChanged += new System.EventHandler(this.cbxReset_CheckedChanged);
-            // 
-            // btnResetAllDate
-            // 
-            this.btnResetAllDate.Location = new System.Drawing.Point(766, 430);
-            this.btnResetAllDate.Name = "btnResetAllDate";
-            this.btnResetAllDate.Size = new System.Drawing.Size(99, 27);
-            this.btnResetAllDate.TabIndex = 1;
-            this.btnResetAllDate.Text = "Reset All Date";
-            this.btnResetAllDate.UseVisualStyleBackColor = true;
-            this.btnResetAllDate.Visible = false;
-            this.btnResetAllDate.Click += new System.EventHandler(this.btnResetAllDate_Click);
-            // 
             // frmmain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(868, 608);
+            this.ClientSize = new System.Drawing.Size(804, 542);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip2);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmmain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainMenu";
             this.Load += new System.EventHandler(this.frmmain_Load);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton btnPlayer;
         private System.Windows.Forms.Panel panel1;
@@ -299,17 +293,19 @@
         private System.Windows.Forms.ToolStripStatusLabel lblTime;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripStatusLabel lblVersion;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
-        private System.Windows.Forms.ToolStripStatusLabel lblDateShamsi;
         private System.Windows.Forms.ToolStripButton btnDungeon;
         private System.Windows.Forms.ToolStripButton btnBoost;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripButton btnBoostSetting;
         private System.Windows.Forms.ToolStripButton btnTransaction;
         private System.Windows.Forms.ToolStripButton btnReport;
-        private System.Windows.Forms.ToolStripButton btnSetting;
-        private System.Windows.Forms.Button btnResetAllDate;
-        private System.Windows.Forms.CheckBox cbxReset;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem settingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem chengToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutMeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton btnBoostList;
+        private System.Windows.Forms.ToolStripStatusLabel lblWowTokenPrice;
+        private System.Windows.Forms.ToolStripStatusLabel lblVersion;
     }
 }

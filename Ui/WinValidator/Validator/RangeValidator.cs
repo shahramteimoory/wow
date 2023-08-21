@@ -1,3 +1,4 @@
+using Fury;
 using System;
 using System.ComponentModel;
 
@@ -78,6 +79,7 @@ namespace ValidationComponents
                     {
                         // The text can't be converted to a number
                         return false;
+                        
                     }
                 case ValidationDataType.Text:
                     string valS = ControlToValidate.Text;

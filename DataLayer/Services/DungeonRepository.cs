@@ -25,6 +25,11 @@ namespace DataLayer.Services
             return db.Dungeon.Where(p => p.IsDelete == false).ToList();
         }
 
+        public List<Dungeon> GetAllSoftDelete()
+        {
+            return db.Dungeon.Where(d => d.IsDelete == true).ToList();
+        }
+
         /// <summary>
         /// شمردن اسم دانجن ها برای پیدا کردن تکراری
         /// </summary>
@@ -86,6 +91,22 @@ namespace DataLayer.Services
                 }).ToList();
         }
 
+        public bool HardDeleteDungeon(int dungeonid)
+        {
+            try
+            {
+                Dungeon dungeon = db.Dungeon.Where(b => b.DungeonID== dungeonid).FirstOrDefault();
+                db.Dungeon.Remove(dungeon);
+
+                return true;
+            }
+            catch
+            {
+
+                return false;
+            }
+        }
+
 
         /// <summary>
         /// متد اضافه کردن دانجن 
@@ -109,6 +130,24 @@ namespace DataLayer.Services
             }
         }
 
+        public bool RecoveryDeleteDungeon(int dungeonid)
+        {
+            try
+            {
+                var dungeon = db.Dungeon.FirstOrDefault(p => p.DungeonID == dungeonid);
+                if (dungeon != null)
+                {
+                    dungeon.IsDelete = false;
+                    db.Entry(dungeon).State = EntityState.Modified;
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         /// <summary>
         /// متد سرچ کردن دانجن ها
         /// </summary>
@@ -117,6 +156,11 @@ namespace DataLayer.Services
         public List<Dungeon> Search(string parameter)
         {
             return db.Dungeon.Where(d => d.Name.Contains(parameter) && d.IsDelete == false).ToList();
+        }
+
+        public List<Dungeon> SearchDeleted(string parameter)
+        {
+            return db.Dungeon.Where(d => d.Name.Contains(parameter) && d.IsDelete == true).ToList();
         }
 
         /// <summary>

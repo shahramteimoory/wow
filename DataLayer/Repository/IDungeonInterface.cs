@@ -15,5 +15,9 @@ namespace DataLayer.Repository
         string GetDungeonNameById(int DungeonID);
         List<ViewModel.Dungeon.DungeonViewModel> GetNameDungeons(string filter = "");
         int GetCount(string Name);
+        List<Dungeon> GetAllSoftDelete();
+        bool HardDeleteDungeon(int dungeonid);
+        List<Dungeon> SearchDeleted(string parameter);
+        bool RecoveryDeleteDungeon(int dungeonid);
     }
 }

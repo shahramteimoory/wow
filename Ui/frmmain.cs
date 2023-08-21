@@ -1,6 +1,12 @@
 ﻿using DataLayer.Context;
+using Fury;
+using Newtonsoft.Json.Linq;
 using System;
+using System.Net;
+using System.Net.Http;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using Ui.Boost;
 using Ui.Player;
 using Ui.Report;
@@ -20,15 +26,40 @@ namespace Ui
             frmPlayerManger frmPlayerManger = new frmPlayerManger();
             frmPlayerManger.ShowDialog();
         }
+       private async Task WowTokePrice()
+        {
 
+            try
+            {
+                var httpClient = new HttpClient();
+                httpClient.DefaultRequestHeaders.Add("x-access-token", "goldapi-4tcfrlkvea6mk-io");
+                var response = await httpClient.GetAsync("https://www.goldapi.io/api/XAU/USD");
+                var responseBody = await response.Content.ReadAsStringAsync();
+
+                var json = JObject.Parse(responseBody);
+                var price = json["price"];
+
+                lblWowTokenPrice.Text=($"EU token: {price} Gold");
+
+            }
+            catch (Exception ex)
+            {
+                FileLogger.Log(ex.ToString());
+                lblWowTokenPrice.Text=("خطا در دریافت قیمت طلا: " + ex.Message);
+            }
+
+           
+        }
+   
         private void frmmain_Load(object sender, EventArgs e)
         {
+            WowTokePrice();
             lblDate.Text = DateTime.Now.ToLongDateString();
             lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
             System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
             System.Diagnostics.FileVersionInfo fvi = System.Diagnostics.FileVersionInfo.GetVersionInfo(assembly.Location);
             lblVersion.Text = "Version : " + fvi.FileVersion;
-            lblDateShamsi.Text = Utility.Convertor.DateConvertor.toshamsi(DateTime.Now);
+            
             using (UnitOfWork db = new UnitOfWork())
             {
                 var o1 = db.PlayerRepository.GetPlayerById(0);
@@ -59,12 +90,6 @@ namespace Ui
             frmBoost.ShowDialog();
         }
 
-        private void btnBoostSetting_Click(object sender, EventArgs e)
-        {
-            frmBoostSetting frmBoostSetting = new frmBoostSetting();
-            frmBoostSetting.ShowDialog();
-        }
-
         private void toolStripButton1_Click_1(object sender, EventArgs e)
         {
             frmTransaction frmTransaction = new frmTransaction();
@@ -77,20 +102,21 @@ namespace Ui
             frmPlayerReport.ShowDialog();
         }
 
-        private void btnSetting_Click(object sender, EventArgs e)
+        private void chengToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmSetting setting = new frmSetting();
             setting.ShowDialog();
         }
 
-        private void cbxReset_CheckedChanged(object sender, EventArgs e)
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            btnResetAllDate.Visible = true;
+            Application.Exit();
         }
 
-        private void btnResetAllDate_Click(object sender, EventArgs e)
+        private void btnBoostList_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("your PC will exlode in 30 secound");
+            frmBoostSetting frmBoostSetting = new frmBoostSetting();
+            frmBoostSetting.ShowDialog();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using DataLayer;
 using DataLayer.Context;
+using Fury;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -95,8 +96,9 @@ namespace Ui.Transaction
             {
                 pcTransaction.ImageLocation = txtImageURL.Text;
             }
-            catch
+            catch(Exception ex)
             {
+                FileLogger.Log(ex.ToString());
                 MessageBox.Show("URL not found");
             }
         }
@@ -166,17 +168,11 @@ namespace Ui.Transaction
             }
             catch (DbEntityValidationException ex)
             {
-                string errorMessage = "خطا در اعتبارسنجی موجودیت: \n";
-                foreach (var validationErrors in ex.EntityValidationErrors)
-                {
-                    foreach (var validationError in validationErrors.ValidationErrors)
-                    {
-                        errorMessage += "ویژگی: " + validationError.PropertyName + "\nخطا: " + validationError.ErrorMessage + "\n";
-                    }
-                }
 
-                MessageBox.Show(errorMessage);
-                // انجام اقدامات مورد نیاز برای رفع خطاها، مانند نمایش پیغام به کاربر یا ثبت آن در یک فایل لاگ
+                FileLogger.Log(ex.ToString());
+
+                
+                
             }
         }
     }

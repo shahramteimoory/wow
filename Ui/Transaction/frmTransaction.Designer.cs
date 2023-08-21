@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.btnPay = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.btnReceive = new System.Windows.Forms.ToolStripButton();
             this.dgvPlayerList = new System.Windows.Forms.DataGridView();
+            this.txtPlayerFilter = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.txtPlayerFilter = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlayerList)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +65,7 @@
             // 
             // btnPay
             // 
-            this.btnPay.Image = global::Ui.Properties.Resources.arrowlup;
+            this.btnPay.Image = global::Fury.Properties.Resources.arrowlup;
             this.btnPay.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnPay.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnPay.Name = "btnPay";
@@ -81,7 +82,7 @@
             // 
             // btnReceive
             // 
-            this.btnReceive.Image = global::Ui.Properties.Resources.arrowdown;
+            this.btnReceive.Image = global::Fury.Properties.Resources.arrowdown;
             this.btnReceive.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnReceive.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnReceive.Name = "btnReceive";
@@ -105,9 +106,27 @@
             this.dgvPlayerList.Name = "dgvPlayerList";
             this.dgvPlayerList.ReadOnly = true;
             this.dgvPlayerList.RowHeadersVisible = false;
+            this.dgvPlayerList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPlayerList.Size = new System.Drawing.Size(231, 162);
             this.dgvPlayerList.TabIndex = 3;
             this.dgvPlayerList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlayerList_CellContentClick);
+            // 
+            // txtPlayerFilter
+            // 
+            this.txtPlayerFilter.Location = new System.Drawing.Point(105, 108);
+            this.txtPlayerFilter.Name = "txtPlayerFilter";
+            this.txtPlayerFilter.Size = new System.Drawing.Size(121, 20);
+            this.txtPlayerFilter.TabIndex = 4;
+            this.txtPlayerFilter.TextChanged += new System.EventHandler(this.txtPlayerFilter_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 111);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Player Name Filter :";
             // 
             // Column1
             // 
@@ -127,29 +146,15 @@
             // 
             // Column3
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Blue;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column3.HeaderText = "Detail";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Column3.Width = 70;
-            // 
-            // txtPlayerFilter
-            // 
-            this.txtPlayerFilter.Location = new System.Drawing.Point(105, 108);
-            this.txtPlayerFilter.Name = "txtPlayerFilter";
-            this.txtPlayerFilter.Size = new System.Drawing.Size(121, 20);
-            this.txtPlayerFilter.TabIndex = 4;
-            this.txtPlayerFilter.TextChanged += new System.EventHandler(this.txtPlayerFilter_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 111);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Player Name Filter :";
             // 
             // frmTransaction
             // 
@@ -181,11 +186,11 @@
         private System.Windows.Forms.ToolStripButton btnPay;
         private System.Windows.Forms.ToolStripButton btnReceive;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewButtonColumn Column3;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.DataGridView dgvPlayerList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewButtonColumn Column3;
     }
 }

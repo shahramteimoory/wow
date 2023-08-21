@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvTransactionDetail = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,12 +94,14 @@
             this.Column2.HeaderText = "Player Name";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Amount";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // Column4
             // 
@@ -106,6 +109,7 @@
             this.Column4.HeaderText = "Type";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
+            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // Column5
             // 
@@ -114,12 +118,14 @@
             this.Column5.HeaderText = "DateTime";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "Title";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
+            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column6.Visible = false;
             // 
             // Column7
@@ -131,9 +137,14 @@
             // 
             // Column8
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Yellow;
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column8.HeaderText = "Select";
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
+            this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column8.Width = 40;
             // 
             // groupBox1
@@ -191,7 +202,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackgroundImage = global::Ui.Properties.Resources.goldright;
+            this.panel2.BackgroundImage = global::Fury.Properties.Resources.goldright;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(548, 0);
@@ -201,7 +212,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::Ui.Properties.Resources.goldleft;
+            this.panel1.BackgroundImage = global::Fury.Properties.Resources.goldleft;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -223,7 +234,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Image = global::Ui.Properties.Resources.changes;
+            this.btnEdit.Image = global::Fury.Properties.Resources.changes;
             this.btnEdit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEdit.Name = "btnEdit";
@@ -241,7 +252,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Image = global::Ui.Properties.Resources.icons8_delete_100;
+            this.btnDelete.Image = global::Fury.Properties.Resources.icons8_delete_100;
             this.btnDelete.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDelete.Name = "btnDelete";
@@ -252,6 +263,7 @@
             // 
             // frmTransactionDetail
             // 
+            this.AcceptButton = this.btnClose;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(631, 482);
@@ -287,6 +299,11 @@
         private System.Windows.Forms.PictureBox pcTransactionDetail;
         private System.Windows.Forms.TextBox TxtTitle;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.LinkLabel lblLink;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton btnEdit;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripButton btnDelete;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -295,10 +312,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewButtonColumn Column8;
-        private System.Windows.Forms.LinkLabel lblLink;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton btnEdit;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripButton btnDelete;
     }
 }

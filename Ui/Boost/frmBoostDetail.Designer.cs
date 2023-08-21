@@ -94,6 +94,9 @@
             this.Column5});
             this.dgvRuns.Location = new System.Drawing.Point(135, 87);
             this.dgvRuns.Name = "dgvRuns";
+            this.dgvRuns.ReadOnly = true;
+            this.dgvRuns.RowHeadersVisible = false;
+            this.dgvRuns.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRuns.Size = new System.Drawing.Size(464, 173);
             this.dgvRuns.TabIndex = 69;
             // 
@@ -101,18 +104,24 @@
             // 
             this.Column6.HeaderText = "RunID";
             this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column6.Visible = false;
             // 
             // Column1
             // 
             this.Column1.HeaderText = "PlayerID";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column1.Visible = false;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "RoleID";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column2.Visible = false;
             // 
             // Column3
@@ -120,18 +129,23 @@
             this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column3.HeaderText = "Booster Name";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Role";
             this.Column4.Name = "Column4";
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column4.ReadOnly = true;
+            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column4.Width = 60;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Cut";
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // lblLvl
             // 
@@ -186,7 +200,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackgroundImage = global::Ui.Properties.Resources.Leftwalkery;
+            this.panel2.BackgroundImage = global::Fury.Properties.Resources.Leftwalkery;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(605, 0);
@@ -196,7 +210,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::Ui.Properties.Resources.right_dh;
+            this.panel1.BackgroundImage = global::Fury.Properties.Resources.right_dh;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -206,6 +220,7 @@
             // 
             // frmBoostDetail
             // 
+            this.AcceptButton = this.btnClose;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(731, 295);
@@ -237,14 +252,14 @@
         private System.Windows.Forms.Label LblDungeonName;
         private System.Windows.Forms.Label lblPot;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblDataTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblDataTime;
     }
 }
