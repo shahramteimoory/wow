@@ -26,7 +26,7 @@ namespace Ui
             frmPlayerManger frmPlayerManger = new frmPlayerManger();
             frmPlayerManger.ShowDialog();
         }
-       private async Task WowTokePrice()
+        private async Task WowTokePrice()
         {
 
             try
@@ -39,27 +39,27 @@ namespace Ui
                 var json = JObject.Parse(responseBody);
                 var price = json["price"];
 
-                lblWowTokenPrice.Text=($"EU token: {price} Gold");
+                lblWowTokenPrice.Text = ($"EU token: {price} Gold");
 
             }
             catch (Exception ex)
             {
                 FileLogger.Log(ex.ToString());
-                lblWowTokenPrice.Text=("خطا در دریافت قیمت طلا: " + ex.Message);
+                lblWowTokenPrice.Text = ("خطا در دریافت قیمت طلا: " + ex.Message);
             }
 
-           
+
         }
-   
+
         private void frmmain_Load(object sender, EventArgs e)
         {
-            WowTokePrice();
+            _ = WowTokePrice();
             lblDate.Text = DateTime.Now.ToLongDateString();
             lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
             System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
             System.Diagnostics.FileVersionInfo fvi = System.Diagnostics.FileVersionInfo.GetVersionInfo(assembly.Location);
             lblVersion.Text = "Version : " + fvi.FileVersion;
-            
+
             using (UnitOfWork db = new UnitOfWork())
             {
                 var o1 = db.PlayerRepository.GetPlayerById(0);
