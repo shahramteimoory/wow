@@ -29,15 +29,8 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTransactionDetail));
             this.dgvTransactionDetail = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.pcTransactionDetail = new System.Windows.Forms.PictureBox();
@@ -49,6 +42,15 @@
             this.btnEdit = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.btnDelete = new System.Windows.Forms.ToolStripButton();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Method = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactionDetail)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcTransactionDetail)).BeginInit();
@@ -67,6 +69,7 @@
             this.Column2,
             this.Column3,
             this.Column4,
+            this.Method,
             this.Column5,
             this.Column6,
             this.Column7,
@@ -77,9 +80,123 @@
             this.dgvTransactionDetail.ReadOnly = true;
             this.dgvTransactionDetail.RowHeadersVisible = false;
             this.dgvTransactionDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTransactionDetail.Size = new System.Drawing.Size(450, 150);
+            this.dgvTransactionDetail.Size = new System.Drawing.Size(532, 150);
             this.dgvTransactionDetail.TabIndex = 0;
             this.dgvTransactionDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTransactionDetail_CellContentClick);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnClose);
+            this.groupBox1.Controls.Add(this.pcTransactionDetail);
+            this.groupBox1.Location = new System.Drawing.Point(96, 302);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(526, 180);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Transaction Image";
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(231, 152);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // pcTransactionDetail
+            // 
+            this.pcTransactionDetail.ErrorImage = null;
+            this.pcTransactionDetail.InitialImage = null;
+            this.pcTransactionDetail.Location = new System.Drawing.Point(6, 19);
+            this.pcTransactionDetail.Name = "pcTransactionDetail";
+            this.pcTransactionDetail.Size = new System.Drawing.Size(514, 127);
+            this.pcTransactionDetail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcTransactionDetail.TabIndex = 0;
+            this.pcTransactionDetail.TabStop = false;
+            // 
+            // TxtTitle
+            // 
+            this.TxtTitle.Location = new System.Drawing.Point(96, 252);
+            this.TxtTitle.Multiline = true;
+            this.TxtTitle.Name = "TxtTitle";
+            this.TxtTitle.ReadOnly = true;
+            this.TxtTitle.Size = new System.Drawing.Size(526, 24);
+            this.TxtTitle.TabIndex = 0;
+            this.TxtTitle.Text = "Title";
+            // 
+            // lblLink
+            // 
+            this.lblLink.AutoSize = true;
+            this.lblLink.Location = new System.Drawing.Point(99, 279);
+            this.lblLink.Name = "lblLink";
+            this.lblLink.Size = new System.Drawing.Size(59, 13);
+            this.lblLink.TabIndex = 3;
+            this.lblLink.TabStop = true;
+            this.lblLink.Text = "Image Link";
+            this.lblLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblLink_LinkClicked);
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::Fury.Properties.Resources.goldright;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(628, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(83, 482);
+            this.panel2.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::Fury.Properties.Resources.goldleft;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(84, 482);
+            this.panel1.TabIndex = 2;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnEdit,
+            this.toolStripLabel1,
+            this.btnDelete});
+            this.toolStrip1.Location = new System.Drawing.Point(84, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(544, 93);
+            this.toolStrip1.TabIndex = 4;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Image = global::Fury.Properties.Resources.changes;
+            this.btnEdit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(83, 90);
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(346, 90);
+            this.toolStripLabel1.Text = "                                                                                 " +
+    "                                ";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Image = global::Fury.Properties.Resources.icons8_delete_100;
+            this.btnDelete.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(84, 90);
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // Column1
             // 
@@ -110,6 +227,13 @@
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Method
+            // 
+            this.Method.HeaderText = "Method";
+            this.Method.Name = "Method";
+            this.Method.ReadOnly = true;
+            this.Method.Width = 60;
             // 
             // Column5
             // 
@@ -147,126 +271,12 @@
             this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column8.Width = 40;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnClose);
-            this.groupBox1.Controls.Add(this.pcTransactionDetail);
-            this.groupBox1.Location = new System.Drawing.Point(96, 302);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(444, 180);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Transaction Image";
-            // 
-            // btnClose
-            // 
-            this.btnClose.Location = new System.Drawing.Point(172, 152);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 1;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // pcTransactionDetail
-            // 
-            this.pcTransactionDetail.ErrorImage = null;
-            this.pcTransactionDetail.InitialImage = null;
-            this.pcTransactionDetail.Location = new System.Drawing.Point(6, 19);
-            this.pcTransactionDetail.Name = "pcTransactionDetail";
-            this.pcTransactionDetail.Size = new System.Drawing.Size(438, 127);
-            this.pcTransactionDetail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcTransactionDetail.TabIndex = 0;
-            this.pcTransactionDetail.TabStop = false;
-            // 
-            // TxtTitle
-            // 
-            this.TxtTitle.Location = new System.Drawing.Point(96, 252);
-            this.TxtTitle.Multiline = true;
-            this.TxtTitle.Name = "TxtTitle";
-            this.TxtTitle.ReadOnly = true;
-            this.TxtTitle.Size = new System.Drawing.Size(444, 24);
-            this.TxtTitle.TabIndex = 0;
-            this.TxtTitle.Text = "Title";
-            // 
-            // lblLink
-            // 
-            this.lblLink.AutoSize = true;
-            this.lblLink.Location = new System.Drawing.Point(99, 279);
-            this.lblLink.Name = "lblLink";
-            this.lblLink.Size = new System.Drawing.Size(59, 13);
-            this.lblLink.TabIndex = 3;
-            this.lblLink.TabStop = true;
-            this.lblLink.Text = "Image Link";
-            this.lblLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblLink_LinkClicked);
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::Fury.Properties.Resources.goldright;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(548, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(83, 482);
-            this.panel2.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::Fury.Properties.Resources.goldleft;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(84, 482);
-            this.panel1.TabIndex = 2;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnEdit,
-            this.toolStripLabel1,
-            this.btnDelete});
-            this.toolStrip1.Location = new System.Drawing.Point(84, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(464, 93);
-            this.toolStrip1.TabIndex = 4;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Image = global::Fury.Properties.Resources.changes;
-            this.btnEdit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(83, 90);
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(262, 90);
-            this.toolStripLabel1.Text = "                                                                                 " +
-    "    ";
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Image = global::Fury.Properties.Resources.icons8_delete_100;
-            this.btnDelete.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(84, 90);
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
             // frmTransactionDetail
             // 
             this.AcceptButton = this.btnClose;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(631, 482);
+            this.ClientSize = new System.Drawing.Size(711, 482);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.lblLink);
             this.Controls.Add(this.TxtTitle);
@@ -275,6 +285,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvTransactionDetail);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
             this.Name = "frmTransactionDetail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -308,6 +319,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Method;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;

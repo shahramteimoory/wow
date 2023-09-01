@@ -18,6 +18,7 @@ namespace DataLayer
         public Player()
         {
             this.Boost = new HashSet<Boost>();
+            this.Character = new HashSet<Character>();
             this.Run = new HashSet<Run>();
             this.Transaction = new HashSet<Transaction>();
         }
@@ -28,6 +29,8 @@ namespace DataLayer
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Boost> Boost { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Character> Character { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Run> Run { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

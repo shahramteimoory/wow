@@ -26,10 +26,12 @@ namespace DataLayer
         }
     
         public virtual DbSet<Boost> Boost { get; set; }
+        public virtual DbSet<Character> Character { get; set; }
         public virtual DbSet<Dungeon> Dungeon { get; set; }
         public virtual DbSet<Player> Player { get; set; }
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<Run> Run { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Transaction> Transaction { get; set; }
     }
 }

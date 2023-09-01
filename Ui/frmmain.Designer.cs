@@ -41,7 +41,9 @@
             this.lblDate = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblWowTokenPrice = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblVersion = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -50,8 +52,6 @@
             this.aboutMeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblWowTokenPrice = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblVersion = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -175,11 +175,23 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(181, 17);
             this.toolStripStatusLabel1.Text = "                         Wow Token Price : ";
             // 
+            // lblWowTokenPrice
+            // 
+            this.lblWowTokenPrice.Name = "lblWowTokenPrice";
+            this.lblWowTokenPrice.Size = new System.Drawing.Size(118, 17);
+            this.lblWowTokenPrice.Text = "toolStripStatusLabel3";
+            // 
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(88, 17);
             this.toolStripStatusLabel2.Text = "                           ";
+            // 
+            // lblVersion
+            // 
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(118, 17);
+            this.lblVersion.Text = "toolStripStatusLabel3";
             // 
             // timer1
             // 
@@ -222,20 +234,20 @@
             // chengToolStripMenuItem
             // 
             this.chengToolStripMenuItem.Name = "chengToolStripMenuItem";
-            this.chengToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.chengToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.chengToolStripMenuItem.Text = "Change owner";
             this.chengToolStripMenuItem.Click += new System.EventHandler(this.chengToolStripMenuItem_Click);
             // 
             // aboutMeToolStripMenuItem
             // 
             this.aboutMeToolStripMenuItem.Name = "aboutMeToolStripMenuItem";
-            this.aboutMeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutMeToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.aboutMeToolStripMenuItem.Text = "About Me";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -244,18 +256,6 @@
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(40, 20);
             this.toolStripMenuItem1.Text = "       ";
-            // 
-            // lblWowTokenPrice
-            // 
-            this.lblWowTokenPrice.Name = "lblWowTokenPrice";
-            this.lblWowTokenPrice.Size = new System.Drawing.Size(118, 17);
-            this.lblWowTokenPrice.Text = "toolStripStatusLabel3";
-            // 
-            // lblVersion
-            // 
-            this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(118, 17);
-            this.lblVersion.Text = "toolStripStatusLabel3";
             // 
             // frmmain
             // 

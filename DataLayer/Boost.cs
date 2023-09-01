@@ -27,6 +27,10 @@ namespace DataLayer
         public long Gold { get; set; }
         public int DungeonID { get; set; }
         public Nullable<int> Lvl { get; set; }
+        public string Season { get; set; }
+        public Nullable<long> RaiderID { get; set; }
+        public Nullable<bool> IsAsigned { get; set; }
+        public Nullable<bool> IsGold { get; set; }
     
         public virtual Dungeon Dungeon { get; set; }
         public virtual Player Player { get; set; }

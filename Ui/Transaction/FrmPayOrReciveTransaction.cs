@@ -2,7 +2,6 @@
 using Fury;
 using System;
 using System.IO;
-using System.Security.Cryptography;
 using System.Windows.Forms;
 using ValidationComponents;
 using static Utility.Enum.Enums;
@@ -82,23 +81,27 @@ namespace Ui.Transaction
                 {
                     Imagename = txtImageURL.Text;
                 }
-                
 
-                
-                
-                
+
+
+
+
                 using (UnitOfWork db = new UnitOfWork())
                 {
-                    DataLayer.Transaction transaction = new DataLayer.Transaction()
-                    {
-                        DateTime = DateTime.Now,
-                        Image = Imagename,
-                        Amount = long.Parse(txtAmount.Text),
-                        PlayerID = playerID,
-                        Type = (int)transactionType,
-                        Title = $"{lblFrmType.Text}: Title: {txtTitle.Text}",
+                    DataLayer.Transaction transaction = new DataLayer.Transaction();
 
-                    };
+                    transaction.DateTime = DateTime.Now;
+                    transaction.Image = Imagename;
+                    transaction.Amount = long.Parse(txtAmount.Text);
+                    transaction.PlayerID = playerID;
+                    transaction.Type = (int)transactionType;
+                    transaction.Title = $"{lblFrmType.Text}: Title: {txtTitle.Text}";
+                    if (rbGold.Checked)
+                    {
+                        transaction.IsGold = true;
+                    }
+                    else { transaction.IsGold = false; }
+
                     db.TransactionRepository.InsertTransaction(transaction);
                     db.Save();
                     this.Close();
@@ -136,12 +139,12 @@ namespace Ui.Transaction
             {
                 pcTransaction.ImageLocation = txtImageURL.Text;
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 FileLogger.Log(ex.ToString());
                 MessageBox.Show("URL not found");
             }
-            
+
         }
     }
 }

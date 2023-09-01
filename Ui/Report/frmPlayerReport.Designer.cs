@@ -29,12 +29,15 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPlayerReport));
             this.label1 = new System.Windows.Forms.Label();
             this.txtPlayerFilter = new System.Windows.Forms.TextBox();
             this.dgvPlayerList = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlayerList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +54,7 @@
             // 
             this.txtPlayerFilter.Location = new System.Drawing.Point(111, 12);
             this.txtPlayerFilter.Name = "txtPlayerFilter";
-            this.txtPlayerFilter.Size = new System.Drawing.Size(121, 20);
+            this.txtPlayerFilter.Size = new System.Drawing.Size(155, 20);
             this.txtPlayerFilter.TabIndex = 7;
             this.txtPlayerFilter.TextChanged += new System.EventHandler(this.txtPlayerFilter_TextChanged);
             // 
@@ -65,13 +68,14 @@
             this.dgvPlayerList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
-            this.Column3});
+            this.Column3,
+            this.Column4});
             this.dgvPlayerList.Location = new System.Drawing.Point(6, 38);
             this.dgvPlayerList.Name = "dgvPlayerList";
             this.dgvPlayerList.ReadOnly = true;
             this.dgvPlayerList.RowHeadersVisible = false;
             this.dgvPlayerList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPlayerList.Size = new System.Drawing.Size(231, 211);
+            this.dgvPlayerList.Size = new System.Drawing.Size(260, 211);
             this.dgvPlayerList.TabIndex = 6;
             this.dgvPlayerList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlayerList_CellContentClick);
             // 
@@ -95,26 +99,40 @@
             // Column3
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Yellow;
             this.Column3.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Column3.HeaderText = "Detail";
+            this.Column3.HeaderText = "Gold";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Column3.Text = "Detail";
-            this.Column3.Width = 70;
+            this.Column3.Width = 60;
+            // 
+            // Column4
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Lime;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Lime;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Lime;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column4.HeaderText = "Money";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column4.Width = 60;
             // 
             // frmPlayerReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(244, 252);
+            this.ClientSize = new System.Drawing.Size(269, 252);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPlayerFilter);
             this.Controls.Add(this.dgvPlayerList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmPlayerReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -134,5 +152,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewButtonColumn Column3;
+        private System.Windows.Forms.DataGridViewButtonColumn Column4;
     }
 }

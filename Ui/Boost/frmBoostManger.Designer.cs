@@ -64,6 +64,8 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.chbAutoCompute = new System.Windows.Forms.CheckBox();
+            this.rbMoney = new System.Windows.Forms.RadioButton();
+            this.rbGold = new System.Windows.Forms.RadioButton();
             this.requiredFieldValidator1 = new ValidationComponents.RequiredFieldValidator(this.components);
             this.gbRole.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlayers)).BeginInit();
@@ -128,7 +130,7 @@
             // 
             // txtGoldPot
             // 
-            this.txtGoldPot.Location = new System.Drawing.Point(504, 30);
+            this.txtGoldPot.Location = new System.Drawing.Point(498, 30);
             this.txtGoldPot.Name = "txtGoldPot";
             this.txtGoldPot.Size = new System.Drawing.Size(131, 20);
             this.txtGoldPot.TabIndex = 42;
@@ -138,7 +140,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(537, 14);
+            this.label4.Location = new System.Drawing.Point(531, 14);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 13);
             this.label4.TabIndex = 43;
@@ -209,6 +211,8 @@
             // 
             this.dgvPlayers.AllowUserToAddRows = false;
             this.dgvPlayers.AllowUserToDeleteRows = false;
+            this.dgvPlayers.AllowUserToResizeColumns = false;
+            this.dgvPlayers.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -313,7 +317,7 @@
             // lblAdvName
             // 
             this.lblAdvName.AutoSize = true;
-            this.lblAdvName.Location = new System.Drawing.Point(90, 33);
+            this.lblAdvName.Location = new System.Drawing.Point(6, 9);
             this.lblAdvName.Name = "lblAdvName";
             this.lblAdvName.Size = new System.Drawing.Size(87, 13);
             this.lblAdvName.TabIndex = 51;
@@ -380,6 +384,7 @@
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column4.Width = 70;
             // 
             // Column5
             // 
@@ -404,13 +409,35 @@
             this.chbAutoCompute.AutoSize = true;
             this.chbAutoCompute.Checked = true;
             this.chbAutoCompute.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chbAutoCompute.Location = new System.Drawing.Point(504, 56);
+            this.chbAutoCompute.Location = new System.Drawing.Point(535, 57);
             this.chbAutoCompute.Name = "chbAutoCompute";
             this.chbAutoCompute.Size = new System.Drawing.Size(93, 17);
             this.chbAutoCompute.TabIndex = 54;
             this.chbAutoCompute.Text = "Auto Compute";
             this.chbAutoCompute.UseVisualStyleBackColor = true;
             this.chbAutoCompute.CheckedChanged += new System.EventHandler(this.chbAutoCompute_CheckedChanged);
+            // 
+            // rbMoney
+            // 
+            this.rbMoney.AutoSize = true;
+            this.rbMoney.Location = new System.Drawing.Point(375, 59);
+            this.rbMoney.Name = "rbMoney";
+            this.rbMoney.Size = new System.Drawing.Size(57, 17);
+            this.rbMoney.TabIndex = 73;
+            this.rbMoney.Text = "Money";
+            this.rbMoney.UseVisualStyleBackColor = true;
+            // 
+            // rbGold
+            // 
+            this.rbGold.AutoSize = true;
+            this.rbGold.Checked = true;
+            this.rbGold.Location = new System.Drawing.Point(438, 59);
+            this.rbGold.Name = "rbGold";
+            this.rbGold.Size = new System.Drawing.Size(47, 17);
+            this.rbGold.TabIndex = 72;
+            this.rbGold.TabStop = true;
+            this.rbGold.Text = "Gold";
+            this.rbGold.UseVisualStyleBackColor = true;
             // 
             // requiredFieldValidator1
             // 
@@ -425,7 +452,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClear;
-            this.ClientSize = new System.Drawing.Size(662, 288);
+            this.ClientSize = new System.Drawing.Size(656, 288);
+            this.Controls.Add(this.rbMoney);
+            this.Controls.Add(this.rbGold);
             this.Controls.Add(this.chbAutoCompute);
             this.Controls.Add(this.dgvRuns);
             this.Controls.Add(this.lblAdvID);
@@ -444,6 +473,7 @@
             this.Controls.Add(this.cbDungeonLvl);
             this.Controls.Add(this.cbDungeonName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmBoostManger";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -482,6 +512,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PlayerID;
         private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
         private System.Windows.Forms.DataGridViewButtonColumn Insert;
+        private System.Windows.Forms.RadioButton rbMoney;
+        private System.Windows.Forms.RadioButton rbGold;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

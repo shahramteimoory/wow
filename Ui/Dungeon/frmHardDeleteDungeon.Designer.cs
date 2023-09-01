@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHardDeleteDungeon));
             this.dgvDeletedDungeon = new System.Windows.Forms.DataGridView();
-            this.txtFilterDeleted = new System.Windows.Forms.TextBox();
             this.DungeonID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.txtFilterDeleted = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeletedDungeon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,14 +56,6 @@
             this.dgvDeletedDungeon.Size = new System.Drawing.Size(219, 229);
             this.dgvDeletedDungeon.TabIndex = 0;
             this.dgvDeletedDungeon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDeletedDungeon_CellContentClick);
-            // 
-            // txtFilterDeleted
-            // 
-            this.txtFilterDeleted.Location = new System.Drawing.Point(12, 12);
-            this.txtFilterDeleted.Name = "txtFilterDeleted";
-            this.txtFilterDeleted.Size = new System.Drawing.Size(218, 20);
-            this.txtFilterDeleted.TabIndex = 1;
-            this.txtFilterDeleted.TextChanged += new System.EventHandler(this.txtFilterDeleted_TextChanged);
             // 
             // DungeonID
             // 
@@ -91,6 +84,14 @@
             this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Delete.Width = 60;
             // 
+            // txtFilterDeleted
+            // 
+            this.txtFilterDeleted.Location = new System.Drawing.Point(12, 12);
+            this.txtFilterDeleted.Name = "txtFilterDeleted";
+            this.txtFilterDeleted.Size = new System.Drawing.Size(218, 20);
+            this.txtFilterDeleted.TabIndex = 1;
+            this.txtFilterDeleted.TextChanged += new System.EventHandler(this.txtFilterDeleted_TextChanged);
+            // 
             // frmHardDeleteDungeon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -99,6 +100,7 @@
             this.Controls.Add(this.txtFilterDeleted);
             this.Controls.Add(this.dgvDeletedDungeon);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmHardDeleteDungeon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Hard Delete";

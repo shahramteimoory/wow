@@ -12,17 +12,12 @@ namespace DataLayer
     using System;
     using System.Collections.Generic;
     
-    public partial class Transaction
+    public partial class sysdiagrams
     {
-        public int TransactionID { get; set; }
-        public int Type { get; set; }
-        public long Amount { get; set; }
-        public System.DateTime DateTime { get; set; }
-        public int PlayerID { get; set; }
-        public string Title { get; set; }
-        public string Image { get; set; }
-        public Nullable<bool> IsGold { get; set; }
-    
-        public virtual Player Player { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

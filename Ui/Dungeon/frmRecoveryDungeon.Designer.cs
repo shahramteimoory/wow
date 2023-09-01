@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRecoveryDungeon));
             this.txtFilterDeleted = new System.Windows.Forms.TextBox();
             this.dgvDeletedDungeon = new System.Windows.Forms.DataGridView();
             this.DungeonID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -103,6 +104,7 @@
             this.Controls.Add(this.txtFilterDeleted);
             this.Controls.Add(this.dgvDeletedDungeon);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmRecoveryDungeon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Recovery";

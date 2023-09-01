@@ -132,7 +132,7 @@
             // clmEdit
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Cornsilk;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Yellow;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Yellow;
             this.clmEdit.DefaultCellStyle = dataGridViewCellStyle1;
             this.clmEdit.HeaderText = "Edit";
@@ -146,6 +146,7 @@
             // 
             this.clmDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Red;
             this.clmDelete.DefaultCellStyle = dataGridViewCellStyle2;
             this.clmDelete.HeaderText = "Delete";
@@ -238,6 +239,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmPlayerManger";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -262,13 +264,13 @@
         private System.Windows.Forms.Panel panel1;
         private ValidationComponents.RequiredFieldValidator requiredFieldValidator1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PlayerID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmPlayer;
-        private System.Windows.Forms.DataGridViewButtonColumn clmEdit;
-        private System.Windows.Forms.DataGridViewButtonColumn clmDelete;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem recoveryHardDeleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btnRecoveryPlayer;
         private System.Windows.Forms.ToolStripMenuItem btnHardDeletePlayer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PlayerID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmPlayer;
+        private System.Windows.Forms.DataGridViewButtonColumn clmEdit;
+        private System.Windows.Forms.DataGridViewButtonColumn clmDelete;
     }
 }

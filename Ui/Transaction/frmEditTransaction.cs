@@ -49,7 +49,11 @@ namespace Ui.Transaction
                     this.Text = "Receive";
                     lblFrmType.Text = "Receiving";
                 }
-                
+                if (transaction.IsGold ==true)
+                {
+                    rbGold.Checked = true;
+                }
+                else { rbMoney.Checked = true; }
             }
         }
         private void frmEditTransaction_Load(object sender, EventArgs e)
@@ -156,7 +160,14 @@ namespace Ui.Transaction
                         transactions.PlayerID = db.PlayerRepository.GetPlayerIdByName(lblPlayerName.Text);
                         transactions.Type = type;
                         transactions.Title = txtTitle.Text;
-
+                        if (rbGold.Checked)
+                        {
+                            transactions.IsGold = true;
+                        }
+                        else
+                        {
+                            transactions.IsGold=false;
+                        }
                         db.TransactionRepository.UpdateTransaction(transactions);
                         db.Save();
                         Dispose();

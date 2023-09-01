@@ -29,17 +29,18 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTransaction));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.btnPay = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.btnReceive = new System.Windows.Forms.ToolStripButton();
             this.dgvPlayerList = new System.Windows.Forms.DataGridView();
-            this.txtPlayerFilter = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.txtPlayerFilter = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlayerList)).BeginInit();
             this.SuspendLayout();
@@ -111,23 +112,6 @@
             this.dgvPlayerList.TabIndex = 3;
             this.dgvPlayerList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlayerList_CellContentClick);
             // 
-            // txtPlayerFilter
-            // 
-            this.txtPlayerFilter.Location = new System.Drawing.Point(105, 108);
-            this.txtPlayerFilter.Name = "txtPlayerFilter";
-            this.txtPlayerFilter.Size = new System.Drawing.Size(121, 20);
-            this.txtPlayerFilter.TabIndex = 4;
-            this.txtPlayerFilter.TextChanged += new System.EventHandler(this.txtPlayerFilter_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 111);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Player Name Filter :";
-            // 
             // Column1
             // 
             this.Column1.DataPropertyName = "PlayerID";
@@ -156,6 +140,23 @@
             this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Column3.Width = 70;
             // 
+            // txtPlayerFilter
+            // 
+            this.txtPlayerFilter.Location = new System.Drawing.Point(105, 108);
+            this.txtPlayerFilter.Name = "txtPlayerFilter";
+            this.txtPlayerFilter.Size = new System.Drawing.Size(121, 20);
+            this.txtPlayerFilter.TabIndex = 4;
+            this.txtPlayerFilter.TextChanged += new System.EventHandler(this.txtPlayerFilter_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 111);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Player Name Filter :";
+            // 
             // frmTransaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,6 +167,7 @@
             this.Controls.Add(this.dgvPlayerList);
             this.Controls.Add(this.toolStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmTransaction";
             this.ShowIcon = false;

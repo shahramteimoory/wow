@@ -12,16 +12,13 @@ namespace DataLayer
     using System;
     using System.Collections.Generic;
     
-    public partial class Transaction
+    public partial class Character
     {
-        public int TransactionID { get; set; }
-        public int Type { get; set; }
-        public long Amount { get; set; }
-        public System.DateTime DateTime { get; set; }
-        public int PlayerID { get; set; }
-        public string Title { get; set; }
-        public string Image { get; set; }
-        public Nullable<bool> IsGold { get; set; }
+        public int CharacterID { get; set; }
+        public Nullable<int> PlayerID { get; set; }
+        public string Region { get; set; }
+        public string Realm { get; set; }
+        public string Name { get; set; }
     
         public virtual Player Player { get; set; }
     }

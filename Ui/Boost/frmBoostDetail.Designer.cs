@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBoostDetail));
             this.btnClose = new System.Windows.Forms.Button();
             this.lblAdvID = new System.Windows.Forms.Label();
             this.lblAdvName = new System.Windows.Forms.Label();
@@ -230,6 +231,7 @@
             this.Controls.Add(this.dgvRuns);
             this.Controls.Add(this.btnClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmBoostDetail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

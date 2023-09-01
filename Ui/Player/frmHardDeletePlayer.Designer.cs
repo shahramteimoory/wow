@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHardDeletePlayer));
             this.dgvPlayerHardDelete = new System.Windows.Forms.DataGridView();
-            this.txtPlayerFilter = new System.Windows.Forms.TextBox();
             this.PlayerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PlayerFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HardDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.txtPlayerFilter = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlayerHardDelete)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,14 +57,6 @@
             this.dgvPlayerHardDelete.Size = new System.Drawing.Size(208, 160);
             this.dgvPlayerHardDelete.TabIndex = 0;
             this.dgvPlayerHardDelete.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlayerHardDelete_CellContentClick);
-            // 
-            // txtPlayerFilter
-            // 
-            this.txtPlayerFilter.Location = new System.Drawing.Point(11, 4);
-            this.txtPlayerFilter.Name = "txtPlayerFilter";
-            this.txtPlayerFilter.Size = new System.Drawing.Size(189, 20);
-            this.txtPlayerFilter.TabIndex = 1;
-            this.txtPlayerFilter.TextChanged += new System.EventHandler(this.txtPlayerFilter_TextChanged);
             // 
             // PlayerID
             // 
@@ -93,6 +86,14 @@
             this.HardDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.HardDelete.Width = 70;
             // 
+            // txtPlayerFilter
+            // 
+            this.txtPlayerFilter.Location = new System.Drawing.Point(11, 4);
+            this.txtPlayerFilter.Name = "txtPlayerFilter";
+            this.txtPlayerFilter.Size = new System.Drawing.Size(189, 20);
+            this.txtPlayerFilter.TabIndex = 1;
+            this.txtPlayerFilter.TextChanged += new System.EventHandler(this.txtPlayerFilter_TextChanged);
+            // 
             // frmHardDeletePlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -101,6 +102,7 @@
             this.Controls.Add(this.txtPlayerFilter);
             this.Controls.Add(this.dgvPlayerHardDelete);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmHardDeletePlayer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

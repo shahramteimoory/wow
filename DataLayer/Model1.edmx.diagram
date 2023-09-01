@@ -5,15 +5,18 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="db5e7be97cb44dc49a763471046e9006" Name="Diagram1">
-        <EntityTypeShape EntityType="LichKingDBModel.Boost" Width="1.5" PointX="7.875" PointY="3.5" />
-        <EntityTypeShape EntityType="LichKingDBModel.Dungeon" Width="1.5" PointX="11.125" PointY="5.25" />
-        <EntityTypeShape EntityType="LichKingDBModel.Player" Width="1.5" PointX="3.25" PointY="1.375" />
-        <EntityTypeShape EntityType="LichKingDBModel.Role" Width="1.5" PointX="7.5" PointY="0.5" />
-        <EntityTypeShape EntityType="LichKingDBModel.Run" Width="1.5" PointX="10.375" PointY="1.75" />
-        <EntityTypeShape EntityType="LichKingDBModel.Transaction" Width="1.5" PointX="5.375" PointY="4.5" />
+        <EntityTypeShape EntityType="LichKingDBModel.Boost" Width="1.5" PointX="6.125" PointY="0.5" />
+        <EntityTypeShape EntityType="LichKingDBModel.Character" Width="1.5" PointX="8.125" PointY="5.375" />
+        <EntityTypeShape EntityType="LichKingDBModel.Dungeon" Width="1.5" PointX="3" PointY="0.5" />
+        <EntityTypeShape EntityType="LichKingDBModel.Player" Width="1.5" PointX="4.875" PointY="5.125" />
+        <EntityTypeShape EntityType="LichKingDBModel.Role" Width="1.5" PointX="8.375" PointY="1" />
+        <EntityTypeShape EntityType="LichKingDBModel.Run" Width="1.5" PointX="1" PointY="3.375" />
+        <EntityTypeShape EntityType="LichKingDBModel.sysdiagrams" Width="1.5" PointX="1" PointY="0.5" />
+        <EntityTypeShape EntityType="LichKingDBModel.Transaction" Width="1.5" PointX="2.875" PointY="6" />
         <AssociationConnector Association="LichKingDBModel.FK_Boost_Dungeon" />
         <AssociationConnector Association="LichKingDBModel.FK_Boost_Player" />
         <AssociationConnector Association="LichKingDBModel.FK_Run_Boost" />
+        <AssociationConnector Association="LichKingDBModel.FK_Character_Player" />
         <AssociationConnector Association="LichKingDBModel.FK_Run_Player" />
         <AssociationConnector Association="LichKingDBModel.FK_Transaction_Player" />
         <AssociationConnector Association="LichKingDBModel.FK_Run_Role" />

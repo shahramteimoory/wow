@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRecoveryPlayer));
             this.dgvRecoveryPlayer = new System.Windows.Forms.DataGridView();
             this.PlayerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PlayerFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -99,6 +100,7 @@
             this.Controls.Add(this.txtPlayerFilter);
             this.Controls.Add(this.dgvRecoveryPlayer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmRecoveryPlayer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Recovery";

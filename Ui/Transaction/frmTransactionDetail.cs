@@ -22,6 +22,7 @@ namespace Ui.Transaction
                 var trans = db.TransactionRepository.GetTransactionByPlayerID(playerID);
                 string player = db.PlayerRepository.GetPlayerNameById(playerID);
                 string type;
+                string method;
                 dgvTransactionDetail.Rows.Clear();
                 foreach (var item in trans)
                 {
@@ -33,8 +34,16 @@ namespace Ui.Transaction
                     {
                         type = "Creditor";
                     }
+                    if (item.IsGold==true)
+                    {
+                        method = "Gold";
+                    }
+                    else
+                    {
+                        method = "Money";
+                    }
 
-                    dgvTransactionDetail.Rows.Add(item.TransactionID, player, item.Amount, type, item.DateTime, item.Title, item.Image);
+                    dgvTransactionDetail.Rows.Add(item.TransactionID, player, item.Amount, type, method, item.DateTime, item.Title, item.Image);
 
                 }
 

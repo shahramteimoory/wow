@@ -29,7 +29,14 @@ namespace Ui.Boost
                 lblAdvID.Text = boost.PlayerID.ToString();
                 lblAdvName.Text = $"Advertiser: {boost.Player.FullName}";
                 BoostDate = boost.DateTime;
-
+               if(boost.IsGold == true)
+                {
+                    rbGold.Checked = true;
+                }
+               else
+                {
+                    rbMoney.Checked = true;
+                }
                 var run = boost.Run;
                 dgvRuns.Rows.Clear();
                 foreach (var item in run)
@@ -66,31 +73,7 @@ namespace Ui.Boost
                 {
                     dgvRuns.Rows.RemoveAt(e.RowIndex);
                 }
-                //switch (e.ColumnIndex)
-                //{
-                //    case 6:
-                //        //update
 
-                //        break;
-                //    case 7:
-                //        //delete
-                //        using (UnitOfWork db = new UnitOfWork())
-                //        {
-                //            bool res = db.RunRepository.DeleteRun(int.Parse(dgvRuns.Rows[e.RowIndex].Cells[0].Value.ToString()));
-                //            db.Save();
-
-                //            if (res)
-                //            {
-                //                MessageBox.Show("Run Deleted");
-                //                frmRefresh();
-                //            }
-
-                //        }
-
-                //            break;
-                //    default:
-                //        break;
-                //}
             }
         }
 
@@ -241,7 +224,14 @@ namespace Ui.Boost
                 boost.Lvl = int.Parse(cbDungeonLvl.SelectedItem.ToString());
                 boost.DungeonID = int.Parse(cbDungeonName.SelectedValue.ToString());
                 boost.Mine = chbOwner.Checked;
-
+                if (rbGold.Checked)
+                {
+                    boost.IsGold = true;
+                }
+                else
+                {
+                    boost.IsGold= false;
+                }
                 List<DataLayer.Run> runs = new List<DataLayer.Run>();
 
                 for (int i = 0; i < dgvRuns.Rows.Count; i++)

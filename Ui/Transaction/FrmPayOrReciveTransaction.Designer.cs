@@ -42,13 +42,15 @@
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnUploadFrpmPC = new System.Windows.Forms.Button();
             this.pcTransaction = new System.Windows.Forms.PictureBox();
+            this.btnUploadFrpmPC = new System.Windows.Forms.Button();
             this.rbFromPC = new System.Windows.Forms.RadioButton();
             this.rbFromURL = new System.Windows.Forms.RadioButton();
             this.txtImageURL = new System.Windows.Forms.TextBox();
             this.requiredFieldValidator1 = new ValidationComponents.RequiredFieldValidator(this.components);
             this.requiredFieldValidator2 = new ValidationComponents.RequiredFieldValidator(this.components);
+            this.rbMoney = new System.Windows.Forms.RadioButton();
+            this.rbGold = new System.Windows.Forms.RadioButton();
             this.gpTransaction.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcTransaction)).BeginInit();
@@ -104,6 +106,8 @@
             // 
             // gpTransaction
             // 
+            this.gpTransaction.Controls.Add(this.rbMoney);
+            this.gpTransaction.Controls.Add(this.rbGold);
             this.gpTransaction.Controls.Add(this.label3);
             this.gpTransaction.Controls.Add(this.txtAmount);
             this.gpTransaction.Controls.Add(this.label2);
@@ -168,16 +172,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Image";
             // 
-            // btnUploadFrpmPC
-            // 
-            this.btnUploadFrpmPC.Location = new System.Drawing.Point(212, 171);
-            this.btnUploadFrpmPC.Name = "btnUploadFrpmPC";
-            this.btnUploadFrpmPC.Size = new System.Drawing.Size(92, 23);
-            this.btnUploadFrpmPC.TabIndex = 11;
-            this.btnUploadFrpmPC.Text = "UploadImage";
-            this.btnUploadFrpmPC.UseVisualStyleBackColor = true;
-            this.btnUploadFrpmPC.Click += new System.EventHandler(this.button1_Click);
-            // 
             // pcTransaction
             // 
             this.pcTransaction.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -188,6 +182,16 @@
             this.pcTransaction.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcTransaction.TabIndex = 10;
             this.pcTransaction.TabStop = false;
+            // 
+            // btnUploadFrpmPC
+            // 
+            this.btnUploadFrpmPC.Location = new System.Drawing.Point(212, 171);
+            this.btnUploadFrpmPC.Name = "btnUploadFrpmPC";
+            this.btnUploadFrpmPC.Size = new System.Drawing.Size(92, 23);
+            this.btnUploadFrpmPC.TabIndex = 11;
+            this.btnUploadFrpmPC.Text = "UploadImage";
+            this.btnUploadFrpmPC.UseVisualStyleBackColor = true;
+            this.btnUploadFrpmPC.Click += new System.EventHandler(this.button1_Click);
             // 
             // rbFromPC
             // 
@@ -236,6 +240,28 @@
             this.requiredFieldValidator2.ErrorMessage = "Please Enter Title";
             this.requiredFieldValidator2.Icon = ((System.Drawing.Icon)(resources.GetObject("requiredFieldValidator2.Icon")));
             // 
+            // rbMoney
+            // 
+            this.rbMoney.AutoSize = true;
+            this.rbMoney.Location = new System.Drawing.Point(159, 46);
+            this.rbMoney.Name = "rbMoney";
+            this.rbMoney.Size = new System.Drawing.Size(57, 17);
+            this.rbMoney.TabIndex = 77;
+            this.rbMoney.Text = "Money";
+            this.rbMoney.UseVisualStyleBackColor = true;
+            // 
+            // rbGold
+            // 
+            this.rbGold.AutoSize = true;
+            this.rbGold.Checked = true;
+            this.rbGold.Location = new System.Drawing.Point(222, 46);
+            this.rbGold.Name = "rbGold";
+            this.rbGold.Size = new System.Drawing.Size(47, 17);
+            this.rbGold.TabIndex = 76;
+            this.rbGold.TabStop = true;
+            this.rbGold.Text = "Gold";
+            this.rbGold.UseVisualStyleBackColor = true;
+            // 
             // FrmPayOrReciveTransaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -254,6 +280,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblFrmType);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmPayOrReciveTransaction";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -289,5 +316,7 @@
         private System.Windows.Forms.RadioButton rbFromPC;
         private System.Windows.Forms.RadioButton rbFromURL;
         private System.Windows.Forms.TextBox txtImageURL;
+        private System.Windows.Forms.RadioButton rbMoney;
+        private System.Windows.Forms.RadioButton rbGold;
     }
 }

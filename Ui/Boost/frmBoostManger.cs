@@ -39,6 +39,11 @@ namespace Ui.Boost
             {
                 dgvPlayers.AutoGenerateColumns = false;
                 dgvPlayers.DataSource = db.PlayerRepository.GetAllPlayer();
+                if (dgvPlayers.RowCount == 0)
+                {
+                    MessageBox.Show("Please add Player for boost ");
+                    this.Close();
+                } 
             }
         }
         private void frmBoostManger_Load(object sender, EventArgs e)
@@ -50,6 +55,11 @@ namespace Ui.Boost
                 cbDungeonName.DataSource = List;
                 cbDungeonName.DisplayMember = "Name";
                 cbDungeonName.ValueMember = "DungeonID";
+                if (cbDungeonName.Items.Count == 0)
+                {
+                    MessageBox.Show("Please first Add Dungeon ");
+                    this.Close();
+                }
             }
             cbDungeonLvl.SelectedIndex = 0;
             frmRefresh();
@@ -185,7 +195,14 @@ namespace Ui.Boost
                     boost.Lvl = int.Parse(cbDungeonLvl.SelectedItem.ToString());
                     boost.DungeonID = int.Parse(cbDungeonName.SelectedValue.ToString());
                     boost.Mine = chbOwner.Checked;
-
+                    if (rbGold.Checked)
+                    {
+                        boost.IsGold = true;
+                    }
+                    else
+                    {
+                        boost.IsGold = false;
+                    }
 
                     List<DataLayer.Run> runs = new List<DataLayer.Run>();
 
