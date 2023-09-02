@@ -38,12 +38,18 @@ namespace Ui.Boost
             using (UnitOfWork db = new UnitOfWork())
             {
                 dgvPlayers.AutoGenerateColumns = false;
-                dgvPlayers.DataSource = db.PlayerRepository.GetAllPlayer();
+                var play = db.PlayerRepository.GetAllPlayer();
+                foreach (var player in play)
+                {
+                    dgvPlayers.Rows.Add(player.PlayerID, player.FullName, "Insert");
+                }
+
+
                 if (dgvPlayers.RowCount == 0)
                 {
                     MessageBox.Show("Please add Player for boost ");
                     this.Close();
-                } 
+                }
             }
         }
         private void frmBoostManger_Load(object sender, EventArgs e)
@@ -98,6 +104,10 @@ namespace Ui.Boost
                     lblAdvName.Text = form.lblName.Text;
                     lblAdvID.Text = form.lblID.Text;
                     txtPlayerNameFilter.Text = lblAdvName.Text;
+                    if (lblAdvID.Text == "0")
+                    {
+                        chbOwner.Checked = true;
+                    }
                 }
                 else
                 {
@@ -131,6 +141,10 @@ namespace Ui.Boost
             {
                 dgvRuns.Rows.Add(dgvPlayers.Rows[e.RowIndex].Cells[0].Value, RoleID, dgvPlayers.Rows[e.RowIndex].Cells[1].Value, RoleName);
                 ComputeCut();
+                for (int i = 0; i < dgvRuns.Rows.Count; i++)
+                {
+                    dgvRuns.Rows[i].Cells[5].Value = "Delete";
+                }
             }
         }
 

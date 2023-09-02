@@ -49,12 +49,29 @@
             this.BoostID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Method = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column14 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.lblAmount = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblAmountMoney = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblStatusMoney = new System.Windows.Forms.Label();
+            this.dgvTransactionMoney = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cCreditorM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cDebtorM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cBallanceM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cStatusM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cTickM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransaction)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRun)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTransactionMoney)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvTransaction
@@ -72,14 +89,13 @@
             this.cBallance,
             this.cStatus,
             this.cTick});
-            this.dgvTransaction.Location = new System.Drawing.Point(14, 12);
+            this.dgvTransaction.Location = new System.Drawing.Point(6, 16);
             this.dgvTransaction.Name = "dgvTransaction";
             this.dgvTransaction.ReadOnly = true;
             this.dgvTransaction.RowHeadersVisible = false;
             this.dgvTransaction.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTransaction.Size = new System.Drawing.Size(658, 177);
+            this.dgvTransaction.Size = new System.Drawing.Size(679, 167);
             this.dgvTransaction.TabIndex = 2;
-            this.dgvTransaction.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTransaction_CellContentClick);
             // 
             // Column3
             // 
@@ -139,16 +155,16 @@
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.Location = new System.Drawing.Point(202, 396);
+            this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.Location = new System.Drawing.Point(258, 586);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(59, 20);
+            this.lblStatus.Size = new System.Drawing.Size(47, 15);
             this.lblStatus.TabIndex = 4;
             this.lblStatus.Text = "label1";
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(276, 366);
+            this.btnClose.Location = new System.Drawing.Point(276, 549);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 5;
@@ -159,7 +175,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 348);
+            this.label1.Location = new System.Drawing.Point(13, 559);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 13);
             this.label1.TabIndex = 6;
@@ -169,7 +185,7 @@
             // 
             this.lblPlayerName.AutoSize = true;
             this.lblPlayerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlayerName.Location = new System.Drawing.Point(79, 348);
+            this.lblPlayerName.Location = new System.Drawing.Point(69, 559);
             this.lblPlayerName.Name = "lblPlayerName";
             this.lblPlayerName.Size = new System.Drawing.Size(50, 16);
             this.lblPlayerName.TabIndex = 7;
@@ -178,11 +194,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 396);
+            this.label2.Location = new System.Drawing.Point(13, 587);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.Size = new System.Drawing.Size(74, 13);
             this.label2.TabIndex = 8;
-            this.label2.Text = "Amount :";
+            this.label2.Text = "Amount Gold :";
             // 
             // dgvRun
             // 
@@ -197,14 +213,15 @@
             this.BoostID,
             this.Column11,
             this.Column12,
+            this.Method,
             this.Column13,
             this.Column14});
-            this.dgvRun.Location = new System.Drawing.Point(14, 195);
+            this.dgvRun.Location = new System.Drawing.Point(4, 384);
             this.dgvRun.Name = "dgvRun";
             this.dgvRun.ReadOnly = true;
             this.dgvRun.RowHeadersVisible = false;
             this.dgvRun.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRun.Size = new System.Drawing.Size(658, 110);
+            this.dgvRun.Size = new System.Drawing.Size(679, 137);
             this.dgvRun.TabIndex = 9;
             this.dgvRun.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRun_CellContentClick);
             // 
@@ -238,9 +255,16 @@
             // 
             // Column12
             // 
-            this.Column12.HeaderText = "Gold";
+            this.Column12.HeaderText = "Amount";
             this.Column12.Name = "Column12";
             this.Column12.ReadOnly = true;
+            // 
+            // Method
+            // 
+            this.Method.HeaderText = "Method";
+            this.Method.Name = "Method";
+            this.Method.ReadOnly = true;
+            this.Method.Width = 80;
             // 
             // Column13
             // 
@@ -265,7 +289,7 @@
             // 
             this.lblAmount.AutoSize = true;
             this.lblAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmount.Location = new System.Drawing.Point(79, 396);
+            this.lblAmount.Location = new System.Drawing.Point(102, 587);
             this.lblAmount.Name = "lblAmount";
             this.lblAmount.Size = new System.Drawing.Size(50, 16);
             this.lblAmount.TabIndex = 10;
@@ -275,26 +299,157 @@
             // 
             this.panel1.BackgroundImage = global::Fury.Properties.Resources.desktop_wallpaper_deathwing_2019_games_world_of_warcraft;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(357, 311);
+            this.panel1.Location = new System.Drawing.Point(357, 527);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(326, 120);
             this.panel1.TabIndex = 11;
+            // 
+            // lblAmountMoney
+            // 
+            this.lblAmountMoney.AutoSize = true;
+            this.lblAmountMoney.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmountMoney.Location = new System.Drawing.Point(103, 619);
+            this.lblAmountMoney.Name = "lblAmountMoney";
+            this.lblAmountMoney.Size = new System.Drawing.Size(50, 16);
+            this.lblAmountMoney.TabIndex = 14;
+            this.lblAmountMoney.Text = "label3";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 619);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(84, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Amount Money :";
+            // 
+            // lblStatusMoney
+            // 
+            this.lblStatusMoney.AutoSize = true;
+            this.lblStatusMoney.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatusMoney.Location = new System.Drawing.Point(249, 620);
+            this.lblStatusMoney.Name = "lblStatusMoney";
+            this.lblStatusMoney.Size = new System.Drawing.Size(47, 15);
+            this.lblStatusMoney.TabIndex = 12;
+            this.lblStatusMoney.Text = "label1";
+            // 
+            // dgvTransactionMoney
+            // 
+            this.dgvTransactionMoney.AllowUserToAddRows = false;
+            this.dgvTransactionMoney.AllowUserToDeleteRows = false;
+            this.dgvTransactionMoney.AllowUserToResizeColumns = false;
+            this.dgvTransactionMoney.AllowUserToResizeRows = false;
+            this.dgvTransactionMoney.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTransactionMoney.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.cCreditorM,
+            this.cDebtorM,
+            this.cBallanceM,
+            this.cStatusM,
+            this.cTickM});
+            this.dgvTransactionMoney.Location = new System.Drawing.Point(0, 19);
+            this.dgvTransactionMoney.Name = "dgvTransactionMoney";
+            this.dgvTransactionMoney.ReadOnly = true;
+            this.dgvTransactionMoney.RowHeadersVisible = false;
+            this.dgvTransactionMoney.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTransactionMoney.Size = new System.Drawing.Size(679, 155);
+            this.dgvTransactionMoney.TabIndex = 15;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dgvTransaction);
+            this.groupBox1.Location = new System.Drawing.Point(-2, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(685, 189);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Gold";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dgvTransactionMoney);
+            this.groupBox2.Location = new System.Drawing.Point(4, 198);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(679, 180);
+            this.groupBox2.TabIndex = 17;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Money";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "DateTime";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn1.Width = 140;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Title";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // cCreditorM
+            // 
+            this.cCreditorM.HeaderText = "Creditor";
+            this.cCreditorM.Name = "cCreditorM";
+            this.cCreditorM.ReadOnly = true;
+            this.cCreditorM.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cCreditorM.Width = 60;
+            // 
+            // cDebtorM
+            // 
+            this.cDebtorM.HeaderText = "Debtor";
+            this.cDebtorM.Name = "cDebtorM";
+            this.cDebtorM.ReadOnly = true;
+            this.cDebtorM.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cDebtorM.Width = 60;
+            // 
+            // cBallanceM
+            // 
+            this.cBallanceM.HeaderText = "Ballance";
+            this.cBallanceM.Name = "cBallanceM";
+            this.cBallanceM.ReadOnly = true;
+            this.cBallanceM.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cBallanceM.Width = 60;
+            // 
+            // cStatusM
+            // 
+            this.cStatusM.HeaderText = "Status";
+            this.cStatusM.Name = "cStatusM";
+            this.cStatusM.ReadOnly = true;
+            this.cStatusM.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cStatusM.Width = 65;
+            // 
+            // cTickM
+            // 
+            this.cTickM.HeaderText = "Column1";
+            this.cTickM.Name = "cTickM";
+            this.cTickM.ReadOnly = true;
+            this.cTickM.Visible = false;
             // 
             // frmReport
             // 
             this.AcceptButton = this.btnClose;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 434);
+            this.ClientSize = new System.Drawing.Size(686, 644);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.dgvRun);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.lblAmountMoney);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblStatusMoney);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblAmount);
-            this.Controls.Add(this.dgvRun);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblPlayerName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblStatus);
-            this.Controls.Add(this.dgvTransaction);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmReport";
@@ -303,6 +458,9 @@
             this.Load += new System.EventHandler(this.frmReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransaction)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRun)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTransactionMoney)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -325,12 +483,26 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cBallance;
         private System.Windows.Forms.DataGridViewTextBoxColumn cStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn cTick;
+        private System.Windows.Forms.Label lblAmountMoney;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblStatusMoney;
+        private System.Windows.Forms.DataGridView dgvTransactionMoney;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn BoostID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Method;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.DataGridViewButtonColumn Column14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cCreditorM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cDebtorM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cBallanceM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cStatusM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTickM;
     }
 }

@@ -111,7 +111,11 @@ namespace Ui.Boost
                     {
                         lblAdvName.Text = $"Advertiser: {form.lblName.Text}";
                         lblAdvID.Text = form.lblID.Text;
-                        txtPlayerNameFilter.Text = lblAdvName.Text;
+                        
+                        if (lblAdvID.Text == "0")
+                        {
+                            chbOwner.Checked = true;
+                        }
                     }
                     else
                     {

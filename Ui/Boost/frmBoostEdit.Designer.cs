@@ -290,9 +290,9 @@
             this.lblAdvName.AutoSize = true;
             this.lblAdvName.Location = new System.Drawing.Point(9, 7);
             this.lblAdvName.Name = "lblAdvName";
-            this.lblAdvName.Size = new System.Drawing.Size(60, 13);
+            this.lblAdvName.Size = new System.Drawing.Size(87, 13);
             this.lblAdvName.TabIndex = 66;
-            this.lblAdvName.Text = "Advertiser: ";
+            this.lblAdvName.Text = "Advertiser: its me";
             // 
             // chbOwner
             // 

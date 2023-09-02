@@ -68,7 +68,7 @@
             this.btnReport});
             this.toolStrip2.Location = new System.Drawing.Point(0, 24);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(804, 62);
+            this.toolStrip2.Size = new System.Drawing.Size(964, 62);
             this.toolStrip2.TabIndex = 1;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -151,9 +151,9 @@
             this.lblWowTokenPrice,
             this.toolStripStatusLabel2,
             this.lblVersion});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 520);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 677);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(804, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(964, 22);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -184,8 +184,8 @@
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(88, 17);
-            this.toolStripStatusLabel2.Text = "                           ";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(241, 17);
+            this.toolStripStatusLabel2.Text = "                                                                              ";
             // 
             // lblVersion
             // 
@@ -207,7 +207,7 @@
             this.panel1.ForeColor = System.Drawing.Color.Crimson;
             this.panel1.Location = new System.Drawing.Point(0, 86);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(804, 456);
+            this.panel1.Size = new System.Drawing.Size(964, 613);
             this.panel1.TabIndex = 2;
             // 
             // menuStrip1
@@ -217,7 +217,7 @@
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(804, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(964, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -261,7 +261,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 542);
+            this.ClientSize = new System.Drawing.Size(964, 699);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip2);
