@@ -109,6 +109,12 @@
     <Compile Include="Boost\frmBoostSetting.Designer.cs">
       <DependentUpon>frmBoostSetting.cs</DependentUpon>
     </Compile>
+    <Compile Include="Character\frmInsertCharacter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Character\frmInsertCharacter.Designer.cs">
+      <DependentUpon>frmInsertCharacter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dungeon\frmDungeonManger.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +262,9 @@
     <EmbeddedResource Include="Boost\frmBoostSetting.resx">
       <DependentUpon>frmBoostSetting.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Character\frmInsertCharacter.resx">
+      <DependentUpon>frmInsertCharacter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dungeon\frmDungeonManger.resx">
       <DependentUpon>frmDungeonManger.cs</DependentUpon>
     </EmbeddedResource>
@@ -302,6 +311,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Transaction\frmEditTransaction.resx">
       <DependentUpon>frmEditTransaction.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Transaction\FrmPayOrReciveTransaction.resx">
       <DependentUpon>FrmPayOrReciveTransaction.cs</DependentUpon>
@@ -404,6 +414,11 @@
     <None Include="Resources\desktop-wallpaper-deathwing-2019-games-world-of-warcraft.jpg" />
     <EmbeddedResource Include="Resources\W 2.ico" />
     <None Include="Resources\list.png" />
+    <None Include="Resources\social-media.png" />
+    <None Include="Resources\recovery-arrow.png" />
+    <None Include="Resources\plus-sign.png" />
+    <None Include="Resources\hordleft.png" />
+    <None Include="Resources\Allianceright.png" />
     <Content Include="W 2.ico" />
     <Content Include="WinValidator\New Text Document.txt" />
   </ItemGroup>

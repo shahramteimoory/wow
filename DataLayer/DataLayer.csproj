@@ -90,6 +90,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Repository\IBoostInterface.cs" />
+    <Compile Include="Repository\ICharacterInterface.cs" />
     <Compile Include="Repository\IDungeonInterface.cs" />
     <Compile Include="Repository\IPlayerInterface.cs" />
     <Compile Include="Repository\IRunInterface.cs" />
@@ -101,6 +102,7 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Services\BoostRepository.cs" />
+    <Compile Include="Services\CharacterRepository.cs" />
     <Compile Include="Services\DungeonRepository.cs" />
     <Compile Include="Services\PlayerRepository.cs" />
     <Compile Include="Services\RunRepository.cs" />

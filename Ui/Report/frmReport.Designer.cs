@@ -58,8 +58,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblStatusMoney = new System.Windows.Forms.Label();
             this.dgvTransactionMoney = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cCreditorM = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +65,8 @@
             this.cBallanceM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cStatusM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTickM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransaction)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRun)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactionMoney)).BeginInit();
@@ -356,26 +356,6 @@
             this.dgvTransactionMoney.Size = new System.Drawing.Size(679, 155);
             this.dgvTransactionMoney.TabIndex = 15;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dgvTransaction);
-            this.groupBox1.Location = new System.Drawing.Point(-2, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(685, 189);
-            this.groupBox1.TabIndex = 16;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Gold";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.dgvTransactionMoney);
-            this.groupBox2.Location = new System.Drawing.Point(4, 198);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(679, 180);
-            this.groupBox2.TabIndex = 17;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Money";
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "DateTime";
@@ -430,6 +410,26 @@
             this.cTickM.Name = "cTickM";
             this.cTickM.ReadOnly = true;
             this.cTickM.Visible = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dgvTransaction);
+            this.groupBox1.Location = new System.Drawing.Point(-2, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(685, 189);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Gold";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dgvTransactionMoney);
+            this.groupBox2.Location = new System.Drawing.Point(4, 198);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(679, 180);
+            this.groupBox2.TabIndex = 17;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Money";
             // 
             // frmReport
             // 

@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBoostSetting));
             this.dgvBoostList = new System.Windows.Forms.DataGridView();
+            this.BoostID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PlayerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DungeonID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gold = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lvl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BoostDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnDetailBoost = new System.Windows.Forms.ToolStripButton();
             this.btnEdit = new System.Windows.Forms.ToolStripButton();
@@ -43,12 +49,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtfilter = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.BoostID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PlayerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DungeonID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gold = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Lvl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BoostDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBoostList)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.gbFilter.SuspendLayout();
@@ -75,6 +75,58 @@
             this.dgvBoostList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBoostList.Size = new System.Drawing.Size(539, 171);
             this.dgvBoostList.TabIndex = 0;
+            // 
+            // BoostID
+            // 
+            this.BoostID.DataPropertyName = "BoostID";
+            this.BoostID.HeaderText = "BoostID";
+            this.BoostID.Name = "BoostID";
+            this.BoostID.ReadOnly = true;
+            this.BoostID.Visible = false;
+            // 
+            // PlayerID
+            // 
+            this.PlayerID.DataPropertyName = "PlayerID";
+            this.PlayerID.HeaderText = "AdvertiserName";
+            this.PlayerID.Name = "PlayerID";
+            this.PlayerID.ReadOnly = true;
+            this.PlayerID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.PlayerID.Width = 150;
+            // 
+            // DungeonID
+            // 
+            this.DungeonID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DungeonID.DataPropertyName = "DungeonID";
+            this.DungeonID.HeaderText = "DungeonName";
+            this.DungeonID.Name = "DungeonID";
+            this.DungeonID.ReadOnly = true;
+            this.DungeonID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Gold
+            // 
+            this.Gold.DataPropertyName = "Gold";
+            this.Gold.HeaderText = "Pot";
+            this.Gold.Name = "Gold";
+            this.Gold.ReadOnly = true;
+            this.Gold.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Gold.Width = 80;
+            // 
+            // Lvl
+            // 
+            this.Lvl.DataPropertyName = "Lvl";
+            this.Lvl.HeaderText = "Lvl";
+            this.Lvl.Name = "Lvl";
+            this.Lvl.ReadOnly = true;
+            this.Lvl.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Lvl.Width = 40;
+            // 
+            // BoostDateTime
+            // 
+            this.BoostDateTime.DataPropertyName = "DateTime";
+            this.BoostDateTime.HeaderText = "DateTime";
+            this.BoostDateTime.Name = "BoostDateTime";
+            this.BoostDateTime.ReadOnly = true;
+            this.BoostDateTime.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // toolStrip1
             // 
@@ -214,58 +266,6 @@
             this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = " Filter";
-            // 
-            // BoostID
-            // 
-            this.BoostID.DataPropertyName = "BoostID";
-            this.BoostID.HeaderText = "BoostID";
-            this.BoostID.Name = "BoostID";
-            this.BoostID.ReadOnly = true;
-            this.BoostID.Visible = false;
-            // 
-            // PlayerID
-            // 
-            this.PlayerID.DataPropertyName = "PlayerID";
-            this.PlayerID.HeaderText = "AdvertiserName";
-            this.PlayerID.Name = "PlayerID";
-            this.PlayerID.ReadOnly = true;
-            this.PlayerID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.PlayerID.Width = 150;
-            // 
-            // DungeonID
-            // 
-            this.DungeonID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DungeonID.DataPropertyName = "DungeonID";
-            this.DungeonID.HeaderText = "DungeonName";
-            this.DungeonID.Name = "DungeonID";
-            this.DungeonID.ReadOnly = true;
-            this.DungeonID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Gold
-            // 
-            this.Gold.DataPropertyName = "Gold";
-            this.Gold.HeaderText = "Pot";
-            this.Gold.Name = "Gold";
-            this.Gold.ReadOnly = true;
-            this.Gold.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Gold.Width = 80;
-            // 
-            // Lvl
-            // 
-            this.Lvl.DataPropertyName = "Lvl";
-            this.Lvl.HeaderText = "Lvl";
-            this.Lvl.Name = "Lvl";
-            this.Lvl.ReadOnly = true;
-            this.Lvl.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Lvl.Width = 40;
-            // 
-            // BoostDateTime
-            // 
-            this.BoostDateTime.DataPropertyName = "DateTime";
-            this.BoostDateTime.HeaderText = "DateTime";
-            this.BoostDateTime.Name = "BoostDateTime";
-            this.BoostDateTime.ReadOnly = true;
-            this.BoostDateTime.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // frmBoostSetting
             // 

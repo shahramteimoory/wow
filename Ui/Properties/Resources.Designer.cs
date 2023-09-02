@@ -83,6 +83,16 @@ namespace Fury.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Allianceright {
+            get {
+                object obj = ResourceManager.GetObject("Allianceright", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap arrowdown {
             get {
                 object obj = ResourceManager.GetObject("arrowdown", resourceCulture);
@@ -263,6 +273,16 @@ namespace Fury.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap hordleft {
+            get {
+                object obj = ResourceManager.GetObject("hordleft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap icons8_delete_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-delete-100", resourceCulture);
@@ -323,6 +343,26 @@ namespace Fury.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap plus_sign {
+            get {
+                object obj = ResourceManager.GetObject("plus-sign", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap recovery_arrow {
+            get {
+                object obj = ResourceManager.GetObject("recovery-arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Report {
             get {
                 object obj = ResourceManager.GetObject("Report", resourceCulture);
@@ -356,6 +396,16 @@ namespace Fury.Properties {
         public static System.Drawing.Bitmap RightDungeon {
             get {
                 object obj = ResourceManager.GetObject("RightDungeon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap social_media {
+            get {
+                object obj = ResourceManager.GetObject("social-media", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

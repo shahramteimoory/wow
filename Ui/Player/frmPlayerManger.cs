@@ -1,4 +1,5 @@
 ﻿using DataLayer.Context;
+using Fury.Character;
 using Fury.Player;
 using System;
 using System.Windows.Forms;
@@ -132,18 +133,26 @@ namespace Ui.Player
             }
         }
 
-        private void btnHardDeletePlayer_Click(object sender, EventArgs e)
+        private void btnRecovery_Click(object sender, EventArgs e)
+        {
+            frmRecoveryPlayer frmRecoveryPlayer = new frmRecoveryPlayer();
+            frmRecoveryPlayer.ShowDialog();
+            frmRefresh();
+        }
+
+        private void btnHardDelete_Click(object sender, EventArgs e)
         {
             frmHardDeletePlayer frmHardDeletePlayer = new frmHardDeletePlayer();
             frmHardDeletePlayer.ShowDialog();
             frmRefresh();
         }
 
-        private void btnRecoveryPlayer_Click(object sender, EventArgs e)
+        private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            frmRecoveryPlayer frmRecoveryPlayer = new frmRecoveryPlayer();
-            frmRecoveryPlayer.ShowDialog();
-            frmRefresh();
+            frmInsertCharacter frmInsertCharacter = new frmInsertCharacter();
+            frmInsertCharacter.playerName = dgvPlayerList.CurrentRow.Cells[2].Value.ToString();
+            frmInsertCharacter.PlayerID = Convert.ToInt32(dgvPlayerList.CurrentRow.Cells[0].Value);
+            frmInsertCharacter.ShowDialog();
         }
     }
 }

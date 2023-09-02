@@ -124,17 +124,23 @@
   <data name="icons8-delete-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-delete-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="hordleft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hordleft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Gold 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Gold 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RightDungeon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RightDungeon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="list" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="goldleft" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\goldleft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Edit1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Edit1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="recovery-arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\recovery-arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Leftwalkery" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Leftwalkery.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,8 +166,8 @@
   <data name="Edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DPS1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DPS2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="plus-sign" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plus-sign.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ezgif.com-webp-to-png (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ezgif.com-webp-to-png (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,11 +175,14 @@
   <data name="images (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="social-media" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\social-media.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Addplayer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Addplayer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="right dh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\right dh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="W_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\W 2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Report" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Report.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,11 +202,14 @@
   <data name="arrowdown" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrowdown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="changes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\changes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="W_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\W 2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DPS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DPS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DPS1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DPS2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="arrowlup" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrowlup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,10 +223,13 @@
   <data name="Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Addplayer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Addplayer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Edit1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Edit1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="list" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="changes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\changes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Allianceright" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Allianceright.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

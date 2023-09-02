@@ -13,6 +13,7 @@ namespace DataLayer.Context
         private IBoostInterface _BoostRepository;
         private IRunInterface _RunRepository;
         private ITransactionInterface _TransactionRepository;
+        private ICharacterInterface _CharacterRepository;
         public IPlayerInterface PlayerRepository
         {
             get
@@ -24,7 +25,6 @@ namespace DataLayer.Context
                 return _PlayerRepository;
             }
         }
-
         public IDungeonInterface DungeonRepository
         {
             get
@@ -69,7 +69,17 @@ namespace DataLayer.Context
                 return _TransactionRepository;
             }
         }
-
+        public ICharacterInterface CharacterRepository
+        {
+            get
+            {
+                if (_CharacterRepository == null)
+                {
+                    _CharacterRepository=new CharacterRepository(db);
+                }
+                return _CharacterRepository;
+            }
+        }
         public void Dispose()
         {
             db.Dispose();

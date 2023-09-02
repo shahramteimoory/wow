@@ -31,6 +31,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTransactionDetail));
             this.dgvTransactionDetail = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Method = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.pcTransactionDetail = new System.Windows.Forms.PictureBox();
@@ -42,15 +51,6 @@
             this.btnEdit = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.btnDelete = new System.Windows.Forms.ToolStripButton();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Method = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactionDetail)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcTransactionDetail)).BeginInit();
@@ -83,6 +83,79 @@
             this.dgvTransactionDetail.Size = new System.Drawing.Size(532, 150);
             this.dgvTransactionDetail.TabIndex = 0;
             this.dgvTransactionDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTransactionDetail_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "TransactionID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 130F;
+            this.Column2.HeaderText = "Player Name";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Amount";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Column4
+            // 
+            this.Column4.FillWeight = 80F;
+            this.Column4.HeaderText = "Type";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Method
+            // 
+            this.Method.HeaderText = "Method";
+            this.Method.Name = "Method";
+            this.Method.ReadOnly = true;
+            this.Method.Width = 60;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column5.FillWeight = 110F;
+            this.Column5.HeaderText = "DateTime";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Title";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column6.Visible = false;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "image";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Visible = false;
+            // 
+            // Column8
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Yellow;
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column8.HeaderText = "Select";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column8.Width = 40;
             // 
             // groupBox1
             // 
@@ -197,79 +270,6 @@
             this.btnDelete.Text = "Delete";
             this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "TransactionID";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 130F;
-            this.Column2.HeaderText = "Player Name";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Amount";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Column4
-            // 
-            this.Column4.FillWeight = 80F;
-            this.Column4.HeaderText = "Type";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Method
-            // 
-            this.Method.HeaderText = "Method";
-            this.Method.Name = "Method";
-            this.Method.ReadOnly = true;
-            this.Method.Width = 60;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.FillWeight = 110F;
-            this.Column5.HeaderText = "DateTime";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Title";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column6.Visible = false;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "image";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Visible = false;
-            // 
-            // Column8
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Yellow;
-            this.Column8.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Column8.HeaderText = "Select";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column8.Width = 40;
             // 
             // frmTransactionDetail
             // 

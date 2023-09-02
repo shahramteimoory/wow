@@ -36,6 +36,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.gpTransaction = new System.Windows.Forms.GroupBox();
+            this.rbMoney = new System.Windows.Forms.RadioButton();
+            this.rbGold = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,8 +51,6 @@
             this.txtImageURL = new System.Windows.Forms.TextBox();
             this.requiredFieldValidator1 = new ValidationComponents.RequiredFieldValidator(this.components);
             this.requiredFieldValidator2 = new ValidationComponents.RequiredFieldValidator(this.components);
-            this.rbMoney = new System.Windows.Forms.RadioButton();
-            this.rbGold = new System.Windows.Forms.RadioButton();
             this.gpTransaction.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcTransaction)).BeginInit();
@@ -118,6 +118,28 @@
             this.gpTransaction.TabIndex = 4;
             this.gpTransaction.TabStop = false;
             this.gpTransaction.Text = "Transaction";
+            // 
+            // rbMoney
+            // 
+            this.rbMoney.AutoSize = true;
+            this.rbMoney.Location = new System.Drawing.Point(159, 46);
+            this.rbMoney.Name = "rbMoney";
+            this.rbMoney.Size = new System.Drawing.Size(57, 17);
+            this.rbMoney.TabIndex = 77;
+            this.rbMoney.Text = "Money";
+            this.rbMoney.UseVisualStyleBackColor = true;
+            // 
+            // rbGold
+            // 
+            this.rbGold.AutoSize = true;
+            this.rbGold.Checked = true;
+            this.rbGold.Location = new System.Drawing.Point(222, 46);
+            this.rbGold.Name = "rbGold";
+            this.rbGold.Size = new System.Drawing.Size(47, 17);
+            this.rbGold.TabIndex = 76;
+            this.rbGold.TabStop = true;
+            this.rbGold.Text = "Gold";
+            this.rbGold.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -239,28 +261,6 @@
             this.requiredFieldValidator2.ControlToValidate = this.txtTitle;
             this.requiredFieldValidator2.ErrorMessage = "Please Enter Title";
             this.requiredFieldValidator2.Icon = ((System.Drawing.Icon)(resources.GetObject("requiredFieldValidator2.Icon")));
-            // 
-            // rbMoney
-            // 
-            this.rbMoney.AutoSize = true;
-            this.rbMoney.Location = new System.Drawing.Point(159, 46);
-            this.rbMoney.Name = "rbMoney";
-            this.rbMoney.Size = new System.Drawing.Size(57, 17);
-            this.rbMoney.TabIndex = 77;
-            this.rbMoney.Text = "Money";
-            this.rbMoney.UseVisualStyleBackColor = true;
-            // 
-            // rbGold
-            // 
-            this.rbGold.AutoSize = true;
-            this.rbGold.Checked = true;
-            this.rbGold.Location = new System.Drawing.Point(222, 46);
-            this.rbGold.Name = "rbGold";
-            this.rbGold.Size = new System.Drawing.Size(47, 17);
-            this.rbGold.TabIndex = 76;
-            this.rbGold.TabStop = true;
-            this.rbGold.Text = "Gold";
-            this.rbGold.UseVisualStyleBackColor = true;
             // 
             // FrmPayOrReciveTransaction
             // 

@@ -101,6 +101,8 @@
             this.Controls.Add(this.dgvRecoveryPlayer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmRecoveryPlayer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Recovery";
