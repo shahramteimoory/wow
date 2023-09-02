@@ -17,7 +17,14 @@ namespace Ui.Boost
             {
 
                 var boost = db.BoostRepository.GetBoostById(Boostid);
-                lblPot.Text = $"Pot Gold:{boost.Gold.ToString()}";
+                if (boost.IsGold==true)
+                {
+                    lblPot.Text = $"Pot Gold:{boost.Gold.ToString()}";
+                }
+                else
+                {
+                    lblPot.Text = $"Pot Money:{boost.Gold.ToString()}";
+                }
                 lblLvl.Text = $"Dungeon Level: {boost.Lvl.ToString()}";
                 LblDungeonName.Text = $"Dungeon Name :{boost.Dungeon.Name}";
 
