@@ -81,6 +81,16 @@ namespace Fury.Character
 
             }
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            frmInsertCharacter frmInsertCharacter= new frmInsertCharacter();
+            frmInsertCharacter.CharacterID = Convert.ToInt32(dgvCharacters.CurrentRow.Cells[0].Value.ToString());
+            frmInsertCharacter.playerName = PlayerName;
+            frmInsertCharacter.PlayerID = Playerid;
+            frmInsertCharacter.ShowDialog();
+            frmrefresh();
+        }
     }
 }
 

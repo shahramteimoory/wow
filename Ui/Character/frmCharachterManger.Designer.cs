@@ -181,6 +181,7 @@
             this.btnEdit.Size = new System.Drawing.Size(46, 35);
             this.btnEdit.Text = "   Edit  ";
             this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // toolStripLabel2
             // 

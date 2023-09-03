@@ -1,13 +1,5 @@
-﻿using DataLayer;
-using DataLayer.Context;
+﻿using DataLayer.Context;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ValidationComponents;
 
@@ -17,6 +9,7 @@ namespace Fury.Character
     {
         public string playerName;
         public int PlayerID;
+        public int CharacterID = 0;
         public frmInsertCharacter()
         {
             InitializeComponent();
@@ -29,38 +22,86 @@ namespace Fury.Character
 
         private void frmInsertCharacter_Load(object sender, EventArgs e)
         {
+            if (CharacterID == 0)
+            {
+
+                cbRegion.SelectedIndex = 0;
+            }
+            else
+            {
+                using (UnitOfWork db = new UnitOfWork())
+                {
+                    DataLayer.Character character = new DataLayer.Character();
+                    character = db.CharacterRepository.GetCharacterByCharacterID(CharacterID);
+                    cbRegion.Text = character.Region;
+                    txtCharacterName.Text = character.Name;
+                    txtRealm.Text = character.Realm;
+                    btnSave.Text = "Edit";
+                    this.Text = "Character Edit";
+                }
+            }
             lblPlayerName.Text = playerName;
-            cbRegion.SelectedIndex = 0;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (BaseValidator.IsFormValid(this.components))
             {
-                using(UnitOfWork db = new UnitOfWork())
+                if (CharacterID == 0)
                 {
-                    int count = db.CharacterRepository.GetCount(txtCharacterName.Text,txtRealm.Text,cbRegion.Text);
+                    using (UnitOfWork db = new UnitOfWork())
+                    {
+                        int count = db.CharacterRepository.GetCount(txtCharacterName.Text, txtRealm.Text, cbRegion.Text);
 
-                    if (count>0)
-                    {
-                        MessageBox.Show("Character Already Exict");
-                        return;
-                    }
-                    else
-                    {
-                        DataLayer.Character character = new DataLayer.Character()
+                        if (count > 0)
                         {
-                            PlayerID = PlayerID,
-                            Region = cbRegion.Text,
-                            Realm = txtRealm.Text,
-                            Name = txtCharacterName.Text,
-                        };
-                        db.CharacterRepository.InsertCharachter(character);
-                        db.Save();
-                        txtCharacterName.Clear();
-                        txtRealm.Clear();
+                            MessageBox.Show("Character Already Exict");
+                            return;
+                        }
+                        else
+                        {
+                            DataLayer.Character character = new DataLayer.Character()
+                            {
+                                PlayerID = PlayerID,
+                                Region = cbRegion.Text,
+                                Realm = txtRealm.Text,
+                                Name = txtCharacterName.Text
+                            };
+                            db.CharacterRepository.InsertCharachter(character);
+                            db.Save();
+                            txtCharacterName.Clear();
+                            txtRealm.Clear();
+                        }
+
                     }
 
+                }
+                else
+                {
+                    using (UnitOfWork db=new UnitOfWork()) 
+                    {
+                        int count = db.CharacterRepository.GetCount(txtCharacterName.Text, txtRealm.Text, cbRegion.Text);
+
+                        if (count > 0)
+                        {
+                            MessageBox.Show("Character Already Exict");
+                            return;
+                        }
+                        else
+                        {
+                            DataLayer.Character character = new DataLayer.Character()
+                            {
+                                CharacterID = CharacterID,
+                                PlayerID = PlayerID,
+                                Region = cbRegion.Text,
+                                Realm = txtRealm.Text,
+                                Name = txtCharacterName.Text
+                            };
+                            db.CharacterRepository.UpdateCharachter(character);
+                            db.Save();
+                            this.Close();
+                        }
+                    }
                 }
             }
         }
