@@ -86,7 +86,7 @@
             // 
             // txtPlayerSearch
             // 
-            this.txtPlayerSearch.Location = new System.Drawing.Point(302, 192);
+            this.txtPlayerSearch.Location = new System.Drawing.Point(302, 162);
             this.txtPlayerSearch.Name = "txtPlayerSearch";
             this.txtPlayerSearch.Size = new System.Drawing.Size(181, 20);
             this.txtPlayerSearch.TabIndex = 33;
@@ -106,7 +106,7 @@
             this.clmPlayer,
             this.clmEdit,
             this.clmDelete});
-            this.dgvPlayerList.Location = new System.Drawing.Point(179, 218);
+            this.dgvPlayerList.Location = new System.Drawing.Point(179, 188);
             this.dgvPlayerList.MultiSelect = false;
             this.dgvPlayerList.Name = "dgvPlayerList";
             this.dgvPlayerList.ReadOnly = true;
@@ -177,7 +177,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(546, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(199, 449);
+            this.panel2.Size = new System.Drawing.Size(199, 419);
             this.panel2.TabIndex = 31;
             // 
             // panel1
@@ -187,7 +187,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(179, 449);
+            this.panel1.Size = new System.Drawing.Size(179, 419);
             this.panel1.TabIndex = 30;
             // 
             // label2
@@ -235,8 +235,8 @@
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(97, 35);
-            this.toolStripLabel1.Text = "                              ";
+            this.toolStripLabel1.Size = new System.Drawing.Size(115, 35);
+            this.toolStripLabel1.Text = "                                    ";
             // 
             // toolStripButton2
             // 
@@ -260,7 +260,7 @@
             this.AcceptButton = this.btnInsertPlayer;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(745, 449);
+            this.ClientSize = new System.Drawing.Size(745, 419);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtInsertPlayer);

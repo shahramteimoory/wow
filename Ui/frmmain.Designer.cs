@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmmain));
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.btnPlayer = new System.Windows.Forms.ToolStripButton();
+            this.btnCharacterManger = new System.Windows.Forms.ToolStripButton();
             this.btnDungeon = new System.Windows.Forms.ToolStripButton();
             this.btnBoost = new System.Windows.Forms.ToolStripButton();
             this.btnBoostList = new System.Windows.Forms.ToolStripButton();
@@ -61,6 +62,7 @@
             // 
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnPlayer,
+            this.btnCharacterManger,
             this.btnDungeon,
             this.btnBoost,
             this.btnBoostList,
@@ -83,6 +85,18 @@
             this.btnPlayer.Text = "Player";
             this.btnPlayer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnPlayer.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // btnCharacterManger
+            // 
+            this.btnCharacterManger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCharacterManger.Image = global::Fury.Properties.Resources.Charachter;
+            this.btnCharacterManger.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnCharacterManger.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCharacterManger.Name = "btnCharacterManger";
+            this.btnCharacterManger.Size = new System.Drawing.Size(67, 59);
+            this.btnCharacterManger.Text = "Characters";
+            this.btnCharacterManger.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCharacterManger.Click += new System.EventHandler(this.btnCharacterManger_Click);
             // 
             // btnDungeon
             // 
@@ -307,5 +321,6 @@
         private System.Windows.Forms.ToolStripButton btnBoostList;
         private System.Windows.Forms.ToolStripStatusLabel lblWowTokenPrice;
         private System.Windows.Forms.ToolStripStatusLabel lblVersion;
+        private System.Windows.Forms.ToolStripButton btnCharacterManger;
     }
 }

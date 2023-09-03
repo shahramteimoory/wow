@@ -113,6 +113,16 @@ namespace Fury.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap ArthasLeft {
+            get {
+                object obj = ResourceManager.GetObject("ArthasLeft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap arthasRight {
             get {
                 object obj = ResourceManager.GetObject("arthasRight", resourceCulture);
@@ -136,6 +146,16 @@ namespace Fury.Properties {
         public static System.Drawing.Bitmap changes {
             get {
                 object obj = ResourceManager.GetObject("changes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Charachter {
+            get {
+                object obj = ResourceManager.GetObject("Charachter", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -286,6 +306,16 @@ namespace Fury.Properties {
         public static System.Drawing.Bitmap icons8_delete_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-delete-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Illidanright {
+            get {
+                object obj = ResourceManager.GetObject("Illidanright", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -13,5 +13,6 @@ namespace DataLayer.Repository
         bool UpdateCharachter(Character character);
         List<Character> GetCharachterByPlayerID(int playerID);
         int GetCount(string name,string realm,string region);
+        Character GetCharacterByCharacterID(int characterId);
     }
 }

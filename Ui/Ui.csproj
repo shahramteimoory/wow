@@ -109,6 +109,18 @@
     <Compile Include="Boost\frmBoostSetting.Designer.cs">
       <DependentUpon>frmBoostSetting.cs</DependentUpon>
     </Compile>
+    <Compile Include="Character\frmCharachterManger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Character\frmCharachterManger.Designer.cs">
+      <DependentUpon>frmCharachterManger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Character\frmCharacterPlayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Character\frmCharacterPlayer.Designer.cs">
+      <DependentUpon>frmCharacterPlayer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Character\frmInsertCharacter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,6 +273,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Boost\frmBoostSetting.resx">
       <DependentUpon>frmBoostSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Character\frmCharachterManger.resx">
+      <DependentUpon>frmCharachterManger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Character\frmCharacterPlayer.resx">
+      <DependentUpon>frmCharacterPlayer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Character\frmInsertCharacter.resx">
       <DependentUpon>frmInsertCharacter.cs</DependentUpon>
@@ -419,6 +437,9 @@
     <None Include="Resources\plus-sign.png" />
     <None Include="Resources\hordleft.png" />
     <None Include="Resources\Allianceright.png" />
+    <None Include="Resources\Charachter.png" />
+    <None Include="Resources\Illidanright.png" />
+    <None Include="Resources\ArthasLeft1.png" />
     <Content Include="W 2.ico" />
     <Content Include="WinValidator\New Text Document.txt" />
   </ItemGroup>

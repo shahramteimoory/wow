@@ -35,6 +35,11 @@ namespace DataLayer.Services
             return db.Character.Where(c => c.PlayerID == playerID).ToList();
         }
 
+        public Character GetCharacterByCharacterID(int characterId)
+        {
+            return db.Character.Find(characterId);
+        }
+
         public int GetCount(string name, string realm, string region)
         {
             return db.Character.Count(c => c.Name.ToLower() == name.ToLower()&& c.Realm.ToLower()== realm.ToLower() && c.Region.ToLower()== region.ToLower());

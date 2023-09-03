@@ -1,5 +1,6 @@
 ﻿using DataLayer.Context;
 using Fury;
+using Fury.Character;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Net;
@@ -117,6 +118,12 @@ namespace Ui
         {
             frmBoostSetting frmBoostSetting = new frmBoostSetting();
             frmBoostSetting.ShowDialog();
+        }
+
+        private void btnCharacterManger_Click(object sender, EventArgs e)
+        {
+            frmCharacterPlayer frmCharacterPlayer = new frmCharacterPlayer();
+            frmCharacterPlayer.ShowDialog();
         }
     }
 }
