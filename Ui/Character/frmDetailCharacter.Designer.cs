@@ -59,9 +59,39 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblDungeonName = new System.Windows.Forms.Label();
+            this.lblSeason = new System.Windows.Forms.Label();
+            this.lblDungeonlvl = new System.Windows.Forms.Label();
+            this.lblUpgrade = new System.Windows.Forms.Label();
+            this.lblTimeremining = new System.Windows.Forms.Label();
+            this.lblAffix1 = new System.Windows.Forms.Label();
+            this.lblAffix2 = new System.Windows.Forms.Label();
+            this.lblAffix3 = new System.Windows.Forms.Label();
+            this.lblRole1 = new System.Windows.Forms.Label();
+            this.lblRole2 = new System.Windows.Forms.Label();
+            this.lblRole3 = new System.Windows.Forms.Label();
+            this.lblRole4 = new System.Windows.Forms.Label();
+            this.lblRole5 = new System.Windows.Forms.Label();
+            this.lblPlayer1 = new System.Windows.Forms.LinkLabel();
+            this.lblPlayer2 = new System.Windows.Forms.LinkLabel();
+            this.lblPlayer3 = new System.Windows.Forms.LinkLabel();
+            this.lblPlayer4 = new System.Windows.Forms.LinkLabel();
+            this.lblPlayer5 = new System.Windows.Forms.LinkLabel();
+            this.lblilvl1 = new System.Windows.Forms.Label();
+            this.lblilvl2 = new System.Windows.Forms.Label();
+            this.lblilvl3 = new System.Windows.Forms.Label();
+            this.lblilvl4 = new System.Windows.Forms.Label();
+            this.lblilvl5 = new System.Windows.Forms.Label();
+            this.lblScore1 = new System.Windows.Forms.Label();
+            this.lblScore2 = new System.Windows.Forms.Label();
+            this.lblScore3 = new System.Windows.Forms.Label();
+            this.lblScore4 = new System.Windows.Forms.Label();
+            this.lblScore5 = new System.Windows.Forms.Label();
+            this.lblseasondetail = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcCharacter)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecentRuns)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pcCharacter
@@ -241,7 +271,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvRecentRuns);
-            this.groupBox1.Location = new System.Drawing.Point(12, 316);
+            this.groupBox1.Location = new System.Drawing.Point(12, 374);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(495, 229);
             this.groupBox1.TabIndex = 19;
@@ -326,18 +356,287 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.groupBox2.Controls.Add(this.lblseasondetail);
+            this.groupBox2.Controls.Add(this.lblScore5);
+            this.groupBox2.Controls.Add(this.lblilvl5);
+            this.groupBox2.Controls.Add(this.lblScore4);
+            this.groupBox2.Controls.Add(this.lblilvl4);
+            this.groupBox2.Controls.Add(this.lblScore3);
+            this.groupBox2.Controls.Add(this.lblilvl3);
+            this.groupBox2.Controls.Add(this.lblScore2);
+            this.groupBox2.Controls.Add(this.lblilvl2);
+            this.groupBox2.Controls.Add(this.lblScore1);
+            this.groupBox2.Controls.Add(this.lblilvl1);
+            this.groupBox2.Controls.Add(this.lblPlayer5);
+            this.groupBox2.Controls.Add(this.lblPlayer4);
+            this.groupBox2.Controls.Add(this.lblPlayer3);
+            this.groupBox2.Controls.Add(this.lblPlayer2);
+            this.groupBox2.Controls.Add(this.lblPlayer1);
+            this.groupBox2.Controls.Add(this.lblRole5);
+            this.groupBox2.Controls.Add(this.lblRole4);
+            this.groupBox2.Controls.Add(this.lblRole3);
+            this.groupBox2.Controls.Add(this.lblRole2);
+            this.groupBox2.Controls.Add(this.lblRole1);
+            this.groupBox2.Controls.Add(this.lblAffix3);
+            this.groupBox2.Controls.Add(this.lblAffix2);
+            this.groupBox2.Controls.Add(this.lblAffix1);
+            this.groupBox2.Controls.Add(this.lblTimeremining);
+            this.groupBox2.Controls.Add(this.lblUpgrade);
+            this.groupBox2.Controls.Add(this.lblDungeonlvl);
+            this.groupBox2.Controls.Add(this.lblSeason);
+            this.groupBox2.Controls.Add(this.lblDungeonName);
             this.groupBox2.Location = new System.Drawing.Point(12, 162);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(489, 148);
+            this.groupBox2.Size = new System.Drawing.Size(489, 206);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detail";
+            // 
+            // lblDungeonName
+            // 
+            this.lblDungeonName.AutoSize = true;
+            this.lblDungeonName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDungeonName.Location = new System.Drawing.Point(158, 16);
+            this.lblDungeonName.Name = "lblDungeonName";
+            this.lblDungeonName.Size = new System.Drawing.Size(0, 17);
+            this.lblDungeonName.TabIndex = 21;
+            // 
+            // lblSeason
+            // 
+            this.lblSeason.AutoSize = true;
+            this.lblSeason.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSeason.Location = new System.Drawing.Point(6, 16);
+            this.lblSeason.Name = "lblSeason";
+            this.lblSeason.Size = new System.Drawing.Size(0, 13);
+            this.lblSeason.TabIndex = 21;
+            // 
+            // lblDungeonlvl
+            // 
+            this.lblDungeonlvl.AutoSize = true;
+            this.lblDungeonlvl.Location = new System.Drawing.Point(410, 18);
+            this.lblDungeonlvl.Name = "lblDungeonlvl";
+            this.lblDungeonlvl.Size = new System.Drawing.Size(0, 13);
+            this.lblDungeonlvl.TabIndex = 21;
+            // 
+            // lblUpgrade
+            // 
+            this.lblUpgrade.AutoSize = true;
+            this.lblUpgrade.Location = new System.Drawing.Point(410, 41);
+            this.lblUpgrade.Name = "lblUpgrade";
+            this.lblUpgrade.Size = new System.Drawing.Size(0, 13);
+            this.lblUpgrade.TabIndex = 22;
+            // 
+            // lblTimeremining
+            // 
+            this.lblTimeremining.AutoSize = true;
+            this.lblTimeremining.Location = new System.Drawing.Point(9, 41);
+            this.lblTimeremining.Name = "lblTimeremining";
+            this.lblTimeremining.Size = new System.Drawing.Size(0, 13);
+            this.lblTimeremining.TabIndex = 23;
+            // 
+            // lblAffix1
+            // 
+            this.lblAffix1.AutoSize = true;
+            this.lblAffix1.Location = new System.Drawing.Point(119, 41);
+            this.lblAffix1.Name = "lblAffix1";
+            this.lblAffix1.Size = new System.Drawing.Size(0, 13);
+            this.lblAffix1.TabIndex = 24;
+            // 
+            // lblAffix2
+            // 
+            this.lblAffix2.AutoSize = true;
+            this.lblAffix2.Location = new System.Drawing.Point(220, 41);
+            this.lblAffix2.Name = "lblAffix2";
+            this.lblAffix2.Size = new System.Drawing.Size(0, 13);
+            this.lblAffix2.TabIndex = 25;
+            // 
+            // lblAffix3
+            // 
+            this.lblAffix3.AutoSize = true;
+            this.lblAffix3.Location = new System.Drawing.Point(323, 41);
+            this.lblAffix3.Name = "lblAffix3";
+            this.lblAffix3.Size = new System.Drawing.Size(0, 13);
+            this.lblAffix3.TabIndex = 26;
+            // 
+            // lblRole1
+            // 
+            this.lblRole1.AutoSize = true;
+            this.lblRole1.Location = new System.Drawing.Point(30, 71);
+            this.lblRole1.Name = "lblRole1";
+            this.lblRole1.Size = new System.Drawing.Size(0, 13);
+            this.lblRole1.TabIndex = 27;
+            // 
+            // lblRole2
+            // 
+            this.lblRole2.AutoSize = true;
+            this.lblRole2.Location = new System.Drawing.Point(30, 93);
+            this.lblRole2.Name = "lblRole2";
+            this.lblRole2.Size = new System.Drawing.Size(0, 13);
+            this.lblRole2.TabIndex = 28;
+            // 
+            // lblRole3
+            // 
+            this.lblRole3.AutoSize = true;
+            this.lblRole3.Location = new System.Drawing.Point(30, 115);
+            this.lblRole3.Name = "lblRole3";
+            this.lblRole3.Size = new System.Drawing.Size(0, 13);
+            this.lblRole3.TabIndex = 27;
+            // 
+            // lblRole4
+            // 
+            this.lblRole4.AutoSize = true;
+            this.lblRole4.Location = new System.Drawing.Point(32, 137);
+            this.lblRole4.Name = "lblRole4";
+            this.lblRole4.Size = new System.Drawing.Size(0, 13);
+            this.lblRole4.TabIndex = 28;
+            // 
+            // lblRole5
+            // 
+            this.lblRole5.AutoSize = true;
+            this.lblRole5.Location = new System.Drawing.Point(32, 160);
+            this.lblRole5.Name = "lblRole5";
+            this.lblRole5.Size = new System.Drawing.Size(0, 13);
+            this.lblRole5.TabIndex = 29;
+            // 
+            // lblPlayer1
+            // 
+            this.lblPlayer1.AutoSize = true;
+            this.lblPlayer1.Location = new System.Drawing.Point(87, 71);
+            this.lblPlayer1.Name = "lblPlayer1";
+            this.lblPlayer1.Size = new System.Drawing.Size(0, 13);
+            this.lblPlayer1.TabIndex = 30;
+            this.lblPlayer1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPlayer1_LinkClicked);
+            // 
+            // lblPlayer2
+            // 
+            this.lblPlayer2.AutoSize = true;
+            this.lblPlayer2.Location = new System.Drawing.Point(87, 93);
+            this.lblPlayer2.Name = "lblPlayer2";
+            this.lblPlayer2.Size = new System.Drawing.Size(0, 13);
+            this.lblPlayer2.TabIndex = 30;
+            this.lblPlayer2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPlayer2_LinkClicked);
+            // 
+            // lblPlayer3
+            // 
+            this.lblPlayer3.AutoSize = true;
+            this.lblPlayer3.Location = new System.Drawing.Point(87, 115);
+            this.lblPlayer3.Name = "lblPlayer3";
+            this.lblPlayer3.Size = new System.Drawing.Size(0, 13);
+            this.lblPlayer3.TabIndex = 30;
+            this.lblPlayer3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPlayer3_LinkClicked);
+            // 
+            // lblPlayer4
+            // 
+            this.lblPlayer4.AutoSize = true;
+            this.lblPlayer4.Location = new System.Drawing.Point(87, 137);
+            this.lblPlayer4.Name = "lblPlayer4";
+            this.lblPlayer4.Size = new System.Drawing.Size(0, 13);
+            this.lblPlayer4.TabIndex = 30;
+            this.lblPlayer4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPlayer4_LinkClicked);
+            // 
+            // lblPlayer5
+            // 
+            this.lblPlayer5.AutoSize = true;
+            this.lblPlayer5.Location = new System.Drawing.Point(87, 160);
+            this.lblPlayer5.Name = "lblPlayer5";
+            this.lblPlayer5.Size = new System.Drawing.Size(0, 13);
+            this.lblPlayer5.TabIndex = 30;
+            this.lblPlayer5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPlayer5_LinkClicked);
+            // 
+            // lblilvl1
+            // 
+            this.lblilvl1.AutoSize = true;
+            this.lblilvl1.Location = new System.Drawing.Point(220, 71);
+            this.lblilvl1.Name = "lblilvl1";
+            this.lblilvl1.Size = new System.Drawing.Size(0, 13);
+            this.lblilvl1.TabIndex = 31;
+            // 
+            // lblilvl2
+            // 
+            this.lblilvl2.AutoSize = true;
+            this.lblilvl2.Location = new System.Drawing.Point(219, 93);
+            this.lblilvl2.Name = "lblilvl2";
+            this.lblilvl2.Size = new System.Drawing.Size(0, 13);
+            this.lblilvl2.TabIndex = 31;
+            // 
+            // lblilvl3
+            // 
+            this.lblilvl3.AutoSize = true;
+            this.lblilvl3.Location = new System.Drawing.Point(219, 115);
+            this.lblilvl3.Name = "lblilvl3";
+            this.lblilvl3.Size = new System.Drawing.Size(0, 13);
+            this.lblilvl3.TabIndex = 31;
+            // 
+            // lblilvl4
+            // 
+            this.lblilvl4.AutoSize = true;
+            this.lblilvl4.Location = new System.Drawing.Point(220, 137);
+            this.lblilvl4.Name = "lblilvl4";
+            this.lblilvl4.Size = new System.Drawing.Size(0, 13);
+            this.lblilvl4.TabIndex = 31;
+            // 
+            // lblilvl5
+            // 
+            this.lblilvl5.AutoSize = true;
+            this.lblilvl5.Location = new System.Drawing.Point(219, 160);
+            this.lblilvl5.Name = "lblilvl5";
+            this.lblilvl5.Size = new System.Drawing.Size(0, 13);
+            this.lblilvl5.TabIndex = 31;
+            // 
+            // lblScore1
+            // 
+            this.lblScore1.AutoSize = true;
+            this.lblScore1.Location = new System.Drawing.Point(398, 71);
+            this.lblScore1.Name = "lblScore1";
+            this.lblScore1.Size = new System.Drawing.Size(0, 13);
+            this.lblScore1.TabIndex = 31;
+            // 
+            // lblScore2
+            // 
+            this.lblScore2.AutoSize = true;
+            this.lblScore2.Location = new System.Drawing.Point(397, 93);
+            this.lblScore2.Name = "lblScore2";
+            this.lblScore2.Size = new System.Drawing.Size(0, 13);
+            this.lblScore2.TabIndex = 31;
+            // 
+            // lblScore3
+            // 
+            this.lblScore3.AutoSize = true;
+            this.lblScore3.Location = new System.Drawing.Point(397, 115);
+            this.lblScore3.Name = "lblScore3";
+            this.lblScore3.Size = new System.Drawing.Size(0, 13);
+            this.lblScore3.TabIndex = 31;
+            // 
+            // lblScore4
+            // 
+            this.lblScore4.AutoSize = true;
+            this.lblScore4.Location = new System.Drawing.Point(398, 137);
+            this.lblScore4.Name = "lblScore4";
+            this.lblScore4.Size = new System.Drawing.Size(0, 13);
+            this.lblScore4.TabIndex = 31;
+            // 
+            // lblScore5
+            // 
+            this.lblScore5.AutoSize = true;
+            this.lblScore5.Location = new System.Drawing.Point(397, 160);
+            this.lblScore5.Name = "lblScore5";
+            this.lblScore5.Size = new System.Drawing.Size(0, 13);
+            this.lblScore5.TabIndex = 31;
+            // 
+            // lblseasondetail
+            // 
+            this.lblseasondetail.AutoSize = true;
+            this.lblseasondetail.Location = new System.Drawing.Point(297, 190);
+            this.lblseasondetail.Name = "lblseasondetail";
+            this.lblseasondetail.Size = new System.Drawing.Size(0, 13);
+            this.lblseasondetail.TabIndex = 32;
             // 
             // frmDetailCharacter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(509, 557);
+            this.ClientSize = new System.Drawing.Size(509, 605);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblRaiderIo);
@@ -370,6 +669,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcCharacter)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecentRuns)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -407,5 +708,34 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewButtonColumn Column8;
+        private System.Windows.Forms.Label lblDungeonName;
+        private System.Windows.Forms.Label lblSeason;
+        private System.Windows.Forms.Label lblUpgrade;
+        private System.Windows.Forms.Label lblDungeonlvl;
+        private System.Windows.Forms.Label lblAffix3;
+        private System.Windows.Forms.Label lblAffix2;
+        private System.Windows.Forms.Label lblAffix1;
+        private System.Windows.Forms.Label lblTimeremining;
+        private System.Windows.Forms.Label lblRole5;
+        private System.Windows.Forms.Label lblRole4;
+        private System.Windows.Forms.Label lblRole3;
+        private System.Windows.Forms.Label lblRole2;
+        private System.Windows.Forms.Label lblRole1;
+        private System.Windows.Forms.LinkLabel lblPlayer5;
+        private System.Windows.Forms.LinkLabel lblPlayer4;
+        private System.Windows.Forms.LinkLabel lblPlayer3;
+        private System.Windows.Forms.LinkLabel lblPlayer2;
+        private System.Windows.Forms.LinkLabel lblPlayer1;
+        private System.Windows.Forms.Label lblilvl5;
+        private System.Windows.Forms.Label lblilvl4;
+        private System.Windows.Forms.Label lblilvl3;
+        private System.Windows.Forms.Label lblilvl2;
+        private System.Windows.Forms.Label lblilvl1;
+        private System.Windows.Forms.Label lblScore5;
+        private System.Windows.Forms.Label lblScore4;
+        private System.Windows.Forms.Label lblScore3;
+        private System.Windows.Forms.Label lblScore2;
+        private System.Windows.Forms.Label lblScore1;
+        private System.Windows.Forms.Label lblseasondetail;
     }
 }
