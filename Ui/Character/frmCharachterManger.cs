@@ -91,6 +91,22 @@ namespace Fury.Character
             frmInsertCharacter.ShowDialog();
             frmrefresh();
         }
+
+        private void dgvCharacters_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 5 && e.RowIndex != -1)
+            {
+                string name= dgvCharacters.CurrentRow.Cells[2].Value.ToString();
+                string realm = dgvCharacters.CurrentRow.Cells[3].Value.ToString();
+                string region = dgvCharacters.CurrentRow.Cells[4].Value.ToString();
+               frmDetailCharacter frmDetailCharacter = new frmDetailCharacter();
+                frmDetailCharacter.realm = realm;
+                frmDetailCharacter.region = region;
+                frmDetailCharacter.name = name;
+                frmDetailCharacter.ShowDialog();
+
+            }
+        }
     }
 }
 

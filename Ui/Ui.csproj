@@ -49,7 +49,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>W 2.ico</ApplicationIcon>
+    <ApplicationIcon>1,1,1.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AdvancedDataGridView, Version=1.2.28405.11, Culture=neutral, processorArchitecture=MSIL">
@@ -120,6 +120,12 @@
     </Compile>
     <Compile Include="Character\frmCharacterPlayer.Designer.cs">
       <DependentUpon>frmCharacterPlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Character\frmDetailCharacter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Character\frmDetailCharacter.Designer.cs">
+      <DependentUpon>frmDetailCharacter.cs</DependentUpon>
     </Compile>
     <Compile Include="Character\frmInsertCharacter.cs">
       <SubType>Form</SubType>
@@ -280,6 +286,9 @@
     <EmbeddedResource Include="Character\frmCharacterPlayer.resx">
       <DependentUpon>frmCharacterPlayer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Character\frmDetailCharacter.resx">
+      <DependentUpon>frmDetailCharacter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Character\frmInsertCharacter.resx">
       <DependentUpon>frmInsertCharacter.cs</DependentUpon>
     </EmbeddedResource>
@@ -364,6 +373,10 @@
       <Project>{f53e79be-f97f-49e7-b570-61c687579506}</Project>
       <Name>DataLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RaiderIo\RaiderIo.csproj">
+      <Project>{9914d04f-132b-4c36-b2d0-467958dc264a}</Project>
+      <Name>RaiderIo</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Utility\Utility.csproj">
       <Project>{c7df3799-a2b1-4c86-856b-c3a0e287f0ca}</Project>
       <Name>Utility</Name>
@@ -440,6 +453,8 @@
     <None Include="Resources\Charachter.png" />
     <None Include="Resources\Illidanright.png" />
     <None Include="Resources\ArthasLeft1.png" />
+    <None Include="Resources\1,1,1.ico" />
+    <Content Include="1,1,1.ico" />
     <Content Include="W 2.ico" />
     <Content Include="WinValidator\New Text Document.txt" />
   </ItemGroup>

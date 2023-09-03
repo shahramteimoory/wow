@@ -43,10 +43,10 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnEdit = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.btnDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.btnInsert = new System.Windows.Forms.ToolStripButton();
             this.btnClose = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCharacters)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -112,6 +112,7 @@
             this.dgvCharacters.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCharacters.Size = new System.Drawing.Size(418, 166);
             this.dgvCharacters.TabIndex = 36;
+            this.dgvCharacters.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCharacters_CellContentClick);
             // 
             // Column1
             // 
@@ -189,6 +190,16 @@
             this.toolStripLabel2.Size = new System.Drawing.Size(127, 35);
             this.toolStripLabel2.Text = "                                        ";
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Image = global::Fury.Properties.Resources.social_media;
+            this.btnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(44, 35);
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
+            // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
@@ -214,16 +225,6 @@
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Image = global::Fury.Properties.Resources.social_media;
-            this.btnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(44, 35);
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
             // 
             // frmCharachterManger
             // 
