@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using DataLayer.Context;
+using Newtonsoft.Json;
 using RaiderIo.RecentRuns;
 using RaiderIo.RunDetail;
 using System;
@@ -18,8 +19,20 @@ namespace Fury.Character
         public string region;
         public string name;
         public string realm;
+       void frmrefresh()
+        {
+            using(UnitOfWork db= new UnitOfWork())
+            {
+                var boost=db.BoostRepository.NotAsignedBoosts();
+                foreach (var item in boost)
+                {
+                    dgvboost.Rows.Add(item.BoostID, "Sign", item.Player.FullName, item.Dungeon.Name, item.Lvl, item.Gold);
+                }
+            }
+        }
         private async void frmDetailCharacter_Load(object sender, EventArgs e)
         {
+            frmrefresh();
             string url = $"https://raider.io/api/v1/characters/profile?region={region.ToLower()}&realm={realm}&name={name}&fields=mythic_plus_recent_runs";
             using (var client = new HttpClient())
             {

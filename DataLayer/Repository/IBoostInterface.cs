@@ -12,7 +12,7 @@ namespace DataLayer.Repository
         bool DeleteBoost(int boostID);
         
         List<int> GetBoostIdsByPlayerID(int playerId);
-        
+        List<Boost> NotAsignedBoosts();
         int GetCount(int playerID);
     }
 }

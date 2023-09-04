@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDetailCharacter));
             this.pcCharacter = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,14 +51,6 @@
             this.lblRaiderIo = new System.Windows.Forms.LinkLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvRecentRuns = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblDungeonName = new System.Windows.Forms.Label();
             this.lblSeason = new System.Windows.Forms.Label();
@@ -88,17 +81,36 @@
             this.lblScore4 = new System.Windows.Forms.Label();
             this.lblScore5 = new System.Windows.Forms.Label();
             this.lblseasondetail = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dgvboost = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pcCharacter)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecentRuns)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvboost)).BeginInit();
             this.SuspendLayout();
             // 
             // pcCharacter
             // 
-            this.pcCharacter.Location = new System.Drawing.Point(12, 27);
+            this.pcCharacter.Location = new System.Drawing.Point(9, 32);
             this.pcCharacter.Name = "pcCharacter";
-            this.pcCharacter.Size = new System.Drawing.Size(88, 68);
+            this.pcCharacter.Size = new System.Drawing.Size(102, 80);
             this.pcCharacter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcCharacter.TabIndex = 0;
             this.pcCharacter.TabStop = false;
@@ -106,7 +118,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(120, 40);
+            this.label1.Location = new System.Drawing.Point(117, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 1;
@@ -115,7 +127,7 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(170, 40);
+            this.lblName.Location = new System.Drawing.Point(167, 47);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(54, 13);
             this.lblName.TabIndex = 2;
@@ -124,7 +136,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(122, 56);
+            this.label2.Location = new System.Drawing.Point(119, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 13);
             this.label2.TabIndex = 3;
@@ -133,7 +145,7 @@
             // lblRace
             // 
             this.lblRace.AutoSize = true;
-            this.lblRace.Location = new System.Drawing.Point(170, 56);
+            this.lblRace.Location = new System.Drawing.Point(167, 63);
             this.lblRace.Name = "lblRace";
             this.lblRace.Size = new System.Drawing.Size(54, 13);
             this.lblRace.TabIndex = 4;
@@ -142,7 +154,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(344, 40);
+            this.label3.Location = new System.Drawing.Point(341, 47);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 5;
@@ -151,7 +163,7 @@
             // lblClass
             // 
             this.lblClass.AutoSize = true;
-            this.lblClass.Location = new System.Drawing.Point(391, 40);
+            this.lblClass.Location = new System.Drawing.Point(388, 47);
             this.lblClass.Name = "lblClass";
             this.lblClass.Size = new System.Drawing.Size(54, 13);
             this.lblClass.TabIndex = 6;
@@ -160,7 +172,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(306, 56);
+            this.label4.Location = new System.Drawing.Point(303, 63);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 13);
             this.label4.TabIndex = 7;
@@ -169,7 +181,7 @@
             // lblActiveSpec
             // 
             this.lblActiveSpec.AutoSize = true;
-            this.lblActiveSpec.Location = new System.Drawing.Point(391, 56);
+            this.lblActiveSpec.Location = new System.Drawing.Point(388, 63);
             this.lblActiveSpec.Name = "lblActiveSpec";
             this.lblActiveSpec.Size = new System.Drawing.Size(54, 13);
             this.lblActiveSpec.TabIndex = 8;
@@ -178,7 +190,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(125, 92);
+            this.label5.Location = new System.Drawing.Point(122, 99);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 13);
             this.label5.TabIndex = 9;
@@ -187,7 +199,7 @@
             // lblRole
             // 
             this.lblRole.AutoSize = true;
-            this.lblRole.Location = new System.Drawing.Point(164, 92);
+            this.lblRole.Location = new System.Drawing.Point(161, 99);
             this.lblRole.Name = "lblRole";
             this.lblRole.Size = new System.Drawing.Size(54, 13);
             this.lblRole.TabIndex = 10;
@@ -196,7 +208,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(335, 92);
+            this.label6.Location = new System.Drawing.Point(332, 99);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 13);
             this.label6.TabIndex = 11;
@@ -205,7 +217,7 @@
             // lblGender
             // 
             this.lblGender.AutoSize = true;
-            this.lblGender.Location = new System.Drawing.Point(389, 92);
+            this.lblGender.Location = new System.Drawing.Point(386, 99);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(54, 13);
             this.lblGender.TabIndex = 12;
@@ -215,7 +227,7 @@
             // 
             this.lblFaction.AutoSize = true;
             this.lblFaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFaction.Location = new System.Drawing.Point(230, 9);
+            this.lblFaction.Location = new System.Drawing.Point(227, 16);
             this.lblFaction.Name = "lblFaction";
             this.lblFaction.Size = new System.Drawing.Size(107, 25);
             this.lblFaction.TabIndex = 13;
@@ -224,7 +236,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 113);
+            this.label7.Location = new System.Drawing.Point(9, 120);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(46, 13);
             this.label7.TabIndex = 14;
@@ -233,7 +245,7 @@
             // lblRealm
             // 
             this.lblRealm.AutoSize = true;
-            this.lblRealm.Location = new System.Drawing.Point(65, 113);
+            this.lblRealm.Location = new System.Drawing.Point(62, 120);
             this.lblRealm.Name = "lblRealm";
             this.lblRealm.Size = new System.Drawing.Size(54, 13);
             this.lblRealm.TabIndex = 15;
@@ -242,7 +254,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(309, 113);
+            this.label8.Location = new System.Drawing.Point(306, 120);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(77, 13);
             this.label8.TabIndex = 16;
@@ -251,7 +263,7 @@
             // lblAchievement
             // 
             this.lblAchievement.AutoSize = true;
-            this.lblAchievement.Location = new System.Drawing.Point(389, 113);
+            this.lblAchievement.Location = new System.Drawing.Point(386, 120);
             this.lblAchievement.Name = "lblAchievement";
             this.lblAchievement.Size = new System.Drawing.Size(54, 13);
             this.lblAchievement.TabIndex = 17;
@@ -260,7 +272,7 @@
             // lblRaiderIo
             // 
             this.lblRaiderIo.AutoSize = true;
-            this.lblRaiderIo.Location = new System.Drawing.Point(21, 146);
+            this.lblRaiderIo.Location = new System.Drawing.Point(18, 153);
             this.lblRaiderIo.Name = "lblRaiderIo";
             this.lblRaiderIo.Size = new System.Drawing.Size(117, 13);
             this.lblRaiderIo.TabIndex = 18;
@@ -271,9 +283,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvRecentRuns);
-            this.groupBox1.Location = new System.Drawing.Point(12, 374);
+            this.groupBox1.Location = new System.Drawing.Point(507, 201);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(495, 229);
+            this.groupBox1.Size = new System.Drawing.Size(495, 239);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Recent Runs";
@@ -293,66 +305,15 @@
             this.Column5,
             this.Column6,
             this.Column7,
-            this.Column8});
-            this.dgvRecentRuns.Location = new System.Drawing.Point(3, 19);
+            this.Column8,
+            this.Column15});
+            this.dgvRecentRuns.Location = new System.Drawing.Point(6, 14);
             this.dgvRecentRuns.Name = "dgvRecentRuns";
             this.dgvRecentRuns.RowHeadersVisible = false;
             this.dgvRecentRuns.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRecentRuns.Size = new System.Drawing.Size(486, 204);
+            this.dgvRecentRuns.Size = new System.Drawing.Size(486, 219);
             this.dgvRecentRuns.TabIndex = 20;
             this.dgvRecentRuns.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecentRuns_CellContentClick);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Detail";
-            this.Column1.Name = "Column1";
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column1.Width = 40;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "Dungeon Name";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Level";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 40;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Up";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 30;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Date Time";
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 120;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Score";
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 50;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "RaiderIoLink";
-            this.Column7.Name = "Column7";
-            this.Column7.Visible = false;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "View";
-            this.Column8.Name = "Column8";
-            this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column8.Width = 40;
             // 
             // groupBox2
             // 
@@ -386,7 +347,7 @@
             this.groupBox2.Controls.Add(this.lblDungeonlvl);
             this.groupBox2.Controls.Add(this.lblSeason);
             this.groupBox2.Controls.Add(this.lblDungeonName);
-            this.groupBox2.Location = new System.Drawing.Point(12, 162);
+            this.groupBox2.Location = new System.Drawing.Point(9, 179);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(489, 206);
             this.groupBox2.TabIndex = 20;
@@ -632,32 +593,178 @@
             this.lblseasondetail.Size = new System.Drawing.Size(0, 13);
             this.lblseasondetail.TabIndex = 32;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.lblFaction);
+            this.groupBox3.Controls.Add(this.groupBox2);
+            this.groupBox3.Controls.Add(this.pcCharacter);
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.lblRaiderIo);
+            this.groupBox3.Controls.Add(this.lblName);
+            this.groupBox3.Controls.Add(this.lblAchievement);
+            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.lblRace);
+            this.groupBox3.Controls.Add(this.lblRealm);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.lblClass);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.lblGender);
+            this.groupBox3.Controls.Add(this.lblActiveSpec);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.lblRole);
+            this.groupBox3.Location = new System.Drawing.Point(3, 12);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(504, 391);
+            this.groupBox3.TabIndex = 21;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "groupBox3";
+            // 
+            // dgvboost
+            // 
+            this.dgvboost.AllowUserToAddRows = false;
+            this.dgvboost.AllowUserToDeleteRows = false;
+            this.dgvboost.AllowUserToResizeColumns = false;
+            this.dgvboost.AllowUserToResizeRows = false;
+            this.dgvboost.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvboost.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column14,
+            this.Column9,
+            this.Column10,
+            this.Column11,
+            this.Column12,
+            this.Column13});
+            this.dgvboost.Location = new System.Drawing.Point(513, 6);
+            this.dgvboost.Name = "dgvboost";
+            this.dgvboost.ReadOnly = true;
+            this.dgvboost.RowHeadersVisible = false;
+            this.dgvboost.Size = new System.Drawing.Size(486, 189);
+            this.dgvboost.TabIndex = 22;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Detail";
+            this.Column1.Name = "Column1";
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column1.Width = 40;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.HeaderText = "Dungeon Name";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Level";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 40;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Up";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 30;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Date Time";
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 120;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Score";
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 50;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "RaiderIoLink";
+            this.Column7.Name = "Column7";
+            this.Column7.Visible = false;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "View";
+            this.Column8.Name = "Column8";
+            this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column8.Width = 40;
+            // 
+            // Column15
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Lime;
+            this.Column15.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column15.HeaderText = "Select";
+            this.Column15.Name = "Column15";
+            this.Column15.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column15.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column15.Width = 40;
+            // 
+            // Column14
+            // 
+            this.Column14.HeaderText = "BoostID";
+            this.Column14.Name = "Column14";
+            this.Column14.ReadOnly = true;
+            this.Column14.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column14.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column14.Visible = false;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Asigned";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Width = 50;
+            // 
+            // Column10
+            // 
+            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column10.HeaderText = "Advertiser Name";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            this.Column10.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "Dungeon Name";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            this.Column11.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column11.Width = 140;
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "Level";
+            this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
+            this.Column12.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column12.Width = 40;
+            // 
+            // Column13
+            // 
+            this.Column13.HeaderText = "Pot";
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            this.Column13.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // frmDetailCharacter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(509, 605);
-            this.Controls.Add(this.groupBox2);
+            this.ClientSize = new System.Drawing.Size(1004, 438);
+            this.Controls.Add(this.dgvboost);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.lblRaiderIo);
-            this.Controls.Add(this.lblAchievement);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.lblRealm);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.lblFaction);
-            this.Controls.Add(this.lblGender);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.lblRole);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.lblActiveSpec);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.lblClass);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.lblRace);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.lblName);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pcCharacter);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -671,8 +778,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecentRuns)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvboost)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -700,14 +809,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvRecentRuns;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridViewButtonColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewButtonColumn Column8;
         private System.Windows.Forms.Label lblDungeonName;
         private System.Windows.Forms.Label lblSeason;
         private System.Windows.Forms.Label lblUpgrade;
@@ -737,5 +838,22 @@
         private System.Windows.Forms.Label lblScore2;
         private System.Windows.Forms.Label lblScore1;
         private System.Windows.Forms.Label lblseasondetail;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DataGridView dgvboost;
+        private System.Windows.Forms.DataGridViewButtonColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewButtonColumn Column8;
+        private System.Windows.Forms.DataGridViewButtonColumn Column15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
+        private System.Windows.Forms.DataGridViewButtonColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
     }
 }

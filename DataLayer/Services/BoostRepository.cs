@@ -49,6 +49,8 @@ namespace DataLayer.Services
             }
         }
 
+
+
         public List<Boost> GetAllBoost()
         {
             return db.Boost.ToList();
@@ -92,6 +94,11 @@ namespace DataLayer.Services
 
                 return false;
             }
+        }
+
+        public List<Boost> NotAsignedBoosts()
+        {
+            return db.Boost.Where(b => b.IsAsigned == false || b.IsAsigned==null).ToList();
         }
 
         public List<Boost> Search(string parameter)
