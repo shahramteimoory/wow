@@ -107,59 +107,68 @@ namespace Fury.Character
             }
             if (e.ColumnIndex == 0 && e.RowIndex != -1)
             {
-                string[] parts = url.Split('/');
-                string season = parts[4];
-                string runId = parts[5].Split('-')[0];
-                string urlrun = $"https://raider.io/api/v1/mythic-plus/run-details?season={season}&id={runId}";
-                using (var client = new HttpClient())
+                try
                 {
-                    var response = await client.GetAsync(urlrun);
-                    if (response.IsSuccessStatusCode)
+                    string[] parts = url.Split('/');
+                    string season = parts[4];
+                    string runId = parts[5].Split('-')[0];
+                    string urlrun = $"https://raider.io/api/v1/mythic-plus/run-details?season={season}&id={runId}";
+                    using (var client = new HttpClient())
                     {
-                        string content = await response.Content.ReadAsStringAsync();
-                        RaiderIo.RunDetail.RunDetail rundetail = JsonConvert.DeserializeObject<RunDetail>(content);
-                        lblDungeonName.Text=rundetail.dungeon.name;
-                        lblSeason.Text=rundetail.dungeon.patch;
-                        lblTimeremining.Text = $"{(rundetail.time_remaining_ms/ 60000).ToString()} Minutes left";
-                        lblDungeonlvl.Text=$"Level: {rundetail.mythic_level.ToString()}";
-                        lblUpgrade.Text=$"+{rundetail.num_chests.ToString()}";
-                        lblAffix1.Text = rundetail.weekly_modifiers[0].name;
-                        lblAffix2.Text= rundetail.weekly_modifiers[1].name;
-                        lblAffix3.Text = rundetail.weekly_modifiers[2].name;
-                        //دیتیل هر کدوم از پلیرا
-                        lblRole1.Text = $"{rundetail.roster[0].role.ToUpper()} :";
-                        lblPlayer1.Text= rundetail.roster[0].character.name;
-                        lblPlayer1.Tag = rundetail.roster[0].character.path;
-                        lblilvl1.Text = rundetail.roster[0].items.item_level_equipped.ToString();
-                        lblScore1.Text = rundetail.roster[0].ranks.score.ToString();
+                        var response = await client.GetAsync(urlrun);
+                        if (response.IsSuccessStatusCode)
+                        {
+                            string content = await response.Content.ReadAsStringAsync();
+                            RaiderIo.RunDetail.RunDetail rundetail = JsonConvert.DeserializeObject<RunDetail>(content);
+                            lblDungeonName.Text = rundetail.dungeon.name;
+                            lblSeason.Text = rundetail.dungeon.patch;
+                            lblTimeremining.Text = $"{(rundetail.time_remaining_ms / 60000).ToString()} Minutes left";
+                            lblDungeonlvl.Text = $"Level: {rundetail.mythic_level.ToString()}";
+                            lblUpgrade.Text = $"+{rundetail.num_chests.ToString()}";
+                            lblAffix1.Text = rundetail.weekly_modifiers[0].name;
+                            lblAffix2.Text = rundetail.weekly_modifiers[1].name;
+                            lblAffix3.Text = rundetail.weekly_modifiers[2].name;
+                            //دیتیل هر کدوم از پلیرا
+                            lblRole1.Text = $"{rundetail.roster[0].role.ToUpper()} :";
+                            lblPlayer1.Text = rundetail.roster[0].character.name;
+                            lblPlayer1.Tag = rundetail.roster[0].character.path;
+                            lblilvl1.Text = rundetail.roster[0].items.item_level_equipped.ToString();
+                            lblScore1.Text = rundetail.roster[0].ranks.score.ToString();
 
-                        lblRole2.Text = $"{rundetail.roster[1].role.ToUpper()} :";
-                        lblPlayer2.Text = rundetail.roster[1].character.name;
-                        lblPlayer2.Tag = rundetail.roster[1].character.path;
-                        lblilvl2.Text = rundetail.roster[1].items.item_level_equipped.ToString();
-                        lblScore2.Text = rundetail.roster[1].ranks.score.ToString();
+                            lblRole2.Text = $"{rundetail.roster[1].role.ToUpper()} :";
+                            lblPlayer2.Text = rundetail.roster[1].character.name;
+                            lblPlayer2.Tag = rundetail.roster[1].character.path;
+                            lblilvl2.Text = rundetail.roster[1].items.item_level_equipped.ToString();
+                            lblScore2.Text = rundetail.roster[1].ranks.score.ToString();
 
-                        lblRole3.Text = $"{rundetail.roster[2].role.ToUpper()} :";
-                        lblPlayer3.Text = rundetail.roster[2].character.name;
-                        lblPlayer3.Tag = rundetail.roster[2].character.path;
-                        lblilvl3.Text = rundetail.roster[2].items.item_level_equipped.ToString();
-                        lblScore3.Text = rundetail.roster[2].ranks.score.ToString();
+                            lblRole3.Text = $"{rundetail.roster[2].role.ToUpper()} :";
+                            lblPlayer3.Text = rundetail.roster[2].character.name;
+                            lblPlayer3.Tag = rundetail.roster[2].character.path;
+                            lblilvl3.Text = rundetail.roster[2].items.item_level_equipped.ToString();
+                            lblScore3.Text = rundetail.roster[2].ranks.score.ToString();
 
-                        lblRole4.Text = $"{rundetail.roster[3].role.ToUpper()} :";
-                        lblPlayer4.Text = rundetail.roster[3].character.name;
-                        lblPlayer4.Tag = rundetail.roster[3].character.path;
-                        lblilvl4.Text = rundetail.roster[3].items.item_level_equipped.ToString();
-                        lblScore4.Text = rundetail.roster[3].ranks.score.ToString();
+                            lblRole4.Text = $"{rundetail.roster[3].role.ToUpper()} :";
+                            lblPlayer4.Text = rundetail.roster[3].character.name;
+                            lblPlayer4.Tag = rundetail.roster[3].character.path;
+                            lblilvl4.Text = rundetail.roster[3].items.item_level_equipped.ToString();
+                            lblScore4.Text = rundetail.roster[3].ranks.score.ToString();
 
-                        lblRole5.Text = $"{rundetail.roster[4].role.ToUpper()} :";
-                        lblPlayer5.Text = rundetail.roster[4].character.name;
-                        lblPlayer5.Tag = rundetail.roster[4].character.path;
-                        lblilvl5.Text = rundetail.roster[4].items.item_level_equipped.ToString();
-                        lblScore5.Text = rundetail.roster[4].ranks.score.ToString();
+                            lblRole5.Text = $"{rundetail.roster[4].role.ToUpper()} :";
+                            lblPlayer5.Text = rundetail.roster[4].character.name;
+                            lblPlayer5.Tag = rundetail.roster[4].character.path;
+                            lblilvl5.Text = rundetail.roster[4].items.item_level_equipped.ToString();
+                            lblScore5.Text = rundetail.roster[4].ranks.score.ToString();
 
-                        lblseasondetail.Text = rundetail.season;
+                            lblseasondetail.Text = rundetail.season;
+                        }
                     }
                 }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("Bad request" + ex.Message);
+                }
+
             }
 
         }

@@ -51,38 +51,6 @@
             this.lblRaiderIo = new System.Windows.Forms.LinkLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvRecentRuns = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblDungeonName = new System.Windows.Forms.Label();
-            this.lblSeason = new System.Windows.Forms.Label();
-            this.lblDungeonlvl = new System.Windows.Forms.Label();
-            this.lblUpgrade = new System.Windows.Forms.Label();
-            this.lblTimeremining = new System.Windows.Forms.Label();
-            this.lblAffix1 = new System.Windows.Forms.Label();
-            this.lblAffix2 = new System.Windows.Forms.Label();
-            this.lblAffix3 = new System.Windows.Forms.Label();
-            this.lblRole1 = new System.Windows.Forms.Label();
-            this.lblRole2 = new System.Windows.Forms.Label();
-            this.lblRole3 = new System.Windows.Forms.Label();
-            this.lblRole4 = new System.Windows.Forms.Label();
-            this.lblRole5 = new System.Windows.Forms.Label();
-            this.lblPlayer1 = new System.Windows.Forms.LinkLabel();
-            this.lblPlayer2 = new System.Windows.Forms.LinkLabel();
-            this.lblPlayer3 = new System.Windows.Forms.LinkLabel();
-            this.lblPlayer4 = new System.Windows.Forms.LinkLabel();
-            this.lblPlayer5 = new System.Windows.Forms.LinkLabel();
-            this.lblilvl1 = new System.Windows.Forms.Label();
-            this.lblilvl2 = new System.Windows.Forms.Label();
-            this.lblilvl3 = new System.Windows.Forms.Label();
-            this.lblilvl4 = new System.Windows.Forms.Label();
-            this.lblilvl5 = new System.Windows.Forms.Label();
-            this.lblScore1 = new System.Windows.Forms.Label();
-            this.lblScore2 = new System.Windows.Forms.Label();
-            this.lblScore3 = new System.Windows.Forms.Label();
-            this.lblScore4 = new System.Windows.Forms.Label();
-            this.lblScore5 = new System.Windows.Forms.Label();
-            this.lblseasondetail = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dgvboost = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -92,6 +60,38 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column15 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblseasondetail = new System.Windows.Forms.Label();
+            this.lblScore5 = new System.Windows.Forms.Label();
+            this.lblilvl5 = new System.Windows.Forms.Label();
+            this.lblScore4 = new System.Windows.Forms.Label();
+            this.lblilvl4 = new System.Windows.Forms.Label();
+            this.lblScore3 = new System.Windows.Forms.Label();
+            this.lblilvl3 = new System.Windows.Forms.Label();
+            this.lblScore2 = new System.Windows.Forms.Label();
+            this.lblilvl2 = new System.Windows.Forms.Label();
+            this.lblScore1 = new System.Windows.Forms.Label();
+            this.lblilvl1 = new System.Windows.Forms.Label();
+            this.lblPlayer5 = new System.Windows.Forms.LinkLabel();
+            this.lblPlayer4 = new System.Windows.Forms.LinkLabel();
+            this.lblPlayer3 = new System.Windows.Forms.LinkLabel();
+            this.lblPlayer2 = new System.Windows.Forms.LinkLabel();
+            this.lblPlayer1 = new System.Windows.Forms.LinkLabel();
+            this.lblRole5 = new System.Windows.Forms.Label();
+            this.lblRole4 = new System.Windows.Forms.Label();
+            this.lblRole3 = new System.Windows.Forms.Label();
+            this.lblRole2 = new System.Windows.Forms.Label();
+            this.lblRole1 = new System.Windows.Forms.Label();
+            this.lblAffix3 = new System.Windows.Forms.Label();
+            this.lblAffix2 = new System.Windows.Forms.Label();
+            this.lblAffix1 = new System.Windows.Forms.Label();
+            this.lblTimeremining = new System.Windows.Forms.Label();
+            this.lblUpgrade = new System.Windows.Forms.Label();
+            this.lblDungeonlvl = new System.Windows.Forms.Label();
+            this.lblSeason = new System.Windows.Forms.Label();
+            this.lblDungeonName = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dgvboost = new System.Windows.Forms.DataGridView();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -283,9 +283,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvRecentRuns);
-            this.groupBox1.Location = new System.Drawing.Point(507, 201);
+            this.groupBox1.Location = new System.Drawing.Point(3, 236);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(495, 239);
+            this.groupBox1.Size = new System.Drawing.Size(486, 239);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Recent Runs";
@@ -311,337 +311,9 @@
             this.dgvRecentRuns.Name = "dgvRecentRuns";
             this.dgvRecentRuns.RowHeadersVisible = false;
             this.dgvRecentRuns.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRecentRuns.Size = new System.Drawing.Size(486, 219);
+            this.dgvRecentRuns.Size = new System.Drawing.Size(471, 219);
             this.dgvRecentRuns.TabIndex = 20;
             this.dgvRecentRuns.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecentRuns_CellContentClick);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.groupBox2.Controls.Add(this.lblseasondetail);
-            this.groupBox2.Controls.Add(this.lblScore5);
-            this.groupBox2.Controls.Add(this.lblilvl5);
-            this.groupBox2.Controls.Add(this.lblScore4);
-            this.groupBox2.Controls.Add(this.lblilvl4);
-            this.groupBox2.Controls.Add(this.lblScore3);
-            this.groupBox2.Controls.Add(this.lblilvl3);
-            this.groupBox2.Controls.Add(this.lblScore2);
-            this.groupBox2.Controls.Add(this.lblilvl2);
-            this.groupBox2.Controls.Add(this.lblScore1);
-            this.groupBox2.Controls.Add(this.lblilvl1);
-            this.groupBox2.Controls.Add(this.lblPlayer5);
-            this.groupBox2.Controls.Add(this.lblPlayer4);
-            this.groupBox2.Controls.Add(this.lblPlayer3);
-            this.groupBox2.Controls.Add(this.lblPlayer2);
-            this.groupBox2.Controls.Add(this.lblPlayer1);
-            this.groupBox2.Controls.Add(this.lblRole5);
-            this.groupBox2.Controls.Add(this.lblRole4);
-            this.groupBox2.Controls.Add(this.lblRole3);
-            this.groupBox2.Controls.Add(this.lblRole2);
-            this.groupBox2.Controls.Add(this.lblRole1);
-            this.groupBox2.Controls.Add(this.lblAffix3);
-            this.groupBox2.Controls.Add(this.lblAffix2);
-            this.groupBox2.Controls.Add(this.lblAffix1);
-            this.groupBox2.Controls.Add(this.lblTimeremining);
-            this.groupBox2.Controls.Add(this.lblUpgrade);
-            this.groupBox2.Controls.Add(this.lblDungeonlvl);
-            this.groupBox2.Controls.Add(this.lblSeason);
-            this.groupBox2.Controls.Add(this.lblDungeonName);
-            this.groupBox2.Location = new System.Drawing.Point(9, 179);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(489, 206);
-            this.groupBox2.TabIndex = 20;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Detail";
-            // 
-            // lblDungeonName
-            // 
-            this.lblDungeonName.AutoSize = true;
-            this.lblDungeonName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDungeonName.Location = new System.Drawing.Point(158, 16);
-            this.lblDungeonName.Name = "lblDungeonName";
-            this.lblDungeonName.Size = new System.Drawing.Size(0, 17);
-            this.lblDungeonName.TabIndex = 21;
-            // 
-            // lblSeason
-            // 
-            this.lblSeason.AutoSize = true;
-            this.lblSeason.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSeason.Location = new System.Drawing.Point(6, 16);
-            this.lblSeason.Name = "lblSeason";
-            this.lblSeason.Size = new System.Drawing.Size(0, 13);
-            this.lblSeason.TabIndex = 21;
-            // 
-            // lblDungeonlvl
-            // 
-            this.lblDungeonlvl.AutoSize = true;
-            this.lblDungeonlvl.Location = new System.Drawing.Point(410, 18);
-            this.lblDungeonlvl.Name = "lblDungeonlvl";
-            this.lblDungeonlvl.Size = new System.Drawing.Size(0, 13);
-            this.lblDungeonlvl.TabIndex = 21;
-            // 
-            // lblUpgrade
-            // 
-            this.lblUpgrade.AutoSize = true;
-            this.lblUpgrade.Location = new System.Drawing.Point(410, 41);
-            this.lblUpgrade.Name = "lblUpgrade";
-            this.lblUpgrade.Size = new System.Drawing.Size(0, 13);
-            this.lblUpgrade.TabIndex = 22;
-            // 
-            // lblTimeremining
-            // 
-            this.lblTimeremining.AutoSize = true;
-            this.lblTimeremining.Location = new System.Drawing.Point(9, 41);
-            this.lblTimeremining.Name = "lblTimeremining";
-            this.lblTimeremining.Size = new System.Drawing.Size(0, 13);
-            this.lblTimeremining.TabIndex = 23;
-            // 
-            // lblAffix1
-            // 
-            this.lblAffix1.AutoSize = true;
-            this.lblAffix1.Location = new System.Drawing.Point(119, 41);
-            this.lblAffix1.Name = "lblAffix1";
-            this.lblAffix1.Size = new System.Drawing.Size(0, 13);
-            this.lblAffix1.TabIndex = 24;
-            // 
-            // lblAffix2
-            // 
-            this.lblAffix2.AutoSize = true;
-            this.lblAffix2.Location = new System.Drawing.Point(220, 41);
-            this.lblAffix2.Name = "lblAffix2";
-            this.lblAffix2.Size = new System.Drawing.Size(0, 13);
-            this.lblAffix2.TabIndex = 25;
-            // 
-            // lblAffix3
-            // 
-            this.lblAffix3.AutoSize = true;
-            this.lblAffix3.Location = new System.Drawing.Point(323, 41);
-            this.lblAffix3.Name = "lblAffix3";
-            this.lblAffix3.Size = new System.Drawing.Size(0, 13);
-            this.lblAffix3.TabIndex = 26;
-            // 
-            // lblRole1
-            // 
-            this.lblRole1.AutoSize = true;
-            this.lblRole1.Location = new System.Drawing.Point(30, 71);
-            this.lblRole1.Name = "lblRole1";
-            this.lblRole1.Size = new System.Drawing.Size(0, 13);
-            this.lblRole1.TabIndex = 27;
-            // 
-            // lblRole2
-            // 
-            this.lblRole2.AutoSize = true;
-            this.lblRole2.Location = new System.Drawing.Point(30, 93);
-            this.lblRole2.Name = "lblRole2";
-            this.lblRole2.Size = new System.Drawing.Size(0, 13);
-            this.lblRole2.TabIndex = 28;
-            // 
-            // lblRole3
-            // 
-            this.lblRole3.AutoSize = true;
-            this.lblRole3.Location = new System.Drawing.Point(30, 115);
-            this.lblRole3.Name = "lblRole3";
-            this.lblRole3.Size = new System.Drawing.Size(0, 13);
-            this.lblRole3.TabIndex = 27;
-            // 
-            // lblRole4
-            // 
-            this.lblRole4.AutoSize = true;
-            this.lblRole4.Location = new System.Drawing.Point(32, 137);
-            this.lblRole4.Name = "lblRole4";
-            this.lblRole4.Size = new System.Drawing.Size(0, 13);
-            this.lblRole4.TabIndex = 28;
-            // 
-            // lblRole5
-            // 
-            this.lblRole5.AutoSize = true;
-            this.lblRole5.Location = new System.Drawing.Point(32, 160);
-            this.lblRole5.Name = "lblRole5";
-            this.lblRole5.Size = new System.Drawing.Size(0, 13);
-            this.lblRole5.TabIndex = 29;
-            // 
-            // lblPlayer1
-            // 
-            this.lblPlayer1.AutoSize = true;
-            this.lblPlayer1.Location = new System.Drawing.Point(87, 71);
-            this.lblPlayer1.Name = "lblPlayer1";
-            this.lblPlayer1.Size = new System.Drawing.Size(0, 13);
-            this.lblPlayer1.TabIndex = 30;
-            this.lblPlayer1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPlayer1_LinkClicked);
-            // 
-            // lblPlayer2
-            // 
-            this.lblPlayer2.AutoSize = true;
-            this.lblPlayer2.Location = new System.Drawing.Point(87, 93);
-            this.lblPlayer2.Name = "lblPlayer2";
-            this.lblPlayer2.Size = new System.Drawing.Size(0, 13);
-            this.lblPlayer2.TabIndex = 30;
-            this.lblPlayer2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPlayer2_LinkClicked);
-            // 
-            // lblPlayer3
-            // 
-            this.lblPlayer3.AutoSize = true;
-            this.lblPlayer3.Location = new System.Drawing.Point(87, 115);
-            this.lblPlayer3.Name = "lblPlayer3";
-            this.lblPlayer3.Size = new System.Drawing.Size(0, 13);
-            this.lblPlayer3.TabIndex = 30;
-            this.lblPlayer3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPlayer3_LinkClicked);
-            // 
-            // lblPlayer4
-            // 
-            this.lblPlayer4.AutoSize = true;
-            this.lblPlayer4.Location = new System.Drawing.Point(87, 137);
-            this.lblPlayer4.Name = "lblPlayer4";
-            this.lblPlayer4.Size = new System.Drawing.Size(0, 13);
-            this.lblPlayer4.TabIndex = 30;
-            this.lblPlayer4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPlayer4_LinkClicked);
-            // 
-            // lblPlayer5
-            // 
-            this.lblPlayer5.AutoSize = true;
-            this.lblPlayer5.Location = new System.Drawing.Point(87, 160);
-            this.lblPlayer5.Name = "lblPlayer5";
-            this.lblPlayer5.Size = new System.Drawing.Size(0, 13);
-            this.lblPlayer5.TabIndex = 30;
-            this.lblPlayer5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPlayer5_LinkClicked);
-            // 
-            // lblilvl1
-            // 
-            this.lblilvl1.AutoSize = true;
-            this.lblilvl1.Location = new System.Drawing.Point(220, 71);
-            this.lblilvl1.Name = "lblilvl1";
-            this.lblilvl1.Size = new System.Drawing.Size(0, 13);
-            this.lblilvl1.TabIndex = 31;
-            // 
-            // lblilvl2
-            // 
-            this.lblilvl2.AutoSize = true;
-            this.lblilvl2.Location = new System.Drawing.Point(219, 93);
-            this.lblilvl2.Name = "lblilvl2";
-            this.lblilvl2.Size = new System.Drawing.Size(0, 13);
-            this.lblilvl2.TabIndex = 31;
-            // 
-            // lblilvl3
-            // 
-            this.lblilvl3.AutoSize = true;
-            this.lblilvl3.Location = new System.Drawing.Point(219, 115);
-            this.lblilvl3.Name = "lblilvl3";
-            this.lblilvl3.Size = new System.Drawing.Size(0, 13);
-            this.lblilvl3.TabIndex = 31;
-            // 
-            // lblilvl4
-            // 
-            this.lblilvl4.AutoSize = true;
-            this.lblilvl4.Location = new System.Drawing.Point(220, 137);
-            this.lblilvl4.Name = "lblilvl4";
-            this.lblilvl4.Size = new System.Drawing.Size(0, 13);
-            this.lblilvl4.TabIndex = 31;
-            // 
-            // lblilvl5
-            // 
-            this.lblilvl5.AutoSize = true;
-            this.lblilvl5.Location = new System.Drawing.Point(219, 160);
-            this.lblilvl5.Name = "lblilvl5";
-            this.lblilvl5.Size = new System.Drawing.Size(0, 13);
-            this.lblilvl5.TabIndex = 31;
-            // 
-            // lblScore1
-            // 
-            this.lblScore1.AutoSize = true;
-            this.lblScore1.Location = new System.Drawing.Point(398, 71);
-            this.lblScore1.Name = "lblScore1";
-            this.lblScore1.Size = new System.Drawing.Size(0, 13);
-            this.lblScore1.TabIndex = 31;
-            // 
-            // lblScore2
-            // 
-            this.lblScore2.AutoSize = true;
-            this.lblScore2.Location = new System.Drawing.Point(397, 93);
-            this.lblScore2.Name = "lblScore2";
-            this.lblScore2.Size = new System.Drawing.Size(0, 13);
-            this.lblScore2.TabIndex = 31;
-            // 
-            // lblScore3
-            // 
-            this.lblScore3.AutoSize = true;
-            this.lblScore3.Location = new System.Drawing.Point(397, 115);
-            this.lblScore3.Name = "lblScore3";
-            this.lblScore3.Size = new System.Drawing.Size(0, 13);
-            this.lblScore3.TabIndex = 31;
-            // 
-            // lblScore4
-            // 
-            this.lblScore4.AutoSize = true;
-            this.lblScore4.Location = new System.Drawing.Point(398, 137);
-            this.lblScore4.Name = "lblScore4";
-            this.lblScore4.Size = new System.Drawing.Size(0, 13);
-            this.lblScore4.TabIndex = 31;
-            // 
-            // lblScore5
-            // 
-            this.lblScore5.AutoSize = true;
-            this.lblScore5.Location = new System.Drawing.Point(397, 160);
-            this.lblScore5.Name = "lblScore5";
-            this.lblScore5.Size = new System.Drawing.Size(0, 13);
-            this.lblScore5.TabIndex = 31;
-            // 
-            // lblseasondetail
-            // 
-            this.lblseasondetail.AutoSize = true;
-            this.lblseasondetail.Location = new System.Drawing.Point(297, 190);
-            this.lblseasondetail.Name = "lblseasondetail";
-            this.lblseasondetail.Size = new System.Drawing.Size(0, 13);
-            this.lblseasondetail.TabIndex = 32;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.lblFaction);
-            this.groupBox3.Controls.Add(this.groupBox2);
-            this.groupBox3.Controls.Add(this.pcCharacter);
-            this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.lblRaiderIo);
-            this.groupBox3.Controls.Add(this.lblName);
-            this.groupBox3.Controls.Add(this.lblAchievement);
-            this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.lblRace);
-            this.groupBox3.Controls.Add(this.lblRealm);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.lblClass);
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.lblGender);
-            this.groupBox3.Controls.Add(this.lblActiveSpec);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.lblRole);
-            this.groupBox3.Location = new System.Drawing.Point(3, 12);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(504, 391);
-            this.groupBox3.TabIndex = 21;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
-            // 
-            // dgvboost
-            // 
-            this.dgvboost.AllowUserToAddRows = false;
-            this.dgvboost.AllowUserToDeleteRows = false;
-            this.dgvboost.AllowUserToResizeColumns = false;
-            this.dgvboost.AllowUserToResizeRows = false;
-            this.dgvboost.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvboost.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column14,
-            this.Column9,
-            this.Column10,
-            this.Column11,
-            this.Column12,
-            this.Column13});
-            this.dgvboost.Location = new System.Drawing.Point(513, 6);
-            this.dgvboost.Name = "dgvboost";
-            this.dgvboost.ReadOnly = true;
-            this.dgvboost.RowHeadersVisible = false;
-            this.dgvboost.Size = new System.Drawing.Size(486, 189);
-            this.dgvboost.TabIndex = 22;
             // 
             // Column1
             // 
@@ -706,6 +378,333 @@
             this.Column15.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Column15.Width = 40;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.groupBox2.Controls.Add(this.lblseasondetail);
+            this.groupBox2.Controls.Add(this.lblScore5);
+            this.groupBox2.Controls.Add(this.lblilvl5);
+            this.groupBox2.Controls.Add(this.lblScore4);
+            this.groupBox2.Controls.Add(this.lblilvl4);
+            this.groupBox2.Controls.Add(this.lblScore3);
+            this.groupBox2.Controls.Add(this.lblilvl3);
+            this.groupBox2.Controls.Add(this.lblScore2);
+            this.groupBox2.Controls.Add(this.lblilvl2);
+            this.groupBox2.Controls.Add(this.lblScore1);
+            this.groupBox2.Controls.Add(this.lblilvl1);
+            this.groupBox2.Controls.Add(this.lblPlayer5);
+            this.groupBox2.Controls.Add(this.lblPlayer4);
+            this.groupBox2.Controls.Add(this.lblPlayer3);
+            this.groupBox2.Controls.Add(this.lblPlayer2);
+            this.groupBox2.Controls.Add(this.lblPlayer1);
+            this.groupBox2.Controls.Add(this.lblRole5);
+            this.groupBox2.Controls.Add(this.lblRole4);
+            this.groupBox2.Controls.Add(this.lblRole3);
+            this.groupBox2.Controls.Add(this.lblRole2);
+            this.groupBox2.Controls.Add(this.lblRole1);
+            this.groupBox2.Controls.Add(this.lblAffix3);
+            this.groupBox2.Controls.Add(this.lblAffix2);
+            this.groupBox2.Controls.Add(this.lblAffix1);
+            this.groupBox2.Controls.Add(this.lblTimeremining);
+            this.groupBox2.Controls.Add(this.lblUpgrade);
+            this.groupBox2.Controls.Add(this.lblDungeonlvl);
+            this.groupBox2.Controls.Add(this.lblSeason);
+            this.groupBox2.Controls.Add(this.lblDungeonName);
+            this.groupBox2.Location = new System.Drawing.Point(513, 18);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(459, 212);
+            this.groupBox2.TabIndex = 20;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Detail";
+            // 
+            // lblseasondetail
+            // 
+            this.lblseasondetail.AutoSize = true;
+            this.lblseasondetail.Location = new System.Drawing.Point(297, 190);
+            this.lblseasondetail.Name = "lblseasondetail";
+            this.lblseasondetail.Size = new System.Drawing.Size(0, 13);
+            this.lblseasondetail.TabIndex = 32;
+            // 
+            // lblScore5
+            // 
+            this.lblScore5.AutoSize = true;
+            this.lblScore5.Location = new System.Drawing.Point(397, 160);
+            this.lblScore5.Name = "lblScore5";
+            this.lblScore5.Size = new System.Drawing.Size(0, 13);
+            this.lblScore5.TabIndex = 31;
+            // 
+            // lblilvl5
+            // 
+            this.lblilvl5.AutoSize = true;
+            this.lblilvl5.Location = new System.Drawing.Point(219, 160);
+            this.lblilvl5.Name = "lblilvl5";
+            this.lblilvl5.Size = new System.Drawing.Size(0, 13);
+            this.lblilvl5.TabIndex = 31;
+            // 
+            // lblScore4
+            // 
+            this.lblScore4.AutoSize = true;
+            this.lblScore4.Location = new System.Drawing.Point(398, 137);
+            this.lblScore4.Name = "lblScore4";
+            this.lblScore4.Size = new System.Drawing.Size(0, 13);
+            this.lblScore4.TabIndex = 31;
+            // 
+            // lblilvl4
+            // 
+            this.lblilvl4.AutoSize = true;
+            this.lblilvl4.Location = new System.Drawing.Point(220, 137);
+            this.lblilvl4.Name = "lblilvl4";
+            this.lblilvl4.Size = new System.Drawing.Size(0, 13);
+            this.lblilvl4.TabIndex = 31;
+            // 
+            // lblScore3
+            // 
+            this.lblScore3.AutoSize = true;
+            this.lblScore3.Location = new System.Drawing.Point(397, 115);
+            this.lblScore3.Name = "lblScore3";
+            this.lblScore3.Size = new System.Drawing.Size(0, 13);
+            this.lblScore3.TabIndex = 31;
+            // 
+            // lblilvl3
+            // 
+            this.lblilvl3.AutoSize = true;
+            this.lblilvl3.Location = new System.Drawing.Point(219, 115);
+            this.lblilvl3.Name = "lblilvl3";
+            this.lblilvl3.Size = new System.Drawing.Size(0, 13);
+            this.lblilvl3.TabIndex = 31;
+            // 
+            // lblScore2
+            // 
+            this.lblScore2.AutoSize = true;
+            this.lblScore2.Location = new System.Drawing.Point(397, 93);
+            this.lblScore2.Name = "lblScore2";
+            this.lblScore2.Size = new System.Drawing.Size(0, 13);
+            this.lblScore2.TabIndex = 31;
+            // 
+            // lblilvl2
+            // 
+            this.lblilvl2.AutoSize = true;
+            this.lblilvl2.Location = new System.Drawing.Point(219, 93);
+            this.lblilvl2.Name = "lblilvl2";
+            this.lblilvl2.Size = new System.Drawing.Size(0, 13);
+            this.lblilvl2.TabIndex = 31;
+            // 
+            // lblScore1
+            // 
+            this.lblScore1.AutoSize = true;
+            this.lblScore1.Location = new System.Drawing.Point(398, 71);
+            this.lblScore1.Name = "lblScore1";
+            this.lblScore1.Size = new System.Drawing.Size(0, 13);
+            this.lblScore1.TabIndex = 31;
+            // 
+            // lblilvl1
+            // 
+            this.lblilvl1.AutoSize = true;
+            this.lblilvl1.Location = new System.Drawing.Point(220, 71);
+            this.lblilvl1.Name = "lblilvl1";
+            this.lblilvl1.Size = new System.Drawing.Size(0, 13);
+            this.lblilvl1.TabIndex = 31;
+            // 
+            // lblPlayer5
+            // 
+            this.lblPlayer5.AutoSize = true;
+            this.lblPlayer5.Location = new System.Drawing.Point(87, 160);
+            this.lblPlayer5.Name = "lblPlayer5";
+            this.lblPlayer5.Size = new System.Drawing.Size(0, 13);
+            this.lblPlayer5.TabIndex = 30;
+            this.lblPlayer5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPlayer5_LinkClicked);
+            // 
+            // lblPlayer4
+            // 
+            this.lblPlayer4.AutoSize = true;
+            this.lblPlayer4.Location = new System.Drawing.Point(87, 137);
+            this.lblPlayer4.Name = "lblPlayer4";
+            this.lblPlayer4.Size = new System.Drawing.Size(0, 13);
+            this.lblPlayer4.TabIndex = 30;
+            this.lblPlayer4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPlayer4_LinkClicked);
+            // 
+            // lblPlayer3
+            // 
+            this.lblPlayer3.AutoSize = true;
+            this.lblPlayer3.Location = new System.Drawing.Point(87, 115);
+            this.lblPlayer3.Name = "lblPlayer3";
+            this.lblPlayer3.Size = new System.Drawing.Size(0, 13);
+            this.lblPlayer3.TabIndex = 30;
+            this.lblPlayer3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPlayer3_LinkClicked);
+            // 
+            // lblPlayer2
+            // 
+            this.lblPlayer2.AutoSize = true;
+            this.lblPlayer2.Location = new System.Drawing.Point(87, 93);
+            this.lblPlayer2.Name = "lblPlayer2";
+            this.lblPlayer2.Size = new System.Drawing.Size(0, 13);
+            this.lblPlayer2.TabIndex = 30;
+            this.lblPlayer2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPlayer2_LinkClicked);
+            // 
+            // lblPlayer1
+            // 
+            this.lblPlayer1.AutoSize = true;
+            this.lblPlayer1.Location = new System.Drawing.Point(87, 71);
+            this.lblPlayer1.Name = "lblPlayer1";
+            this.lblPlayer1.Size = new System.Drawing.Size(0, 13);
+            this.lblPlayer1.TabIndex = 30;
+            this.lblPlayer1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPlayer1_LinkClicked);
+            // 
+            // lblRole5
+            // 
+            this.lblRole5.AutoSize = true;
+            this.lblRole5.Location = new System.Drawing.Point(32, 160);
+            this.lblRole5.Name = "lblRole5";
+            this.lblRole5.Size = new System.Drawing.Size(0, 13);
+            this.lblRole5.TabIndex = 29;
+            // 
+            // lblRole4
+            // 
+            this.lblRole4.AutoSize = true;
+            this.lblRole4.Location = new System.Drawing.Point(32, 137);
+            this.lblRole4.Name = "lblRole4";
+            this.lblRole4.Size = new System.Drawing.Size(0, 13);
+            this.lblRole4.TabIndex = 28;
+            // 
+            // lblRole3
+            // 
+            this.lblRole3.AutoSize = true;
+            this.lblRole3.Location = new System.Drawing.Point(30, 115);
+            this.lblRole3.Name = "lblRole3";
+            this.lblRole3.Size = new System.Drawing.Size(0, 13);
+            this.lblRole3.TabIndex = 27;
+            // 
+            // lblRole2
+            // 
+            this.lblRole2.AutoSize = true;
+            this.lblRole2.Location = new System.Drawing.Point(30, 93);
+            this.lblRole2.Name = "lblRole2";
+            this.lblRole2.Size = new System.Drawing.Size(0, 13);
+            this.lblRole2.TabIndex = 28;
+            // 
+            // lblRole1
+            // 
+            this.lblRole1.AutoSize = true;
+            this.lblRole1.Location = new System.Drawing.Point(30, 71);
+            this.lblRole1.Name = "lblRole1";
+            this.lblRole1.Size = new System.Drawing.Size(0, 13);
+            this.lblRole1.TabIndex = 27;
+            // 
+            // lblAffix3
+            // 
+            this.lblAffix3.AutoSize = true;
+            this.lblAffix3.Location = new System.Drawing.Point(323, 41);
+            this.lblAffix3.Name = "lblAffix3";
+            this.lblAffix3.Size = new System.Drawing.Size(0, 13);
+            this.lblAffix3.TabIndex = 26;
+            // 
+            // lblAffix2
+            // 
+            this.lblAffix2.AutoSize = true;
+            this.lblAffix2.Location = new System.Drawing.Point(220, 41);
+            this.lblAffix2.Name = "lblAffix2";
+            this.lblAffix2.Size = new System.Drawing.Size(0, 13);
+            this.lblAffix2.TabIndex = 25;
+            // 
+            // lblAffix1
+            // 
+            this.lblAffix1.AutoSize = true;
+            this.lblAffix1.Location = new System.Drawing.Point(119, 41);
+            this.lblAffix1.Name = "lblAffix1";
+            this.lblAffix1.Size = new System.Drawing.Size(0, 13);
+            this.lblAffix1.TabIndex = 24;
+            // 
+            // lblTimeremining
+            // 
+            this.lblTimeremining.AutoSize = true;
+            this.lblTimeremining.Location = new System.Drawing.Point(9, 41);
+            this.lblTimeremining.Name = "lblTimeremining";
+            this.lblTimeremining.Size = new System.Drawing.Size(0, 13);
+            this.lblTimeremining.TabIndex = 23;
+            // 
+            // lblUpgrade
+            // 
+            this.lblUpgrade.AutoSize = true;
+            this.lblUpgrade.Location = new System.Drawing.Point(410, 41);
+            this.lblUpgrade.Name = "lblUpgrade";
+            this.lblUpgrade.Size = new System.Drawing.Size(0, 13);
+            this.lblUpgrade.TabIndex = 22;
+            // 
+            // lblDungeonlvl
+            // 
+            this.lblDungeonlvl.AutoSize = true;
+            this.lblDungeonlvl.Location = new System.Drawing.Point(410, 18);
+            this.lblDungeonlvl.Name = "lblDungeonlvl";
+            this.lblDungeonlvl.Size = new System.Drawing.Size(0, 13);
+            this.lblDungeonlvl.TabIndex = 21;
+            // 
+            // lblSeason
+            // 
+            this.lblSeason.AutoSize = true;
+            this.lblSeason.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSeason.Location = new System.Drawing.Point(6, 16);
+            this.lblSeason.Name = "lblSeason";
+            this.lblSeason.Size = new System.Drawing.Size(0, 13);
+            this.lblSeason.TabIndex = 21;
+            // 
+            // lblDungeonName
+            // 
+            this.lblDungeonName.AutoSize = true;
+            this.lblDungeonName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDungeonName.Location = new System.Drawing.Point(158, 16);
+            this.lblDungeonName.Name = "lblDungeonName";
+            this.lblDungeonName.Size = new System.Drawing.Size(0, 17);
+            this.lblDungeonName.TabIndex = 21;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.lblFaction);
+            this.groupBox3.Controls.Add(this.pcCharacter);
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.lblRaiderIo);
+            this.groupBox3.Controls.Add(this.lblName);
+            this.groupBox3.Controls.Add(this.lblAchievement);
+            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.lblRace);
+            this.groupBox3.Controls.Add(this.lblRealm);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.lblClass);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.lblGender);
+            this.groupBox3.Controls.Add(this.lblActiveSpec);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.lblRole);
+            this.groupBox3.Location = new System.Drawing.Point(3, 12);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(504, 218);
+            this.groupBox3.TabIndex = 21;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Chrachter Detail";
+            // 
+            // dgvboost
+            // 
+            this.dgvboost.AllowUserToAddRows = false;
+            this.dgvboost.AllowUserToDeleteRows = false;
+            this.dgvboost.AllowUserToResizeColumns = false;
+            this.dgvboost.AllowUserToResizeRows = false;
+            this.dgvboost.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvboost.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column14,
+            this.Column9,
+            this.Column10,
+            this.Column11,
+            this.Column12,
+            this.Column13});
+            this.dgvboost.Location = new System.Drawing.Point(495, 250);
+            this.dgvboost.Name = "dgvboost";
+            this.dgvboost.ReadOnly = true;
+            this.dgvboost.RowHeadersVisible = false;
+            this.dgvboost.Size = new System.Drawing.Size(477, 219);
+            this.dgvboost.TabIndex = 22;
+            // 
             // Column14
             // 
             this.Column14.HeaderText = "BoostID";
@@ -761,8 +760,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1004, 438);
+            this.ClientSize = new System.Drawing.Size(983, 474);
             this.Controls.Add(this.dgvboost);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -771,7 +771,7 @@
             this.MinimizeBox = false;
             this.Name = "frmDetailCharacter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Character Detail";
+            this.Text = "Asign Panel";
             this.Load += new System.EventHandler(this.frmDetailCharacter_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcCharacter)).EndInit();
             this.groupBox1.ResumeLayout(false);
